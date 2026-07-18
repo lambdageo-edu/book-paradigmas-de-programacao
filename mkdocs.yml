@@ -1,0 +1,92 @@
+site_name: Paradigmas de Programação
+site_description: >
+  Livro didático da disciplina de Paradigmas de Programação: fundamentos
+  comparativos de paradigmas e um estudo aprofundado de Orientação a Objetos
+  com Java (Java 21 LTS).
+site_author: "Sergio Souza Costa"
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: pt
+  font: false
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Alternar para modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Alternar para modo claro
+
+plugins:
+  - search
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - tables
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/lambdageo.css
+
+nav:
+  - Apresentação: index.md
+
+  - Unidade 1 — Paradigmas e Fundamentos de Java:
+    - "Cap 1: Paradigmas de Programação":              unidade1/01_paradigmas_linguagens.md
+    - "Cap 2: Panorama da Linguagem Java":              unidade1/02_visao_java.md
+    - "Cap 3: Tipos e Expressões":                      unidade1/03_tipos_expressoes.md
+    - "Cap 4: Comandos":                                unidade1/04_comandos.md
+
+  - Unidade 2 — Orientação a Objetos em Java:
+    - "Cap 5: Classes e Objetos":                       unidade2/01_classes_objetos.md
+    - "Cap 6: Relações — Herança e Encapsulamento":     unidade2/02_relacoes.md
+    - "Cap 7: Polimorfismo":                            unidade2/03_polimorfismo.md
+    - "Cap 8: Classes Abstratas e Interfaces":          unidade2/04_classes_abstratas_interfaces.md
+    - "Cap 9: Princípios e Padrões Orientados a Objetos": unidade2/05_principios_padroes.md
+
+  - Unidade 3 — Java Avançado:
+    - "Cap 10: Tratamento de Exceções":                 unidade3/01_excecoes.md
+    - "Cap 11: Coleções":                               unidade3/02_colecoes.md
+    - "Cap 12: Persistência com JDBC":                  unidade3/03_banco_dados.md
+    - "Cap 13: Interface Gráfica com Swing":             unidade3/04_interface_grafica.md
+    - "Cap 14: Reflexão":                               unidade3/05_reflexao.md
+    - "Cap 15: Java Funcional":                         unidade3/06_java_funcional.md
+    - "Exercícios Resolvidos":                          unidade3/07_exercicios.md

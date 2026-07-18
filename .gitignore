@@ -1,0 +1,28 @@
+# Python Virtual Environment
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# MkDocs compiled output
+site/
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+.DS_Store
+
+# Java build artifacts (Maven/Gradle) - caso o repo inclua exemplos de código
+target/
+build/
+out/
+*.class
+*.jar
+!gradle-wrapper.jar
+.gradle/
