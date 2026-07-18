@@ -1,0 +1,1917 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Livro didático da disciplina de Paradigmas de Programação: fundamentos comparativos de paradigmas e um estudo aprofundado de Orientação a Objetos com Java (Java 21 LTS).
+">
+      
+      
+        <meta name="author" content="Sergio Souza Costa">
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../02_visao_java/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Cap 1: Paradigmas de Programação - Paradigmas de Programação</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/lambdageo.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cap-1-paradigmas-de-programacao" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Paradigmas de Programação" class="md-header__button md-logo" aria-label="Paradigmas de Programação" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Paradigmas de Programação
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cap 1: Paradigmas de Programação
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Alternar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Alternar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartilhar" aria-label="Compartilhar" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Paradigmas de Programação" class="md-nav__button md-logo" aria-label="Paradigmas de Programação" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Paradigmas de Programação
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apresentação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 1 — Paradigmas e Fundamentos de Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 1 — Paradigmas e Fundamentos de Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 1: Paradigmas de Programação
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 1: Paradigmas de Programação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-esta-disciplina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Sobre esta disciplina
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-um-programa-um-algoritmo-uma-linguagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 O que é um programa, um algoritmo, uma linguagem?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#um-breve-historico-das-linguagens-de-baixo-nivel-ao-paradigma-estruturado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕰️ Um breve histórico: das linguagens de baixo nível ao paradigma estruturado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🕰️ Um breve histórico: das linguagens de baixo nível ao paradigma estruturado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#as-linguagens-de-primeira-geracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As linguagens de primeira geração
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-primeiras-linguagens-de-alto-nivel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As primeiras linguagens de alto nível
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-um-paradigma-de-programacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 O que é um paradigma de programação?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 O que é um paradigma de programação?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paradigma-imperativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paradigma Imperativo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paradigma-declarativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paradigma Declarativo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programacao-estruturada-em-mais-detalhe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programação Estruturada, em mais detalhe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programacao-funcional-em-mais-detalhe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programação Funcional, em mais detalhe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paradigma-logico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paradigma Lógico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paradigma-orientado-a-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paradigma Orientado a Objetos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodos-de-implementacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Métodos de implementação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caracteristicas-de-linguagens-de-programacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📏 Características de linguagens de programação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📏 Características de linguagens de programação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#legibilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legibilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redigibilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redigibilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confiabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confiabilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#um-panorama-de-linguagens-do-mercado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌍 Um panorama de linguagens do mercado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-estudar-linguagens-de-programacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Por que estudar linguagens de programação?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Atividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-saber-mais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Para saber mais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_visao_java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 2: Panorama da Linguagem Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_tipos_expressoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 3: Tipos e Expressões
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_comandos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 4: Comandos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 2 — Orientação a Objetos em Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 2 — Orientação a Objetos em Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/01_classes_objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 5: Classes e Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/02_relacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 6: Relações — Herança e Encapsulamento
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/03_polimorfismo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 7: Polimorfismo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/04_classes_abstratas_interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 8: Classes Abstratas e Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/05_principios_padroes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 9: Princípios e Padrões Orientados a Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 3 — Java Avançado
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 3 — Java Avançado
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/01_excecoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 10: Tratamento de Exceções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/02_colecoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 11: Coleções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/03_banco_dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 12: Persistência com JDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/04_interface_grafica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 13: Interface Gráfica com Swing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/05_reflexao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 14: Reflexão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/06_java_funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 15: Java Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/07_exercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercícios Resolvidos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-esta-disciplina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Sobre esta disciplina
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-um-programa-um-algoritmo-uma-linguagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 O que é um programa, um algoritmo, uma linguagem?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#um-breve-historico-das-linguagens-de-baixo-nivel-ao-paradigma-estruturado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕰️ Um breve histórico: das linguagens de baixo nível ao paradigma estruturado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🕰️ Um breve histórico: das linguagens de baixo nível ao paradigma estruturado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#as-linguagens-de-primeira-geracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As linguagens de primeira geração
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-primeiras-linguagens-de-alto-nivel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As primeiras linguagens de alto nível
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-um-paradigma-de-programacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 O que é um paradigma de programação?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧠 O que é um paradigma de programação?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paradigma-imperativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paradigma Imperativo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paradigma-declarativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paradigma Declarativo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programacao-estruturada-em-mais-detalhe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programação Estruturada, em mais detalhe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programacao-funcional-em-mais-detalhe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programação Funcional, em mais detalhe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paradigma-logico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paradigma Lógico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paradigma-orientado-a-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paradigma Orientado a Objetos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodos-de-implementacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Métodos de implementação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caracteristicas-de-linguagens-de-programacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📏 Características de linguagens de programação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📏 Características de linguagens de programação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#legibilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legibilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redigibilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redigibilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confiabilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confiabilidade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#um-panorama-de-linguagens-do-mercado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌍 Um panorama de linguagens do mercado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-estudar-linguagens-de-programacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Por que estudar linguagens de programação?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Atividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-saber-mais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Para saber mais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cap-1-paradigmas-de-programacao">Cap 1: Paradigmas de Programação<a class="headerlink" href="#cap-1-paradigmas-de-programacao" title="Permanent link">&para;</a></h1>
+<h2 id="sobre-esta-disciplina">🎯 Sobre esta disciplina<a class="headerlink" href="#sobre-esta-disciplina" title="Permanent link">&para;</a></h2>
+<p>Esta disciplina tem quatro objetivos entrelaçados:</p>
+<ul>
+<li>Apresentar os principais <strong>paradigmas</strong> de linguagens de programação.</li>
+<li>Fazer um <strong>estudo comparativo</strong> entre eles — o que cada um resolve bem, e a que custo.</li>
+<li>Entender como paradigmas diferentes <strong>se integram</strong> nas linguagens modernas (poucas linguagens hoje são "puras" em um único paradigma).</li>
+<li>Aprofundar em uma linguagem concreta — neste livro, <strong>Java</strong> — como estudo de caso do paradigma orientado a objetos.</li>
+</ul>
+<p>Ao final, o objetivo não é apenas "saber Java", mas ter vocabulário conceitual para avaliar <em>qualquer</em> linguagem nova que você encontrar ao longo da carreira: por que ela tomou certas decisões de design, que trade-offs isso implica, e como isso se compara com o que você já conhece.</p>
+<div class="admonition info">
+<p class="admonition-title">Bibliografia de referência</p>
+<p>Sebesta, R. <em>Conceitos de Linguagens de Programação</em> (9ª ed.); Watt, D. <em>Programming Language Design Concepts</em>; Varejão, F. <em>Linguagens de Programação: Conceitos e Técnicas</em> (disponível gratuitamente online); Tucker, A. &amp; Noonan, R. <em>Linguagens de Programação — Princípios e Paradigmas</em>.</p>
+</div>
+<hr />
+<h2 id="o-que-e-um-programa-um-algoritmo-uma-linguagem">🧩 O que é um programa, um algoritmo, uma linguagem?<a class="headerlink" href="#o-que-e-um-programa-um-algoritmo-uma-linguagem" title="Permanent link">&para;</a></h2>
+<p>Antes de comparar linguagens, vale fixar três definições que serão usadas o curso inteiro:</p>
+<ul>
+<li><strong>Programa</strong>: uma sequência de símbolos que especifica uma computação.</li>
+<li><strong>Algoritmo</strong>: um método finito, descrito em um vocabulário fixo e por instruções precisas, organizado em passos discretos, cuja execução não exige intuição ou criatividade — e que eventualmente termina.</li>
+<li><strong>Linguagem de programação</strong>: um formalismo artificial no qual algoritmos podem ser expressos.</li>
+</ul>
+<p>Essas três ideias parecem óbvias, mas a terceira é a mais importante para este curso: uma linguagem é, antes de tudo, uma <strong>notação formal</strong> — e notações diferentes tornam certos algoritmos mais fáceis ou mais difíceis de expressar. É exatamente essa diferença de notação, aplicada a um mesmo problema computacional, que chamamos de <strong>paradigma</strong>.</p>
+<hr />
+<h2 id="um-breve-historico-das-linguagens-de-baixo-nivel-ao-paradigma-estruturado">🕰️ Um breve histórico: das linguagens de baixo nível ao paradigma estruturado<a class="headerlink" href="#um-breve-historico-das-linguagens-de-baixo-nivel-ao-paradigma-estruturado" title="Permanent link">&para;</a></h2>
+<h3 id="as-linguagens-de-primeira-geracao">As linguagens de primeira geração<a class="headerlink" href="#as-linguagens-de-primeira-geracao" title="Permanent link">&para;</a></h3>
+<p>Os primeiros computadores com programa armazenado eram programados diretamente em <strong>linguagem de máquina</strong>, específica para cada arquitetura. Para tornar isso um pouco mais legível, surgiu o <strong>Assembly</strong>: símbolos mnemônicos mapeados 1-para-1 nas instruções do processador.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>; soma os valores n+...+3+2+1(+0) em um laço e
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>; guarda o resultado na posição de memória &quot;sum&quot;
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>loop:   S(x)-&gt;Ac+  n    ; carrega n no acumulador
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        Cc-&gt;S(x)   pos  ; se AC &gt;= 0, salta para pos
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        halt             ; senão, termina
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        .empty
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>pos:    S(x)-&gt;Ah+  sum  ; soma n a sum
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        At-&gt;S(x)   sum
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        S(x)-&gt;Ac+  n
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        S(x)-&gt;Ah-  one   ; decrementa n
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        At-&gt;S(x)   n
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        Cu-&gt;S(x)   loop  ; volta ao início do laço
+</code></pre></div>
+<p>O grande problema dessas linguagens de <strong>primeira geração</strong> era a <strong>falta de portabilidade</strong>: um programa escrito para uma máquina não rodava em outra.</p>
+<h3 id="as-primeiras-linguagens-de-alto-nivel">As primeiras linguagens de alto nível<a class="headerlink" href="#as-primeiras-linguagens-de-alto-nivel" title="Permanent link">&para;</a></h3>
+<p>As linguagens de alto nível resolveram parte do problema de portabilidade, mas herdaram do assembly um controle de fluxo baseado em saltos condicionais e incondicionais (<code>goto</code>) — um mecanismo flexível, mas que produz código cujo fluxo de execução não acompanha a ordem em que o texto é lido. Isso prejudica legibilidade e manutenibilidade, e foi um dos fatores por trás da chamada "crise do software" nos anos 1970 (voltaremos a esse ponto adiante).</p>
+<p>As quatro linguagens fundadoras dessa era:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Fortran (1957)</label><label for="__tabbed_1_2">Lisp (1958)</label><label for="__tabbed_1_3">Algol60 (1960)</label><label for="__tabbed_1_4">Cobol (1959)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Criada por uma equipe da IBM liderada por John Backus, é considerada a primeira linguagem de alto nível, criada para permitir que fórmulas matemáticas fossem traduzidas automaticamente em código eficiente para o IBM 704. Ainda é usada por matemáticos, físicos e engenheiros — e continua evoluindo (a revisão mais recente do padrão é de 2023).</p>
+</div>
+<div class="tabbed-block">
+<p>Criada por John McCarthy, é a segunda linguagem de alto nível e a primeira linguagem <strong>funcional</strong>, baseada no cálculo lambda. Sintaxe minimalista — tudo é lista — e altamente customizável via macros. É a ancestral de dialetos modernos como Scheme, Racket e <strong>Clojure</strong>, que estudaremos mais adiante no curso de Programação Funcional.</p>
+</div>
+<div class="tabbed-block">
+<p>Projetada por comitê (incluindo os criadores de Fortran e Lisp) com a ambição de ser uma "linguagem universal". Comercialmente não decolou, mas influenciou profundamente linguagens posteriores, entre elas C.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>procedure Absmax(a) Size:(n, m) Result:(y) Subscripts:(i, k);
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    value n, m; array a; integer n, m, i, k; real y;
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>comment Encontra o maior elemento em módulo da matriz a (n×m)
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    e devolve seu valor em y e seus índices em i, k;
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>begin
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    integer p, q;
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    y := 0; i := k := 1;
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    for p := 1 step 1 until n do
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        for q := 1 step 1 until m do
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            if abs(a[p, q]) &gt; y then
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>                begin y := abs(a[p, q]);
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>                    i := p; k := q
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>                end
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>end Absmax
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Introduziu estruturas de dados nomeadas e voltadas a processamento comercial, dominando o mercado de aplicações bancárias e de mainframe — onde, aliás, ainda está presente hoje.</p>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="o-que-e-um-paradigma-de-programacao">🧠 O que é um paradigma de programação?<a class="headerlink" href="#o-que-e-um-paradigma-de-programacao" title="Permanent link">&para;</a></h2>
+<p>Um paradigma de programação é um <strong>estilo distintivo de programar</strong>, caracterizado pela predominância de certos conceitos-chave. Programas em assembly são, no fundo, todos "iguais" — sequências de instruções de processador. Mas assim que subimos para uma linguagem de alto nível, a forma de pensar o problema começa a divergir de acordo com o paradigma escolhido: as linguagens de um mesmo paradigma tendem a compartilhar muito mais entre si do que com linguagens de paradigmas diferentes.</p>
+<p>Vamos adotar a classificação a seguir, que separaremos em dois grandes grupos:</p>
+<h3 id="paradigma-imperativo">Paradigma Imperativo<a class="headerlink" href="#paradigma-imperativo" title="Permanent link">&para;</a></h3>
+<p>Baseado no <strong>processo de mudança de estado</strong>: variáveis, valores e atribuições. É o modelo mental mais próximo da máquina — uma sequência de comandos que alteram a memória passo a passo.</p>
+<ul>
+<li><strong>Estruturado/procedimental</strong>: refinamentos sucessivos, blocos aninhados de comandos, forte desestímulo ao uso de <code>goto</code> — apoiado nos três comandos fundamentais: sequência, seleção e iteração.</li>
+<li><strong>Orientado a objetos</strong>: uma coleção de objetos que se relacionam e se comunicam por troca de mensagens — Smalltalk, C++, Java, Python, Ruby, Kotlin, C#.</li>
+</ul>
+<h3 id="paradigma-declarativo">Paradigma Declarativo<a class="headerlink" href="#paradigma-declarativo" title="Permanent link">&para;</a></h3>
+<p>Abstrai-se de <strong>como</strong> o computador executa a tarefa, especificando apenas <strong>o que</strong> deve ser calculado.</p>
+<ul>
+<li><strong>Funcional</strong>: computação como composição e aplicação de funções — Haskell, Lisp, Clojure, Elixir.</li>
+<li><strong>Lógico</strong>: uma coleção de fatos e regras sobre a qual se fazem perguntas — Prolog, Mercury.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Por que só estes dois grandes grupos?</p>
+<p>Existem outras classificações mais finas (paradigma orientado a eventos, reativo, concorrente...), mas para os fins comparativos deste curso, a divisão imperativo × declarativo — com objetos de um lado e funções/lógica do outro — é suficiente e é a que aparece na maior parte da literatura clássica (Watt, Sebesta, Van Roy).</p>
+</div>
+<h3 id="programacao-estruturada-em-mais-detalhe">Programação Estruturada, em mais detalhe<a class="headerlink" href="#programacao-estruturada-em-mais-detalhe" title="Permanent link">&para;</a></h3>
+<p>O paradigma estruturado nasceu de uma reação coletiva contra o "código espaguete" produzido pelo uso indiscriminado de <code>goto</code>. Edsger Dijkstra e C.A.R. Hoare, entre outros, sintetizaram práticas que hoje consideramos óbvias: <strong>desenvolvimento top-down</strong>, <strong>modularização</strong>, <strong>tipos estruturados</strong> e o uso disciplinado de apenas três construções de controle — sequência, seleção e iteração — no lugar de saltos arbitrários.</p>
+<p>Foi também nessa época que se consolidou o conceito de <strong>tipo abstrato de dados (TAD)</strong>: um conjunto de objetos e as operações definidas sobre eles, onde a especificação das operações define uma interface entre o TAD e o resto do programa — descrevendo <em>o que</em> as operações fazem, mas não <em>como</em> fazem. Esse conceito é o alicerce direto sobre o qual as classes de linguagens orientadas a objetos, como Java, foram construídas — algo que retomaremos na Unidade 2.</p>
+<h3 id="programacao-funcional-em-mais-detalhe">Programação Funcional, em mais detalhe<a class="headerlink" href="#programacao-funcional-em-mais-detalhe" title="Permanent link">&para;</a></h3>
+<p>Vale separar dois usos do termo "funcional", como propõe Martin Odersky (criador de Scala):</p>
+<ul>
+<li><strong>Sentido amplo</strong>: programar com foco em funções e suas composições. Funções são <strong>valores de primeira classe</strong> — podem ser passadas como argumento, retornadas por outras funções, guardadas em estruturas de dados e usadas como literais anônimos (<strong>lambdas</strong>):</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">Prelude</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="p">(</span><span class="nf">\</span><span class="n">x</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
+</code></pre></div>
+<ul>
+<li><strong>Sentido restrito</strong>: programar <strong>sem efeitos colaterais</strong>, isto é, com <strong>funções puras</strong> — funções cujo resultado depende apenas dos argumentos, sem alterar estado externo nem depender dele. Uma função pura aplicada aos mesmos argumentos sempre devolve o mesmo resultado; essa propriedade é chamada de <strong>transparência referencial</strong>.</li>
+</ul>
+<p>Mesmo em uma linguagem imperativa é possível — e desejável — escrever funções puras:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">double</span><span class="w"> </span><span class="nf">dobra</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span>
+</code></pre></div>
+<p>Mas nem toda função "parece" pura à primeira vista. Compare com a função abaixo — ela é pura?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">double</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">double</span><span class="w"> </span><span class="nf">dobraMaisI</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">              </span><span class="c1">// efeito colateral: altera estado global</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
+</code></pre></div>
+<p>Não: ela depende de e modifica uma variável global <code>i</code>, então duas chamadas com o mesmo <code>x</code> podem devolver resultados diferentes. Esse tipo de análise — "essa função é pura?" — é um exercício que vale a pena internalizar desde já, porque ele é a base de boa parte do raciocínio sobre corretude e testabilidade de código, em qualquer paradigma.</p>
+<h3 id="paradigma-logico">Paradigma Lógico<a class="headerlink" href="#paradigma-logico" title="Permanent link">&para;</a></h3>
+<p>Baseado em três conceitos centrais: <strong>fatos</strong>, <strong>regras</strong> e <strong>perguntas</strong>. Prolog é o representante clássico; você pode experimentar interativamente em <a href="https://swish.swi-prolog.org/">swish.swi-prolog.org</a>. Não é o foco deste curso, mas vale conhecer o modelo mental — programar <em>descrevendo relações</em>, e deixar que o motor de inferência descubra como satisfazê-las.</p>
+<h3 id="paradigma-orientado-a-objetos">Paradigma Orientado a Objetos<a class="headerlink" href="#paradigma-orientado-a-objetos" title="Permanent link">&para;</a></h3>
+<p>Esse é o paradigma que estudaremos em profundidade a partir da Unidade 2, usando Java como linguagem de estudo. Por ora, fica o resumo de Alan Kay (criador do Smalltalk, um dos berços da orientação a objetos): tudo é um objeto; objetos se comunicam trocando mensagens; cada objeto tem sua própria memória; todo objeto é instância de uma classe; a classe concentra o comportamento compartilhado por suas instâncias.</p>
+<hr />
+<h2 id="metodos-de-implementacao">⚙️ Métodos de implementação<a class="headerlink" href="#metodos-de-implementacao" title="Permanent link">&para;</a></h2>
+<p>Além do paradigma, outra dimensão importante para comparar linguagens é <strong>como</strong> o código-fonte se transforma em execução:</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Características</th>
+<th>Exemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Compilação</strong></td>
+<td>Tradução direta para código de máquina antes da execução; foco em eficiência e sistemas</td>
+<td>C, C++, Rust, Go</td>
+</tr>
+<tr>
+<td><strong>Interpretação</strong></td>
+<td>Código lido e executado passo a passo por outro programa, geralmente embutido em uma aplicação (navegador, shell, servidor)</td>
+<td>Bash, linguagens de script</td>
+</tr>
+<tr>
+<td><strong>Híbrido (máquina virtual)</strong></td>
+<td>Compilação para um código intermediário (<em>bytecode</em>), executado depois por uma máquina virtual</td>
+<td>Java (JVM), .NET (CLR), Erlang/Elixir (BEAM)</td>
+</tr>
+</tbody>
+</table>
+<p>A linguagem <strong>Go</strong> é um bom exemplo moderno de compilação cruzada eficiente: um único código-fonte compila nativamente para diversos sistemas operacionais e arquiteturas sem depender de máquina virtual.</p>
+<p>Já a JVM se tornou um alvo de compilação popular para várias linguagens além do Java — Kotlin, Groovy, Scala e Clojure "compilam" para o mesmo bytecode; a BEAM (máquina virtual de Erlang) é o destino da linguagem brasileira <strong>Elixir</strong>.</p>
+<p>Mesmo interpretadores usam representações intermediárias internamente. Em Python, por exemplo, é possível inspecionar o bytecode gerado para uma função:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">dis</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">dobro</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">dis</span><span class="o">.</span><span class="n">dis</span><span class="p">(</span><span class="n">dobro</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>  4           0 LOAD_CONST               1 (2)
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>              2 LOAD_FAST                0 (x)
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>              4 BINARY_MULTIPLY
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>              6 RETURN_VALUE
+</code></pre></div>
+<hr />
+<h2 id="caracteristicas-de-linguagens-de-programacao">📏 Características de linguagens de programação<a class="headerlink" href="#caracteristicas-de-linguagens-de-programacao" title="Permanent link">&para;</a></h2>
+<p>Discussões sobre "qual linguagem é melhor" tendem a ser acaloradas e cheias de subjetividade. Sebesta propõe um conjunto de critérios mais objetivos para comparar linguagens — vamos usá-los ao longo de todo o curso.</p>
+<h3 id="legibilidade">Legibilidade<a class="headerlink" href="#legibilidade" title="Permanent link">&para;</a></h3>
+<p>Facilidade de <strong>ler e entender</strong> um programa já escrito.</p>
+<p><strong>Simplicidade.</strong> Uma linguagem com muitas construções básicas é mais difícil de aprender do que uma com poucas. Dois problemas comuns aqui:</p>
+<ul>
+<li><strong>Multiplicidade de recursos</strong>: existir mais de uma forma de fazer a mesma coisa. Java, por exemplo, oferece quatro formas equivalentes de incrementar uma variável:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">count</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">count</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="o">++</span><span class="n">count</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li><strong>Sobrecarga de símbolos</strong>: usar o mesmo símbolo para significados diferentes conforme o contexto — em C, o que significam os três <code>*</code> a seguir?</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span><span class="n">q</span><span class="p">;</span>
+</code></pre></div>
+<p>Java optou por <strong>não</strong> oferecer sobrecarga de operadores (diferente de C++, que já a tinha desde o início). Scala vai no sentido oposto e permite forte sobrecarga — poderosa, mas fácil de abusar. Os projetistas de Go justificam a mesma escolha de Java citando a experiência de que múltiplos métodos com o mesmo nome e assinaturas diferentes, embora ocasionalmente úteis, tendem a deixar o código mais confuso e frágil na prática.</p>
+<p><strong>Ortogonalidade.</strong> Diz respeito à capacidade de combinar os conceitos básicos da linguagem livremente, sem produzir efeitos anômalos — quanto menos exceções às regras gerais, mais ortogonal é a linguagem. Exemplos de baixa ortogonalidade:</p>
+<ul>
+<li>Em C, o tipo <code>void</code> só é válido em declarações de função e ponteiros — não existe "variável void".</li>
+<li>Em C, uma <code>struct</code> pode ser retornada por uma função, mas um array não pode.</li>
+<li>Em Java, por que a linha 4 abaixo não compila?</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kt">byte</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">z</span><span class="p">;</span><span class="w">   </span><span class="c1">// ok: int + int -&gt; int</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w">   </span><span class="c1">// erro de compilação!</span>
+</code></pre></div>
+<p>(A resposta tem a ver com <strong>promoção de tipos</strong>: em Java, uma expressão aritmética entre <code>byte</code>s é promovida a <code>int</code>, e o resultado <code>int</code> não pode ser atribuído a <code>byte</code> sem <em>cast</em> explícito — veremos isso em detalhe no capítulo sobre Tipos e Expressões.)</p>
+<h3 id="redigibilidade">Redigibilidade<a class="headerlink" href="#redigibilidade" title="Permanent link">&para;</a></h3>
+<p>A facilidade de <strong>escrever</strong> programas para um determinado domínio de problema. Note o "para um determinado domínio": R foi desenhada para facilitar análise de dados, não para escrever um sistema operacional — comparar redigibilidade fora do domínio-alvo é injusto com a linguagem.</p>
+<p>Boa parte dos fatores que afetam redigibilidade também afeta legibilidade — abstração é o principal deles: funções, classes e outros mecanismos de abstração tornam o código mais curto e mais claro simultaneamente. <strong>Expressividade</strong> é outro fator: operadores poderosos que permitem expressar bastante computação em pouco código. Em C, o <code>for</code> não faz nada que o <code>while</code> não faça, mas deixa laços com contagem fixa mais curtos e mais fáceis de ler:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="c1">// comandos</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">}</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1">// o mesmo laço com for</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="c1">// comandos</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="p">}</span>
+</code></pre></div>
+<p>Redigibilidade e legibilidade às vezes entram em conflito — código muito conciso pode ficar difícil de ler. O que faz o código C abaixo?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(;</span><span class="w"> </span><span class="o">*</span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="n">q</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">++</span><span class="p">);</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">}</span>
+</code></pre></div>
+<p>(É uma cópia de string escrita de forma extremamente compacta — funcional, mas ilegível para quem não é fluente em C.)</p>
+<h3 id="confiabilidade">Confiabilidade<a class="headerlink" href="#confiabilidade" title="Permanent link">&para;</a></h3>
+<p>Um programa é confiável se ele se comporta conforme sua especificação <strong>em todas as condições</strong>. Elementos de linguagem que aumentam ou reduzem confiabilidade:</p>
+<ul>
+<li><strong>Checagem de tipos em tempo de compilação</strong>: linguagens estaticamente tipadas capturam erros de tipo antes da execução — Java tende a ser mais confiável que Python nesse eixo.</li>
+<li><strong>Tipagem forte</strong>: evita conversões implícitas perigosas. O código abaixo compila em C, mas não em C++ — porque C++ é mais fortemente tipada quanto a conversões implícitas de ponteiro:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w">   </span><span class="c1">// compila em C (com aviso), é erro em C++</span>
+</code></pre></div>
+<ul>
+<li><strong>Tratamento de exceções</strong>: permite interceptar erros e, em certos casos, obriga o programador a tratá-los — em Java, exceções checadas (como as de acesso a banco de dados) precisam ser declaradas ou tratadas, algo que linguagens baseadas apenas em códigos de erro não conseguem impor.</li>
+<li><strong>Acesso direto a ponteiros</strong>: manipular ponteiros livremente (como em C) é uma fonte clássica de bugs. C++ herda esse acesso irrestrito de C; Java e a maioria das linguagens mais recentes não expõem ponteiros ao programador.</li>
+<li><strong>Referências nulas</strong>: mesmo sem ponteiros, o problema persiste — <code>NullPointerException</code> em Java é um dos erros mais comuns em produção. Linguagens mais recentes (Kotlin, Swift) tratam nulidade no próprio sistema de tipos; Java oferece <code>Optional&lt;T&gt;</code> desde a versão 8 como mecanismo opcional (não imposto pelo compilador), que veremos na Unidade 3.</li>
+</ul>
+<p>Combinando esses fatores, uma ordem aproximada de confiabilidade seria: C &lt; C++ &lt; Java &lt; Kotlin — cada uma reduzindo uma classe de erro que a anterior ainda permitia.</p>
+<h3 id="custos">Custos<a class="headerlink" href="#custos" title="Permanent link">&para;</a></h3>
+<p>Por fim, a escolha de uma linguagem para um projeto real envolve custos que vão muito além da sintaxe (Sebesta): custo de <strong>treinar programadores</strong>, de <strong>escrever</strong> programas, de <strong>compilar</strong>, de <strong>executar</strong>, de <strong>manter</strong> a implementação da própria linguagem, custo da <strong>baixa confiabilidade</strong> (bugs em produção) e custo de <strong>manutenção</strong> ao longo do tempo. Entre todos, os três mais decisivos na prática costumam ser desenvolvimento, manutenção e confiabilidade — não desempenho bruto.</p>
+<hr />
+<h2 id="um-panorama-de-linguagens-do-mercado">🌍 Um panorama de linguagens do mercado<a class="headerlink" href="#um-panorama-de-linguagens-do-mercado" title="Permanent link">&para;</a></h2>
+<p>Não existe hoje um único projeto de software que use apenas uma linguagem. Conhecer, ainda que superficialmente, o "sabor" de várias linguagens ajuda a reconhecer padrões quando você encontrar uma nova. Um recorte razoável do mercado atual:</p>
+<table>
+<thead>
+<tr>
+<th>Linguagem</th>
+<th>Paradigma principal</th>
+<th>Tipagem</th>
+<th>Método de execução</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Java</td>
+<td>Orientado a objetos (com recursos funcionais desde a v8)</td>
+<td>Estática, forte</td>
+<td>Híbrido (JVM)</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Multiparadigma (imperativo, OO, funcional)</td>
+<td>Dinâmica, forte</td>
+<td>Interpretado / híbrido</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>Multiparadigma, baseado em protótipos</td>
+<td>Dinâmica, fraca</td>
+<td>Interpretado / JIT</td>
+</tr>
+<tr>
+<td>Kotlin</td>
+<td>Orientado a objetos + funcional</td>
+<td>Estática, forte</td>
+<td>Híbrido (JVM)</td>
+</tr>
+<tr>
+<td>Go</td>
+<td>Imperativo/estruturado, concorrente</td>
+<td>Estática, forte</td>
+<td>Compilado</td>
+</tr>
+<tr>
+<td>Swift</td>
+<td>Orientado a objetos + protocolos</td>
+<td>Estática, forte</td>
+<td>Compilado</td>
+</tr>
+<tr>
+<td>C#</td>
+<td>Orientado a objetos</td>
+<td>Estática, forte</td>
+<td>Híbrido (CLR)</td>
+</tr>
+<tr>
+<td>Elixir</td>
+<td>Funcional, orientado a atores</td>
+<td>Dinâmica, forte</td>
+<td>Híbrido (BEAM)</td>
+</tr>
+<tr>
+<td>Clojure</td>
+<td>Funcional (Lisp)</td>
+<td>Dinâmica, forte</td>
+<td>Híbrido (JVM)</td>
+</tr>
+</tbody>
+</table>
+<p>Ao pesquisar uma linguagem nova, é útil ter em mente um pequeno checklist de perguntas — as mesmas que usaremos para descrever Java na Unidade 1:</p>
+<ul>
+<li>O sistema de tipos é estático ou dinâmico? Há inferência de tipos?</li>
+<li>Qual é o paradigma predominante — e quais outros ela incorpora?</li>
+<li>É <em>class-based</em> ou <em>prototype-based</em>?</li>
+<li>Suporta casamento de padrões (<em>pattern matching</em>)?</li>
+<li>Funções são valores de primeira classe?</li>
+</ul>
+<hr />
+<h2 id="por-que-estudar-linguagens-de-programacao">💡 Por que estudar linguagens de programação?<a class="headerlink" href="#por-que-estudar-linguagens-de-programacao" title="Permanent link">&para;</a></h2>
+<p>Segundo Sebesta, o estudo comparado de linguagens traz vantagens concretas, mesmo que você passe a carreira inteira programando em uma ou duas linguagens:</p>
+<ul>
+<li>Aumenta a capacidade de <strong>expressar ideias</strong> em código — você reconhece padrões de outras linguagens e os aplica na sua.</li>
+<li>Dá embasamento para <strong>escolher a linguagem adequada</strong> a cada problema, em vez de usar sempre o mesmo martelo.</li>
+<li>Aumenta a habilidade de <strong>aprender novas linguagens</strong> rapidamente — o vocabulário conceitual (paradigma, tipagem, escopo, ligação) se transfere.</li>
+<li>Melhora o uso de linguagens que você <strong>já conhece</strong>, ao entender <em>por que</em> elas tomaram certas decisões de design.</li>
+<li>Contribui para o <strong>avanço geral da computação</strong>, como profissional capaz de avaliar criticamente novas ferramentas.</li>
+</ul>
+<hr />
+<h2 id="atividades">📝 Atividades<a class="headerlink" href="#atividades" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Quais elementos da linguagem Python aumentam sua redigibilidade e legibilidade em comparação com C? Dê exemplos.</li>
+<li>Por que, em geral, é possível escrever código mais eficiente em C do que em Python?</li>
+<li>Reusabilidade e modificabilidade costumam se reforçar mutuamente. Dê um exemplo dessa relação.</li>
+<li>Escolha três propriedades desejáveis de linguagens (por exemplo, legibilidade, confiabilidade, reuso) e, para cada uma, dê um exemplo concreto — de qualquer linguagem que você conheça — que ilustre como ela é alcançada.</li>
+<li>Dê um exemplo, em qualquer linguagem, em que a busca por eficiência prejudica a confiabilidade.</li>
+<li>Dê um exemplo em que a busca por portabilidade prejudica a eficiência.</li>
+<li>Uma linguagem pode sempre ser implementada tanto por compilação quanto por interpretação? Pesquise linguagens que suportam ambos os métodos.</li>
+<li>O que significa dizer que linguagens declarativas "não têm estado"? Compare com um exemplo imperativo equivalente.</li>
+<li>Dê exemplos de conceitos originados em linguagens funcionais que hoje aparecem em linguagens mainstream mais antigas (incluindo o próprio Java).</li>
+</ol>
+<hr />
+<h2 id="para-saber-mais">🔗 Para saber mais<a class="headerlink" href="#para-saber-mais" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Varejão, F. — <a href="http://www.inf.ufes.br/~fvarejao/livroLP.html"><em>Linguagens de Programação: Conceitos e Técnicas</em></a> (livro gratuito)</li>
+<li><a href="https://www.computerhistory.org/timeline/software-languages/">Timeline de linguagens de programação — Computer History Museum</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Timeline_of_programming_languages">Timeline das linguagens de programação — Wikipedia</a></li>
+<li>Wegner, P. — <em>Concepts and Paradigms of Object-Oriented Programming</em> (palestra na OOPSLA 1989)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

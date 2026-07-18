@@ -1,0 +1,1843 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Livro didático da disciplina de Paradigmas de Programação: fundamentos comparativos de paradigmas e um estudo aprofundado de Orientação a Objetos com Java (Java 21 LTS).
+">
+      
+      
+        <meta name="author" content="Sergio Souza Costa">
+      
+      
+      
+        <link rel="prev" href="../02_visao_java/">
+      
+      
+        <link rel="next" href="../04_comandos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Cap 3: Tipos e Expressões - Paradigmas de Programação</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/lambdageo.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cap-3-tipos-e-expressoes" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Paradigmas de Programação" class="md-header__button md-logo" aria-label="Paradigmas de Programação" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Paradigmas de Programação
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cap 3: Tipos e Expressões
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Alternar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Alternar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartilhar" aria-label="Compartilhar" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Paradigmas de Programação" class="md-nav__button md-logo" aria-label="Paradigmas de Programação" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Paradigmas de Programação
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apresentação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 1 — Paradigmas e Fundamentos de Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 1 — Paradigmas e Fundamentos de Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_paradigmas_linguagens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 1: Paradigmas de Programação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_visao_java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 2: Panorama da Linguagem Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 3: Tipos e Expressões
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 3: Tipos e Expressões
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conceitos-sobre-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧮 Conceitos sobre tipos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧮 Conceitos sobre tipos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e-um-sistema-de-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é um sistema de tipos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checagem-de-tipos-estatica-dinamica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checagem de tipos: estática × dinâmica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fortemente-fracamente-tipada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fortemente × fracamente tipada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vantagens-e-limites-da-tipagem-estatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vantagens e limites da tipagem estática
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inferencia-de-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inferência de tipos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classificacao-dos-tipos-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificação dos tipos de dados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-em-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ☕ Tipos em Java
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="☕ Tipos em Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-primitivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos primitivos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de referência
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boxing-autoboxing-e-wrappers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boxing, autoboxing e wrappers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#records-um-novo-tipo-de-produto-cartesiano" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Records: um novo tipo de produto cartesiano
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sealed-unioes-disjuntas-em-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sealed — uniões disjuntas em Java
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceito-sobre-expressoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➕ Conceito sobre expressões
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="➕ Conceito sobre expressões">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construtores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Construtores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chamadas-de-funcao-e-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chamadas de função e operadores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressoes-condicionais-em-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expressões condicionais em Java
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-blocks-java-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text blocks (Java 15+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variaveis-amarracao-e-escopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Variáveis, amarração e escopo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Atividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-saber-mais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Para saber mais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_comandos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 4: Comandos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 2 — Orientação a Objetos em Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 2 — Orientação a Objetos em Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/01_classes_objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 5: Classes e Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/02_relacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 6: Relações — Herança e Encapsulamento
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/03_polimorfismo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 7: Polimorfismo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/04_classes_abstratas_interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 8: Classes Abstratas e Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/05_principios_padroes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 9: Princípios e Padrões Orientados a Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 3 — Java Avançado
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 3 — Java Avançado
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/01_excecoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 10: Tratamento de Exceções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/02_colecoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 11: Coleções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/03_banco_dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 12: Persistência com JDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/04_interface_grafica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 13: Interface Gráfica com Swing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/05_reflexao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 14: Reflexão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/06_java_funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 15: Java Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/07_exercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercícios Resolvidos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conceitos-sobre-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧮 Conceitos sobre tipos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧮 Conceitos sobre tipos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e-um-sistema-de-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é um sistema de tipos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checagem-de-tipos-estatica-dinamica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checagem de tipos: estática × dinâmica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fortemente-fracamente-tipada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fortemente × fracamente tipada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vantagens-e-limites-da-tipagem-estatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vantagens e limites da tipagem estática
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inferencia-de-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inferência de tipos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classificacao-dos-tipos-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classificação dos tipos de dados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-em-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ☕ Tipos em Java
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="☕ Tipos em Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-primitivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos primitivos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-referencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de referência
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boxing-autoboxing-e-wrappers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boxing, autoboxing e wrappers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#records-um-novo-tipo-de-produto-cartesiano" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Records: um novo tipo de produto cartesiano
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sealed-unioes-disjuntas-em-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sealed — uniões disjuntas em Java
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceito-sobre-expressoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ➕ Conceito sobre expressões
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="➕ Conceito sobre expressões">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construtores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Construtores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chamadas-de-funcao-e-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chamadas de função e operadores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressoes-condicionais-em-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expressões condicionais em Java
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-blocks-java-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text blocks (Java 15+)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variaveis-amarracao-e-escopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Variáveis, amarração e escopo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Atividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-saber-mais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Para saber mais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cap-3-tipos-e-expressoes">Cap 3: Tipos e Expressões<a class="headerlink" href="#cap-3-tipos-e-expressoes" title="Permanent link">&para;</a></h1>
+<h2 id="conceitos-sobre-tipos">🧮 Conceitos sobre tipos<a class="headerlink" href="#conceitos-sobre-tipos" title="Permanent link">&para;</a></h2>
+<h3 id="o-que-e-um-sistema-de-tipos">O que é um sistema de tipos<a class="headerlink" href="#o-que-e-um-sistema-de-tipos" title="Permanent link">&para;</a></h3>
+<p>Um sistema de tipos é, essencialmente, um conjunto de regras para checar a consistência de um programa. Luca Cardelli resume bem o propósito: tipos existem para impor restrições que ajudam a garantir corretude — o objetivo fundamental de um sistema de tipos é prevenir a ocorrência de erros de execução.</p>
+<p>Formalmente, um <strong>tipo é um conjunto de valores</strong> que compartilham um comportamento uniforme sob as operações associadas a esse conjunto:</p>
+<ul>
+<li><code>v</code> é um valor do tipo <code>T</code> se <code>v ∈ T</code>.</li>
+<li>Exemplo: para <code>Boolean</code>, os valores são <code>{true, false}</code> e as operações são <code>and</code>, <code>or</code>, <code>not</code>. A cardinalidade do tipo, <code>#Boolean</code>, é 2.</li>
+</ul>
+<h3 id="checagem-de-tipos-estatica-dinamica">Checagem de tipos: estática × dinâmica<a class="headerlink" href="#checagem-de-tipos-estatica-dinamica" title="Permanent link">&para;</a></h3>
+<p>A checagem de tipos garante que uma operação só é aplicada a operandos compatíveis. Ela pode acontecer:</p>
+<ul>
+<li><strong>Em tempo de compilação (estática)</strong>: toda variável e parâmetro tem um tipo conhecido antes da execução — Pascal, C, C++, Java, Kotlin, Swift, Haskell.</li>
+<li><strong>Em tempo de execução (dinâmica)</strong>: apenas os <em>valores</em> carregam um tipo; variáveis podem assumir valores de tipos diferentes ao longo da execução — Python, Ruby, Lua, JavaScript.</li>
+<li><strong>Em ambos</strong>: linguagens estaticamente tipadas quase sempre também fazem alguma checagem em tempo de execução (por exemplo, um <code>ClassCastException</code> em Java, ou divisão por zero).</li>
+</ul>
+<p>Java é estaticamente tipada. O código abaixo nem compila, porque <code>max</code> espera dois <code>int</code> e recebemos <code>double</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">App</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.8</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">));</span><span class="w"> </span><span class="c1">// erro de compilação: incompatible types</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
+</code></pre></div>
+<p>Em uma linguagem dinamicamente tipada, como Lua ou Python, a mesma função <code>max</code> aceitaria números ou strings sem reescrever nada — a checagem só aconteceria (ou não) quando o programa rodasse.</p>
+<h3 id="fortemente-fracamente-tipada">Fortemente × fracamente tipada<a class="headerlink" href="#fortemente-fracamente-tipada" title="Permanent link">&para;</a></h3>
+<p>Uma linguagem é <strong>fortemente tipada</strong> se erros de tipo são <em>sempre</em> detectados, seja em compilação ou execução — e <strong>fracamente tipada</strong> se permite conversões implícitas silenciosas que podem mascarar erros. Isso é ortogonal a estática/dinâmica: C é estaticamente tipada, mas fracamente (permite conversões implícitas perigosas); Python é dinamicamente tipada, mas fortemente (uma operação inválida sempre lança exceção, nunca produz lixo silencioso).</p>
+<p>Java fica no meio do caminho: é razoavelmente forte, mas ainda permite algumas conversões implícitas entre tipos numéricos (<em>widening</em>) que podem surpreender:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">        </span><span class="c1">// 3 — divisão inteira, sem aviso</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">double</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">     </span><span class="c1">// 3.0 — o resultado int é convertido para double DEPOIS da divisão!</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">double</span><span class="w"> </span><span class="n">correta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// 3.333... — agora a divisão já é em ponto flutuante</span>
+</code></pre></div>
+<p>Kotlin, por comparação, é mais estritamente tipada nesse ponto: <code>val x: Double = 10 / 5</code> é erro de compilação, porque <code>10 / 5</code> já é um <code>Int</code> e Kotlin não converte implicitamente <code>Int</code> para <code>Double</code> na atribuição.</p>
+<h3 id="vantagens-e-limites-da-tipagem-estatica">Vantagens e limites da tipagem estática<a class="headerlink" href="#vantagens-e-limites-da-tipagem-estatica" title="Permanent link">&para;</a></h3>
+<p>Cardelli resume as vantagens: tipagem estática permite detectar inconsistências de tipo em tempo de compilação, garante que o programa executado é internamente consistente quanto a tipos, favorece maior eficiência de execução (o compilador já sabe os tipos, não precisa checá-los em runtime) e impõe uma disciplina que tende a deixar o código mais estruturado e legível.</p>
+<p>A contrapartida é a perda de flexibilidade: tipagem estática pode restringir prematuramente o comportamento de um valor a um único tipo, dificultando escrever, por exemplo, uma função de ordenação genérica que funcione uniformemente para qualquer tipo comparável. É exatamente esse problema que o <strong>polimorfismo</strong> resolve — veremos isso em detalhe na Unidade 2.</p>
+<h3 id="inferencia-de-tipos">Inferência de tipos<a class="headerlink" href="#inferencia-de-tipos" title="Permanent link">&para;</a></h3>
+<p>Linguagens estáticas modernas — Kotlin, Swift, Scala, Haskell e, parcialmente, o próprio Java — oferecem <strong>inferência de tipos</strong>: o compilador deduz o tipo de uma expressão sem que você precise anotá-lo explicitamente. Desde o <strong>Java 10</strong>, a palavra-chave <code>var</code> permite inferência de tipo para variáveis locais:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">var</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Sergio&quot;</span><span class="p">;</span><span class="w">     </span><span class="c1">// o compilador infere String</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">var</span><span class="w"> </span><span class="n">idade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w">          </span><span class="c1">// infere int</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">var</span><span class="w"> </span><span class="n">notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mf">8.5</span><span class="p">,</span><span class="w"> </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">7.2</span><span class="p">);</span><span class="w"> </span><span class="c1">// infere List&lt;Double&gt;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">// nome = 10; // erro! var NÃO torna a variável dinamicamente tipada —</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">              </span><span class="c1">// o tipo é fixado em String na declaração, só a ANOTAÇÃO é opcional.</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title"><code>var</code> não é tipagem dinâmica</p>
+<p>Esse é o erro conceitual mais comum sobre <code>var</code>. O tipo continua sendo determinado em tempo de compilação — <code>var</code> só evita repetir o nome do tipo quando ele já é óbvio pelo lado direito da atribuição. Use com moderação: <code>var lista = new ArrayList&lt;Pedido&gt;()</code> é claro; <code>var resultado = processar(x)</code> pode obscurecer o tipo de retorno se <code>processar</code> não tiver um nome autoexplicativo.</p>
+</div>
+<h3 id="classificacao-dos-tipos-de-dados">Classificação dos tipos de dados<a class="headerlink" href="#classificacao-dos-tipos-de-dados" title="Permanent link">&para;</a></h3>
+<p>Os tipos de dados se dividem em <strong>primitivos</strong> e <strong>compostos</strong>:</p>
+<ul>
+<li><strong>Primitivos</strong>: valores atômicos, que não se decompõem em valores mais simples — <code>char</code>, <code>int</code>, <code>double</code>, <code>boolean</code>.</li>
+<li><strong>Compostos</strong>: valores construídos a partir de valores mais simples — <code>struct</code>, array, união, registro, tupla, lista.</li>
+</ul>
+<p>David Watt propõe uma categorização mais fina para tipos compostos:</p>
+<ul>
+<li><strong>Produtos cartesianos</strong> (tuplas, structs, registros, classes)</li>
+<li><strong>Mapeamentos</strong> (arrays, funções)</li>
+<li><strong>Uniões disjuntas</strong> (tipos algébricos, registros discriminados, objetos)</li>
+<li><strong>Tipos recursivos</strong> (listas, árvores)</li>
+</ul>
+<h2 id="tipos-em-java">☕ Tipos em Java<a class="headerlink" href="#tipos-em-java" title="Permanent link">&para;</a></h2>
+<p>Java tem uma distinção fundamental entre dois grupos de tipos: <strong>primitivos</strong> e <strong>de referência</strong>.</p>
+<h3 id="tipos-primitivos">Tipos primitivos<a class="headerlink" href="#tipos-primitivos" title="Permanent link">&para;</a></h3>
+<p>Java define <strong>8 tipos primitivos</strong>, todos com tamanho fixo e portável (ao contrário de C, onde <code>int</code> pode variar de plataforma para plataforma):</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Tamanho</th>
+<th>Faixa / valores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>byte</code></td>
+<td>8 bits</td>
+<td>-128 a 127</td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td>16 bits</td>
+<td>-32.768 a 32.767</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>32 bits</td>
+<td>≈ -2,1 a 2,1 bilhões</td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td>64 bits</td>
+<td>inteiro de precisão estendida</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>32 bits</td>
+<td>ponto flutuante de precisão simples</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>64 bits</td>
+<td>ponto flutuante de precisão dupla</td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td>16 bits</td>
+<td>um caractere UTF-16</td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td>—</td>
+<td><code>true</code> ou <code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p>Valores primitivos <strong>não são objetos</strong> — não têm métodos, e vivem na <em>stack</em> (ou embutidos diretamente em um objeto), não no <em>heap</em>. Essa é uma diferença de design importante em relação a linguagens como Python ou Ruby, onde "tudo é objeto".</p>
+<h3 id="tipos-de-referencia">Tipos de referência<a class="headerlink" href="#tipos-de-referencia" title="Permanent link">&para;</a></h3>
+<p>Todo o resto — classes, interfaces, arrays, <code>String</code> — é um <strong>tipo de referência</strong>: a variável guarda uma referência para um objeto alocado no <em>heap</em>, não o objeto em si.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">              </span><span class="c1">// x guarda o valor 10 diretamente</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;olá&quot;</span><span class="p">;</span><span class="w">        </span><span class="c1">// s guarda uma referência para um objeto String no heap</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w">   </span><span class="c1">// arr guarda uma referência para um array no heap</span>
+</code></pre></div>
+<h3 id="boxing-autoboxing-e-wrappers">Boxing, autoboxing e wrappers<a class="headerlink" href="#boxing-autoboxing-e-wrappers" title="Permanent link">&para;</a></h3>
+<p>Cada tipo primitivo tem uma classe <em>wrapper</em> correspondente (<code>int</code> → <code>Integer</code>, <code>double</code> → <code>Double</code>, ...), necessária sempre que um valor primitivo precisa ser tratado como objeto — por exemplo, dentro de uma coleção genérica, já que <code>List&lt;int&gt;</code> não é uma sintaxe válida:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">notas</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w">          </span><span class="c1">// autoboxing: int 10 vira Integer automaticamente</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">primeira</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">notas</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// auto-unboxing: Integer vira int automaticamente</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Cuidado ao comparar wrappers com <code>==</code></p>
+<p><code>Integer a = 200; Integer b = 200; a == b</code> pode dar <code>false</code>, porque <code>==</code> em tipos de referência compara identidade de objeto, não valor — e o <em>cache</em> de <code>Integer</code> só garante identidade para valores entre -128 e 127. Use sempre <code>.equals()</code> (ou <code>Objects.equals</code>) para comparar wrappers por valor.</p>
+</div>
+<h3 id="records-um-novo-tipo-de-produto-cartesiano">Records: um novo tipo de produto cartesiano<a class="headerlink" href="#records-um-novo-tipo-de-produto-cartesiano" title="Permanent link">&para;</a></h3>
+<p>Desde o <strong>Java 16</strong>, a linguagem tem <em>records</em> — uma forma concisa de declarar um tipo composto imutável (um produto cartesiano, na classificação de Watt), com construtor, <em>getters</em>, <code>equals</code>, <code>hashCode</code> e <code>toString</code> gerados automaticamente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">record</span> <span class="nc">Ponto</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="c1">// opcional: um construtor compacto para validação</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Ponto</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Double</span><span class="p">.</span><span class="na">isNaN</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">isNaN</span><span class="p">(</span><span class="n">y</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;coordenadas inválidas&quot;</span><span class="p">);</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">distancia</span><span class="p">(</span><span class="n">Ponto</span><span class="w"> </span><span class="n">outro</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">outro</span><span class="p">.</span><span class="na">x</span><span class="p">,</span><span class="w"> </span><span class="n">dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">outro</span><span class="p">.</span><span class="na">y</span><span class="p">;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dy</span><span class="p">);</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">var</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Ponto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">var</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Ponto</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="na">distancia</span><span class="p">(</span><span class="n">p2</span><span class="p">));</span><span class="w"> </span><span class="c1">// 5.0</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span><span class="w">               </span><span class="c1">// Ponto[x=0.0, y=0.0] — toString automático</span>
+</code></pre></div>
+<p>Compare com a versão "clássica" pré-Java 16, que exigia escrever manualmente construtor, <em>getters</em>, <code>equals</code>, <code>hashCode</code> e <code>toString</code> — dezenas de linhas de código repetitivo para o mesmo efeito. <em>Records</em> são o exemplo mais direto de como Java moderno absorveu ideias de linguagens funcionais (tipos de dados imutáveis, como em Haskell ou Kotlin) para reduzir código boilerplate.</p>
+<h3 id="sealed-unioes-disjuntas-em-java"><code>sealed</code> — uniões disjuntas em Java<a class="headerlink" href="#sealed-unioes-disjuntas-em-java" title="Permanent link">&para;</a></h3>
+<p>Desde o <strong>Java 17</strong>, classes e interfaces <code>sealed</code> permitem expressar diretamente uma <strong>união disjunta</strong> (na classificação de Watt) — um tipo que só pode ser um entre um conjunto fechado de subtipos conhecidos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">sealed</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Forma</span><span class="w"> </span><span class="kd">permits</span><span class="w"> </span><span class="n">Circulo</span><span class="p">,</span><span class="w"> </span><span class="n">Retangulo</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">record</span> <span class="nc">Circulo</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">raio</span><span class="p">)</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Forma</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">record</span> <span class="nc">Retangulo</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">largura</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">altura</span><span class="p">)</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Forma</span><span class="w"> </span><span class="p">{}</span>
+</code></pre></div>
+<p>Combinado com <em>pattern matching</em> (próxima seção), isso permite ao compilador verificar exaustividade — algo que só linguagens com tipos algébricos, como Haskell ou Elixir, ofereciam tradicionalmente.</p>
+<h2 id="conceito-sobre-expressoes">➕ Conceito sobre expressões<a class="headerlink" href="#conceito-sobre-expressoes" title="Permanent link">&para;</a></h2>
+<p>Uma <strong>expressão</strong> é uma construção que pode ser avaliada, produzindo um valor.</p>
+<h3 id="literais">Literais<a class="headerlink" href="#literais" title="Permanent link">&para;</a></h3>
+<p>O tipo mais simples de expressão é o literal — denota diretamente um valor fixo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="mi">365</span><span class="w">        </span><span class="c1">// int</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="mf">3.1416</span><span class="w">     </span><span class="c1">// double</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="mf">3.1416f</span><span class="w">    </span><span class="c1">// float</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kc">false</span><span class="w">      </span><span class="c1">// boolean</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="sc">&#39;%&#39;</span><span class="w">        </span><span class="c1">// char</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="s">&quot;E aí?&quot;</span><span class="w">    </span><span class="c1">// String</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Ponto flutuante e igualdade</p>
+<p>Nunca compare <code>float</code>/<code>double</code> com <code>==</code> esperando igualdade exata — erros de arredondamento em ponto flutuante binário fazem <code>0.1 + 0.2 == 0.3</code> avaliar para <code>false</code> na maioria das linguagens, Java incluída. Para valores monetários ou onde precisão exata importa, use <code>BigDecimal</code>.</p>
+</div>
+<h3 id="construtores">Construtores<a class="headerlink" href="#construtores" title="Permanent link">&para;</a></h3>
+<p>Um construtor é uma expressão que monta um valor composto a partir de suas partes. Em Java, isso é o operador <code>new</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">var</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Ponto</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span><span class="w">       </span><span class="c1">// Java (record)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">val</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span><span class="w">            </span><span class="c1">// Kotlin, para comparação</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Point</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">20</span><span class="w">                  </span><span class="o">--</span><span class="w"> </span><span class="n">Haskell</span><span class="p">,</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="n">comparação</span>
+</code></pre></div>
+<h3 id="chamadas-de-funcao-e-operadores">Chamadas de função e operadores<a class="headerlink" href="#chamadas-de-funcao-e-operadores" title="Permanent link">&para;</a></h3>
+<p>Uma chamada de função calcula um resultado aplicando uma função a argumentos: <code>f(x)</code>. Um <strong>operador</strong> é, conceitualmente, uma função associada a um símbolo e usada em notação infixa — <code>a + b</code> é equivalente a <code>+(a, b)</code>. Uma expressão como <code>a * b + c / d</code> é, no fundo, composição de funções: <code>+(*(a, b), /(c, d))</code>.</p>
+<p>Java segue as regras usuais de <strong>precedência</strong> (multiplicação antes de adição) e <strong>associatividade</strong> (a maioria dos operadores binários é associativa à esquerda; exponenciação, quando existe, costuma ser à direita — embora Java, notavelmente, <strong>não tenha operador de exponenciação</strong>, usando <code>Math.pow(a, b)</code> no lugar).</p>
+<h3 id="expressoes-condicionais-em-java">Expressões condicionais em Java<a class="headerlink" href="#expressoes-condicionais-em-java" title="Permanent link">&para;</a></h3>
+<p>O <strong>operador ternário</strong> já existe desde sempre em Java e é a forma mais direta de uma expressão condicional:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">String</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nota</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">7.0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;aprovado&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;reprovado&quot;</span><span class="p">;</span>
+</code></pre></div>
+<p>Mas até o <strong>Java 13</strong> (com <em>switch expressions</em> estabilizadas no Java 14), Java não tinha um equivalente direto ao <code>case</code>-como-expressão de Haskell ou ao <code>when</code> do Kotlin — só o <code>switch</code>-<strong>comando</strong> clássico, herdado de C, com <em>fall-through</em> implícito e sem valor de retorno. Isso mudou:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">// switch clássico (comando, não expressão) — ainda válido, mas verboso</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">mes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">dias</span><span class="p">;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">mes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">        </span><span class="n">dias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">28</span><span class="p">;</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="mi">6</span><span class="p">:</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="mi">9</span><span class="p">:</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="mi">11</span><span class="p">:</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="n">dias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="k">default</span><span class="p">:</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">        </span><span class="n">dias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">31</span><span class="p">;</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">// switch expression moderna (Java 14+) — concisa, sem fall-through, exaustiva</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">dias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">mes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="mi">28</span><span class="p">;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="mi">31</span><span class="p">;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">};</span>
+</code></pre></div>
+<p>Combinado com <em>records</em> e <code>sealed</code>, o Java 21 leva isso ainda mais longe com <strong>pattern matching para <code>switch</code></strong> e <strong>record patterns</strong>, aproximando a linguagem do <code>case</code> de Haskell ou do <code>when</code> do Kotlin:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">sealed</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Forma</span><span class="w"> </span><span class="kd">permits</span><span class="w"> </span><span class="n">Circulo</span><span class="p">,</span><span class="w"> </span><span class="n">Retangulo</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kd">record</span> <span class="nc">Circulo</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">raio</span><span class="p">)</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Forma</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kd">record</span> <span class="nc">Retangulo</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">largura</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">altura</span><span class="p">)</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Forma</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">area</span><span class="p">(</span><span class="n">Forma</span><span class="w"> </span><span class="n">forma</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">forma</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">Circulo</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">raio</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="na">raio</span><span class="p">();</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">Retangulo</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="c1">// record pattern: desestrutura direto</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">        </span><span class="c1">// sem default: o compilador SABE que Forma só tem esses dois casos (sealed)</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">        </span><span class="c1">// e recusa compilar se faltar algum</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="p">};</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="p">}</span>
+</code></pre></div>
+<p>Isso é uma mudança real de estilo: o compilador agora garante <strong>exaustividade</strong> — se alguém adicionar um terceiro tipo de <code>Forma</code> no futuro e esquecer de tratá-lo aqui, o código não compila. É o mesmo tipo de garantia que atrai tanta gente para tipos algébricos em linguagens funcionais.</p>
+<h3 id="text-blocks-java-15">Text blocks (Java 15+)<a class="headerlink" href="#text-blocks-java-15" title="Permanent link">&para;</a></h3>
+<p>Para strings literais multilinha — comum em SQL, JSON, HTML embutido — o Java 15 introduziu <em>text blocks</em>, delimitados por <code>"""</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;&quot;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="s">    SELECT nome, email</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="s">    FROM contato</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="s">    WHERE ativo = true</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="s">    &quot;&quot;&quot;</span><span class="p">;</span>
+</code></pre></div>
+<p>Comparado à concatenação manual de strings com <code>+</code> e <code>\n</code>, que era a única opção até então, isso reduz bastante ruído visual em código que monta texto estruturado.</p>
+<h2 id="variaveis-amarracao-e-escopo">📦 Variáveis, amarração e escopo<a class="headerlink" href="#variaveis-amarracao-e-escopo" title="Permanent link">&para;</a></h2>
+<p>Vale distinguir duas visões de "variável" entre paradigmas, como propõe David Watt:</p>
+<ul>
+<li><strong>Em linguagens funcionais/lógicas</strong> (como em matemática), uma "variável" representa um valor fixo, porém desconhecido — não muda depois de definida.</li>
+<li><strong>Em linguagens imperativas/OO</strong>, uma variável é um <strong>contêiner</strong> para um valor, que pode ser inspecionado e atualizado quantas vezes for preciso — modelando um objeto do mundo real cujo estado muda ao longo do tempo.</li>
+</ul>
+<p>Java, por padrão, segue o modelo imperativo — variáveis são mutáveis a menos que marcadas <code>final</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">// ok, contador é mutável</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LIMITE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1">// LIMITE = 200;            // erro de compilação: LIMITE é final</span>
+</code></pre></div>
+<p><strong>Amarração</strong> (<em>binding</em>) é a associação entre um identificador e uma entidade — um valor, uma variável, uma função. Três perguntas organizam o estudo de amarrações em qualquer linguagem:</p>
+<ol>
+<li>Que símbolos podem compor um identificador válido?</li>
+<li>Que tipos de entidade podem ser amarrados a um identificador?</li>
+<li>Qual é a validade dessa amarração no tempo e no espaço — isto é, seu <strong>escopo</strong>?</li>
+</ol>
+<p>O <strong>escopo</strong> de uma declaração é a porção do programa onde ela produz efeito. Em linguagens antigas como Cobol, o escopo de toda declaração era o programa inteiro; nas linguagens modernas — Java incluída — o escopo é delimitado por <strong>blocos</strong> (<code>{ }</code>), o que permite reutilizar nomes de variáveis em blocos diferentes sem conflito.</p>
+<h2 id="atividades">📝 Atividades<a class="headerlink" href="#atividades" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Explique, em termos de checagem estática vs. dinâmica e forte vs. fraca, por que <code>10 / 3</code> e <code>10.0 / 3</code> produzem resultados diferentes em Java, mesmo compilando os dois sem erro.</li>
+<li>Reescreva, usando <code>record</code>, uma classe <code>Pessoa</code> com <code>nome</code> e <code>idade</code> que você teria escrito "à moda antiga" (construtor, getters, <code>equals</code>, <code>hashCode</code>, <code>toString</code> manuais). Compare o tamanho dos dois códigos.</li>
+<li>Modele um tipo <code>Resultado</code> com <code>sealed interface</code> que representa <code>Sucesso(String valor)</code> ou <code>Falha(String motivo)</code>, e escreva uma <code>switch expression</code> exaustiva sobre ele.</li>
+<li>Pesquise a diferença entre <code>==</code> e <code>.equals()</code> para tipos de referência em Java, e explique por que <code>new String("a") == new String("a")</code> é <code>false</code>, mas <code>new String("a").equals(new String("a"))</code> é <code>true</code>.</li>
+<li>Compare <em>switch expressions</em> de Java 21 com <code>when</code> em Kotlin e <code>case</code> em Haskell — que semelhanças e diferenças você identifica?</li>
+</ol>
+<h2 id="para-saber-mais">🔗 Para saber mais<a class="headerlink" href="#para-saber-mais" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://openjdk.org/jeps/395">JEP 395 — Records</a></li>
+<li><a href="https://openjdk.org/jeps/409">JEP 409 — Sealed Classes</a></li>
+<li><a href="https://openjdk.org/jeps/441">JEP 441 — Pattern Matching for switch</a></li>
+<li>Cardelli, L. — <em>On Understanding Types, Data Abstraction, and Polymorphism</em></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1616 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Livro didático da disciplina de Paradigmas de Programação: fundamentos comparativos de paradigmas e um estudo aprofundado de Orientação a Objetos com Java (Java 21 LTS).
+">
+      
+      
+        <meta name="author" content="Sergio Souza Costa">
+      
+      
+      
+        <link rel="prev" href="../01_paradigmas_linguagens/">
+      
+      
+        <link rel="next" href="../03_tipos_expressoes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Cap 2: Panorama da Linguagem Java - Paradigmas de Programação</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/lambdageo.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cap-2-panorama-da-linguagem-java" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Paradigmas de Programação" class="md-header__button md-logo" aria-label="Paradigmas de Programação" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Paradigmas de Programação
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cap 2: Panorama da Linguagem Java
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Alternar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Alternar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartilhar" aria-label="Compartilhar" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Paradigmas de Programação" class="md-nav__button md-logo" aria-label="Paradigmas de Programação" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Paradigmas de Programação
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apresentação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 1 — Paradigmas e Fundamentos de Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 1 — Paradigmas e Fundamentos de Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_paradigmas_linguagens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 1: Paradigmas de Programação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 2: Panorama da Linguagem Java
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 2: Panorama da Linguagem Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#breve-historico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕰️ Breve histórico
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cinco-principios-de-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Cinco princípios de design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-plataforma-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧱 A plataforma Java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalando-o-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💻 Instalando o ambiente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primeiro-programa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👋 Primeiro programa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-basica-da-linguagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧬 Estrutura básica da linguagem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paradigmas-suportados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 Paradigmas suportados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparacoes-com-outras-linguagens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Comparações com outras linguagens
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚖️ Comparações com outras linguagens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java × C
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java × C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java × PHP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java × JavaScript
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Atividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-saber-mais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Para saber mais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_tipos_expressoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 3: Tipos e Expressões
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_comandos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 4: Comandos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 2 — Orientação a Objetos em Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 2 — Orientação a Objetos em Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/01_classes_objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 5: Classes e Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/02_relacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 6: Relações — Herança e Encapsulamento
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/03_polimorfismo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 7: Polimorfismo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/04_classes_abstratas_interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 8: Classes Abstratas e Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/05_principios_padroes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 9: Princípios e Padrões Orientados a Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 3 — Java Avançado
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 3 — Java Avançado
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/01_excecoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 10: Tratamento de Exceções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/02_colecoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 11: Coleções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/03_banco_dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 12: Persistência com JDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/04_interface_grafica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 13: Interface Gráfica com Swing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/05_reflexao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 14: Reflexão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/06_java_funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 15: Java Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade3/07_exercicios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercícios Resolvidos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#breve-historico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕰️ Breve histórico
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cinco-principios-de-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Cinco princípios de design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-plataforma-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧱 A plataforma Java
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalando-o-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💻 Instalando o ambiente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primeiro-programa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👋 Primeiro programa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-basica-da-linguagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧬 Estrutura básica da linguagem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paradigmas-suportados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 Paradigmas suportados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparacoes-com-outras-linguagens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ Comparações com outras linguagens
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚖️ Comparações com outras linguagens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java × C
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java × C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java × PHP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java × JavaScript
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Atividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-saber-mais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Para saber mais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cap-2-panorama-da-linguagem-java">Cap 2: Panorama da Linguagem Java<a class="headerlink" href="#cap-2-panorama-da-linguagem-java" title="Permanent link">&para;</a></h1>
+<p>Antes de mergulhar em sintaxe, vale aplicar à própria linguagem Java o checklist de perguntas que fechou o capítulo anterior: de onde ela veio, que problema resolveu, e como se posiciona hoje frente a outras linguagens.</p>
+<h2 id="breve-historico">🕰️ Breve histórico<a class="headerlink" href="#breve-historico" title="Permanent link">&para;</a></h2>
+<p>Java nasceu em junho de 1991 como um projeto interno da Sun Microsystems chamado <strong>"Oak"</strong>, liderado por James Gosling. O objetivo original não era nem web nem servidores corporativos — era eletrônica de consumo: uma linguagem e uma máquina virtual que pudessem rodar de forma segura e portável em dispositivos variados, com sintaxe parecida com C, porém mais simples e mais uniforme (fortemente influenciada por C++, mas evitando várias de suas armadilhas).</p>
+<p>A primeira versão pública, <strong>Java 1.0</strong>, saiu em 1995 sob o lema <strong>"Write Once, Run Anywhere"</strong> — um programa Java compilado roda em qualquer plataforma que tenha uma JVM, sem recompilação. O modelo de segurança configurável (sandbox de <em>applets</em>) fez a linguagem decolar junto com a explosão da web nos anos 1990.</p>
+<p>Alguns marcos importantes da evolução da linguagem:</p>
+<table>
+<thead>
+<tr>
+<th>Versão</th>
+<th>Ano</th>
+<th>Principais novidades</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Java 1.2 ("Java 2")</td>
+<td>1998</td>
+<td>Coleções, Swing, JIT</td>
+</tr>
+<tr>
+<td>Java 5</td>
+<td>2004</td>
+<td><strong>Generics</strong>, enums, anotações, autoboxing, <code>for-each</code></td>
+</tr>
+<tr>
+<td>Java 8</td>
+<td>2014</td>
+<td><strong>Lambdas</strong>, Stream API, <code>Optional</code>, métodos <code>default</code> em interfaces</td>
+</tr>
+<tr>
+<td>Java 9</td>
+<td>2017</td>
+<td>Sistema de módulos (JPMS), início do ritmo de release semestral</td>
+</tr>
+<tr>
+<td>Java 11</td>
+<td>2018</td>
+<td>LTS; <code>var</code> para inferência de tipo local; novo <code>HttpClient</code></td>
+</tr>
+<tr>
+<td>Java 17</td>
+<td>2021</td>
+<td>LTS; <strong>sealed classes</strong>, pattern matching básico, <em>records</em> estabilizados</td>
+</tr>
+<tr>
+<td><strong>Java 21</strong></td>
+<td>2023</td>
+<td><strong>LTS</strong>; <strong>virtual threads</strong> (Project Loom), pattern matching para <code>switch</code>, <em>record patterns</em></td>
+</tr>
+<tr>
+<td>Java 25</td>
+<td>2025</td>
+<td>LTS mais recente; <em>structured concurrency</em>, evolução de <em>scoped values</em></td>
+</tr>
+</tbody>
+</table>
+<p>Desde a versão 9, a Oracle adotou um <strong>ritmo de release semestral</strong> (março e setembro), com uma versão <strong>LTS (Long-Term Support)</strong> a cada dois anos — atualmente Java 17, 21 e 25. Este livro usa <strong>Java 21 LTS</strong> como base para todos os exemplos, por ser a versão LTS mais amplamente adotada em produção no momento em que este material foi escrito, já incorporando recursos modernos como <em>records</em>, <code>var</code>, <em>pattern matching</em> e <em>virtual threads</em>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Java não parou no 8</p>
+<p>É comum encontrar material didático (e até profissionais experientes) tratando "Java 8" como sinônimo de "Java moderno". Não é mais o caso: de 2017 para cá a linguagem incorporou <em>records</em>, <em>sealed classes</em>, <em>pattern matching</em>, <em>text blocks</em> e <em>virtual threads</em> — mudanças que afetam como se escreve Java idiomático hoje. Ao longo deste livro, vamos preferir esse estilo mais recente sempre que ele deixar o código mais claro, sem abrir mão de explicar a forma "clássica" quando ela ainda for relevante (por exemplo, em bases de código legadas).</p>
+</div>
+<h2 id="cinco-principios-de-design">🎯 Cinco princípios de design<a class="headerlink" href="#cinco-principios-de-design" title="Permanent link">&para;</a></h2>
+<p>Os objetivos originais de Gosling para a linguagem continuam sendo uma boa lente para entender decisões de design do Java até hoje:</p>
+<ol>
+<li>Deve ser <strong>orientada a objetos</strong>.</li>
+<li>Deve permitir que o <strong>mesmo programa execute em vários sistemas operacionais</strong> sem recompilação.</li>
+<li>Deve ter <strong>suporte nativo a redes</strong> de computadores.</li>
+<li>Deve ser projetada para <strong>executar código remoto com segurança</strong>.</li>
+<li>Deve ser <strong>fácil de usar</strong>, aproveitando os melhores recursos de outras linguagens orientadas a objetos.</li>
+</ol>
+<h2 id="a-plataforma-java">🧱 A plataforma Java<a class="headerlink" href="#a-plataforma-java" title="Permanent link">&para;</a></h2>
+<p>Uma fonte comum de confusão para quem começa em Java é que "Java" não é só a linguagem — é uma <strong>plataforma</strong> inteira, o que também explica parte da sua fama de ser "complexa":</p>
+<ul>
+<li><strong>JVM (Java Virtual Machine)</strong>: a máquina virtual que executa o bytecode <code>.class</code>, incluindo o compilador <strong>JIT</strong> (<em>Just-In-Time</em>), responsável por otimizar trechos de bytecode para código de máquina nativo em tempo de execução.</li>
+<li><strong>JRE (Java Runtime Environment)</strong>: JVM + bibliotecas necessárias para <em>executar</em> aplicações Java. Hoje, na prática, a distinção JRE/JDK separada praticamente desapareceu — desde o Java 11 a Oracle não distribui mais um JRE separado; instala-se o JDK mesmo apenas para rodar aplicações.</li>
+<li><strong>JDK (Java Development Kit)</strong>: JRE + ferramentas para <em>desenvolver</em> — compilador (<code>javac</code>), depurador, <code>jshell</code> (REPL interativo, desde o Java 9) e utilitários de empacotamento.</li>
+</ul>
+<p>Dentro do JDK, distinguem-se diferentes edições por público-alvo:</p>
+<ul>
+<li><strong>Java SE (Standard Edition)</strong>: a base da plataforma — JVM, bibliotecas fundamentais (I/O, <code>String</code>, coleções). É o que este livro cobre.</li>
+<li><strong>Jakarta EE</strong> (antiga <em>Java EE</em>, renomeada após a doação à Eclipse Foundation em 2017): edição voltada a aplicações corporativas e web, hoje sustentada por frameworks como Spring e Quarkus mais do que pela especificação EE em si.</li>
+<li><strong>Java ME (Micro Edition)</strong>: voltada a dispositivos embarcados; hoje tem uso residual, dado que a maioria dos dispositivos móveis atuais usa outras plataformas (Android usa sua própria toolchain, não a JVM tradicional).</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">OpenJDK vs. Oracle JDK</p>
+<p>Hoje a forma mais comum de obter o JDK é via <strong>OpenJDK</strong>, a implementação de referência open source (licença GPLv2 + Classpath Exception), distribuída por vários fornecedores (Eclipse Temurin, Amazon Corretto, Azul Zulu, entre outros) — em vez do JDK proprietário da Oracle, cujos termos de licenciamento comercial mudaram diversas vezes nos últimos anos. Para desenvolvimento e a maior parte dos usos em produção, um OpenJDK é a escolha mais simples e sem restrições de licença.</p>
+</div>
+<h2 id="instalando-o-ambiente">💻 Instalando o ambiente<a class="headerlink" href="#instalando-o-ambiente" title="Permanent link">&para;</a></h2>
+<p>A forma mais prática de instalar e gerenciar versões do JDK hoje é por um <strong>gerenciador de versões</strong>, em vez de baixar instaladores manualmente — principalmente porque em algum momento você vai precisar alternar entre versões diferentes (um curso pedindo Java 21, um projeto legado em Java 8...).</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SDKMAN! (Linux/macOS/WSL)</label><label for="__tabbed_1_2">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://get.sdkman.io&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">source</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.sdkman/bin/sdkman-init.sh&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>sdk<span class="w"> </span>install<span class="w"> </span>java<span class="w"> </span><span class="m">21</span>.0.5-tem<span class="w">   </span><span class="c1"># Eclipse Temurin, Java 21 LTS</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>sdk<span class="w"> </span>use<span class="w"> </span>java<span class="w"> </span><span class="m">21</span>.0.5-tem
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>java<span class="w"> </span>-version
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Recomenda-se o <a href="https://adoptium.net/">Eclipse Temurin</a> (instalador <code>.msi</code>) ou o gerenciador de pacotes <code>winget</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">winget</span> <span class="n">install</span> <span class="n">EclipseAdoptium</span><span class="p">.</span><span class="n">Temurin</span><span class="p">.</span><span class="n">21</span><span class="p">.</span><span class="n">JDK</span>
+</code></pre></div></p>
+</div>
+</div>
+</div>
+<p>Para desenvolvimento sério, um <strong>IDE</strong> é altamente recomendado desde o início — IntelliJ IDEA (Community Edition, gratuita) ou VS Code com o <em>Extension Pack for Java</em> são as opções mais usadas hoje.</p>
+<h2 id="primeiro-programa">👋 Primeiro programa<a class="headerlink" href="#primeiro-programa" title="Permanent link">&para;</a></h2>
+<p>O clássico "Hello World" em Java:</p>
+<div class="highlight"><span class="filename">Hello.java</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hello</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Olá, mundo!&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>javac<span class="w"> </span>Hello.java<span class="w">   </span><span class="c1"># compila para Hello.class (bytecode)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>java<span class="w"> </span>Hello<span class="w">          </span><span class="c1"># executa na JVM</span>
+</code></pre></div>
+<p>Desde o Java 11, para scripts rápidos e aprendizado, também é possível <strong>executar um arquivo <code>.java</code> diretamente</strong>, sem compilar explicitamente (o <code>java</code> compila em memória e roda na hora):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>java<span class="w"> </span>Hello.java
+</code></pre></div>
+<p>E, para experimentar trechos de código sem nem criar um arquivo, o Java tem um REPL desde a versão 9:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>jshell
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>jshell&gt;<span class="w"> </span>System.out.println<span class="o">(</span><span class="s2">&quot;Olá, mundo!&quot;</span><span class="o">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Olá,<span class="w"> </span>mundo!
+</code></pre></div>
+<h2 id="estrutura-basica-da-linguagem">🧬 Estrutura básica da linguagem<a class="headerlink" href="#estrutura-basica-da-linguagem" title="Permanent link">&para;</a></h2>
+<p>A sintaxe de Java foi fortemente influenciada por C/C++ — chaves para blocos, ponto e vírgula ao final de comandos, tipos declarados antes dos identificadores. As diferenças mais importantes em relação a C++:</p>
+<ul>
+<li>Java <strong>não é uma linguagem híbrida</strong>: todo código roda sobre a JVM (não compila diretamente para código de máquina nativo, embora ferramentas como o GraalVM Native Image tornem isso possível hoje para casos específicos).</li>
+<li>Java tem <strong>coletor de lixo (garbage collector)</strong> integrado: não existe <code>free</code>/<code>delete</code> manual.</li>
+<li>Um programa Java é, estruturalmente, uma <strong>coleção de classes que se relacionam</strong>, cada uma agrupando atributos e métodos — o que já antecipa o assunto central da Unidade 2.</li>
+</ul>
+<h2 id="paradigmas-suportados">🧩 Paradigmas suportados<a class="headerlink" href="#paradigmas-suportados" title="Permanent link">&para;</a></h2>
+<p>Java foi projetada primariamente em torno do paradigma <strong>orientado a objetos baseado em classes</strong> — é, e continua sendo, o núcleo da linguagem e o foco deste livro. Mas, especialmente a partir do Java 8, a linguagem passou a incorporar fortemente elementos de outros paradigmas:</p>
+<ul>
+<li><strong>Programação genérica</strong>, via <em>generics</em> (desde o Java 5).</li>
+<li><strong>Programação funcional</strong>, via lambdas, referências a métodos e a Stream API (Unidade 3, capítulo "Java Funcional").</li>
+<li><strong>Programação reflexiva</strong>, via a API de <em>reflection</em> (Unidade 3, capítulo "Reflexão").</li>
+<li><strong>Programação concorrente</strong>, historicamente via <code>Thread</code>/<code>ExecutorService</code>, e desde o Java 21 também via <strong>virtual threads</strong> (<em>Project Loom</em>) — threads leves gerenciadas pela JVM, que tornam código concorrente bloqueante barato de escalar sem reescrever tudo em estilo assíncrono.</li>
+</ul>
+<h2 id="comparacoes-com-outras-linguagens">⚖️ Comparações com outras linguagens<a class="headerlink" href="#comparacoes-com-outras-linguagens" title="Permanent link">&para;</a></h2>
+<p>Comparar Java com linguagens vizinhas ajuda a fixar suas decisões de design — vamos revisitar vários desses pontos com mais profundidade ao longo do livro.</p>
+<h3 id="java-c">Java × C<a class="headerlink" href="#java-c" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Java</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Paradigma</td>
+<td>Orientado a objetos</td>
+<td>Procedural</td>
+</tr>
+<tr>
+<td>Distribuição</td>
+<td>Bytecode portável (<code>.class</code>)</td>
+<td>Precisa recompilar por plataforma</td>
+</tr>
+<tr>
+<td>Ponteiros</td>
+<td>Não existem (nem aritmética de ponteiros)</td>
+<td>Centrais na linguagem</td>
+</tr>
+<tr>
+<td>Memória</td>
+<td>Gerenciamento automático (GC)</td>
+<td>Manual (<code>malloc</code>/<code>free</code>)</td>
+</tr>
+<tr>
+<td>Pré-processador</td>
+<td>Não tem</td>
+<td>Tem (<code>#define</code>, <code>#include</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="java-c_1">Java × C++<a class="headerlink" href="#java-c_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Java</th>
+<th>C++</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modelo de objetos</td>
+<td>Simplificado</td>
+<td>Mais complexo e flexível</td>
+</tr>
+<tr>
+<td>Despacho de métodos</td>
+<td>Virtual por padrão</td>
+<td>Só virtual se declarado <code>virtual</code></td>
+</tr>
+<tr>
+<td>Passagem de argumentos</td>
+<td>Sempre por valor (mas o valor pode ser uma referência a objeto)</td>
+<td>Por valor, referência ou ponteiro</td>
+</tr>
+<tr>
+<td>Herança múltipla</td>
+<td>Não (mas há herança múltipla de <em>interfaces</em>)</td>
+<td>Sim, de classes</td>
+</tr>
+<tr>
+<td>Genéricos/templates</td>
+<td><em>Generics</em> (com <em>type erasure</em>, menos poderosos, mas mais seguros)</td>
+<td><em>Templates</em> (mais poderosos, mais complexos)</td>
+</tr>
+<tr>
+<td>Sobrecarga de operadores</td>
+<td>Não</td>
+<td>Sim</td>
+</tr>
+</tbody>
+</table>
+<h3 id="java-php">Java × PHP<a class="headerlink" href="#java-php" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Java é estaticamente tipada; PHP é dinamicamente tipada (embora o PHP moderno, 8.x, tenha ganhado tipagem gradual opcional).</li>
+<li>Java é de propósito geral; PHP é majoritariamente usado para desenvolvimento web.</li>
+<li>Ambas suportam concorrência hoje — Java nativamente desde o início, PHP de forma mais limitada e recente (fibers desde o PHP 8.1).</li>
+</ul>
+<h3 id="java-javascript">Java × JavaScript<a class="headerlink" href="#java-javascript" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Java é estaticamente tipada; JavaScript é dinamicamente tipada (TypeScript adiciona tipagem estática opcional por cima do JS).</li>
+<li>Java usa objetos baseados em <strong>classes</strong>; JavaScript nasceu baseado em <strong>protótipos</strong>, mas desde o ES6 (2015) oferece sintaxe de <code>class</code> (que ainda é, por baixo, protótipos).</li>
+<li>Java tem encapsulamento real via modificadores de acesso (<code>private</code>, <code>protected</code>); campos privados em classes JavaScript só se tornaram nativos com <code>#campo</code> no ES2022.</li>
+<li>Java é multithreaded nativamente; JavaScript é single-threaded com um <em>event loop</em> (concorrência via <code>async</code>/<code>await</code>, Web Workers ou, no Node.js, <code>worker_threads</code>).</li>
+</ul>
+<h2 id="atividades">📝 Atividades<a class="headerlink" href="#atividades" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Instale um JDK 21 usando SDKMAN! (ou equivalente na sua plataforma) e confirme a versão com <code>java -version</code>.</li>
+<li>Execute o Hello World de duas formas: compilando com <code>javac</code> + <code>java</code>, e diretamente com <code>java Hello.java</code>.</li>
+<li>Abra o <code>jshell</code> e experimente declarar uma variável com <code>var</code>, uma lista com <code>List.of(...)</code>, e imprimir seus elementos com um <code>for-each</code>.</li>
+<li>Pesquise: o que é <em>type erasure</em> em generics Java, e por que ele é frequentemente citado como uma limitação em relação aos templates de C++?</li>
+</ol>
+<h2 id="para-saber-mais">🔗 Para saber mais<a class="headerlink" href="#para-saber-mais" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.oracle.com/en/java/javase/21/">Documentação oficial do Java SE 21</a></li>
+<li><a href="https://openjdk.org/">OpenJDK</a> — implementação de referência open source</li>
+<li><a href="https://adoptium.net/">Adoptium / Eclipse Temurin</a> — distribuições de OpenJDK prontas para uso</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

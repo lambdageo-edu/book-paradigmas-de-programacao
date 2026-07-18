@@ -1,0 +1,1352 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Livro didático da disciplina de Paradigmas de Programação: fundamentos comparativos de paradigmas e um estudo aprofundado de Orientação a Objetos com Java (Java 21 LTS).
+">
+      
+      
+        <meta name="author" content="Sergio Souza Costa">
+      
+      
+      
+        <link rel="prev" href="../06_java_funcional/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Exercícios Resolvidos - Paradigmas de Programação</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/lambdageo.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exercicios-resolvidos" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Paradigmas de Programação" class="md-header__button md-logo" aria-label="Paradigmas de Programação" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Paradigmas de Programação
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exercícios Resolvidos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Alternar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Alternar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartilhar" aria-label="Compartilhar" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Paradigmas de Programação" class="md-nav__button md-logo" aria-label="Paradigmas de Programação" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Paradigmas de Programação
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apresentação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 1 — Paradigmas e Fundamentos de Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 1 — Paradigmas e Fundamentos de Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade1/01_paradigmas_linguagens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 1: Paradigmas de Programação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade1/02_visao_java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 2: Panorama da Linguagem Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade1/03_tipos_expressoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 3: Tipos e Expressões
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade1/04_comandos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 4: Comandos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 2 — Orientação a Objetos em Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 2 — Orientação a Objetos em Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/01_classes_objetos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 5: Classes e Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/02_relacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 6: Relações — Herança e Encapsulamento
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/03_polimorfismo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 7: Polimorfismo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/04_classes_abstratas_interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 8: Classes Abstratas e Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unidade2/05_principios_padroes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 9: Princípios e Padrões Orientados a Objetos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidade 3 — Java Avançado
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidade 3 — Java Avançado
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_excecoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 10: Tratamento de Exceções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_colecoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 11: Coleções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_banco_dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 12: Persistência com JDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_interface_grafica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 13: Interface Gráfica com Swing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_reflexao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 14: Reflexão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_java_funcional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cap 15: Java Funcional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercícios Resolvidos
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercícios Resolvidos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#questoes-dissertativas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✍️ Questões dissertativas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✍️ Questões dissertativas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unidade-1-paradigmas-e-fundamentos-de-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unidade 1 — Paradigmas e Fundamentos de Java
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unidade-2-orientacao-a-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unidade 2 — Orientação a Objetos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unidade-3-java-avancado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unidade 3 — Java Avançado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questoes-de-multipla-escolha-poscomp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Questões de múltipla escolha (POSCOMP)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicio-de-sintese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Exercício de síntese
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-saber-mais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Para saber mais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#questoes-dissertativas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✍️ Questões dissertativas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✍️ Questões dissertativas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unidade-1-paradigmas-e-fundamentos-de-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unidade 1 — Paradigmas e Fundamentos de Java
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unidade-2-orientacao-a-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unidade 2 — Orientação a Objetos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unidade-3-java-avancado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unidade 3 — Java Avançado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questoes-de-multipla-escolha-poscomp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Questões de múltipla escolha (POSCOMP)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicio-de-sintese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Exercício de síntese
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-saber-mais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Para saber mais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="exercicios-resolvidos">Exercícios Resolvidos<a class="headerlink" href="#exercicios-resolvidos" title="Permanent link">&para;</a></h1>
+<p>Uma lista de exercícios para revisar os conceitos discutidos ao longo do livro — organizados em dissertativas (cobrindo as três unidades) e uma seleção de questões de múltipla escolha do <strong>POSCOMP</strong> (Exame Nacional de Ingresso na Pós-Graduação em Computação), que costuma cobrar boa parte deste conteúdo.</p>
+<h2 id="questoes-dissertativas">✍️ Questões dissertativas<a class="headerlink" href="#questoes-dissertativas" title="Permanent link">&para;</a></h2>
+<h3 id="unidade-1-paradigmas-e-fundamentos-de-java">Unidade 1 — Paradigmas e Fundamentos de Java<a class="headerlink" href="#unidade-1-paradigmas-e-fundamentos-de-java" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Qual a principal característica, vantagens e desvantagens das linguagens estaticamente tipadas? Exemplifique com código.</li>
+<li>Qual a principal característica, vantagens e desvantagens das linguagens dinamicamente tipadas? Exemplifique com código.</li>
+<li>Cite exemplos de linguagens estaticamente e dinamicamente tipadas.</li>
+<li>O que é inferência de tipos? Exemplifique e cite linguagens que usam esse recurso — incluindo o próprio Java.</li>
+<li>O que são paradigmas de programação? Cite os principais discutidos neste livro.</li>
+<li>Quais conceitos surgiram com a programação estruturada?</li>
+<li>Compare as linguagens Java e Python.</li>
+<li>Compare as linguagens Java e C.</li>
+<li>O que significa dizer que uma linguagem trata funções como valores de primeira classe?</li>
+<li>Qual a diferença entre as estratégias de avaliação <em>call-by-value</em> e <em>call-by-reference</em>? Em qual delas se encaixa a passagem de parâmetros em Java?</li>
+<li>Segundo Sebesta, quais critérios usamos para avaliar linguagens de programação? Escolha três e ilustre cada um com um exemplo.</li>
+</ol>
+<h3 id="unidade-2-orientacao-a-objetos">Unidade 2 — Orientação a Objetos<a class="headerlink" href="#unidade-2-orientacao-a-objetos" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Defina e exemplifique objeto e classe.</li>
+<li>O que é encapsulamento, e quais os seus benefícios? Exemplifique.</li>
+<li>Qual a diferença entre atributos de instância e atributos estáticos (de classe)?</li>
+<li>Qual a diferença entre métodos de instância e métodos estáticos?</li>
+<li>Qual a diferença entre variáveis locais e atributos de instância?</li>
+<li>O que é herança em orientação a objetos? Exemplifique.</li>
+<li>Que problema(s) a herança tenta resolver?</li>
+<li>Qual a diferença entre <strong>sobrescrever</strong> (<em>override</em>) e <strong>sobrecarregar</strong> (<em>overload</em>) um método?</li>
+<li>Quais são os modificadores de controle de acesso em Java, e qual o efeito de cada um?</li>
+<li>Qual a diferença entre classes abstratas e interfaces? Em que situação você escolheria uma ou outra?</li>
+<li>Existe herança múltipla de classes em Java? E de interfaces?</li>
+<li>Qual a diferença entre dependência e associação entre classes? Exemplifique.</li>
+<li>Explique os quatro tipos de polimorfismo tratados neste livro (sobrecarga, coerção, paramétrico, inclusão).</li>
+<li>Qual a diferença entre polimorfismo ad-hoc e polimorfismo universal?</li>
+<li>Qual a diferença entre <em>cast</em> e coerção? Exemplifique.</li>
+</ol>
+<h3 id="unidade-3-java-avancado">Unidade 3 — Java Avançado<a class="headerlink" href="#unidade-3-java-avancado" title="Permanent link">&para;</a></h3>
+<ol>
+<li>O que é uma exceção, no contexto de Java?</li>
+<li>O que significa "tratamento" ou "manipulação" de exceções?</li>
+<li>Cite exemplos de classes de exceção do próprio Java, e classifique-as (checked/unchecked).</li>
+<li>Explique o bloco <code>try</code>/<code>catch</code>/<code>finally</code>.</li>
+<li>Explique a forma de lançamento de uma exceção (<code>throw new ...</code>).</li>
+<li>Explique o funcionamento da propagação de exceções (<code>throws</code>).</li>
+<li>O que é programação reflexiva?</li>
+<li>No contexto de metaprogramação, o que é introspecção?</li>
+<li>No contexto de metaprogramação, o que é uma anotação?</li>
+<li>Quais as principais classes/APIs do Java que dão suporte à introspecção?</li>
+<li>Por que dizemos que o Java dá suporte apenas à introspecção, e não à reflexão completa?</li>
+<li>Cite exemplos de frameworks Java que fazem uso extensivo de metaprogramação.</li>
+<li>O que são funções de alta ordem? Exemplifique com <code>map</code>, <code>filter</code> e <code>reduce</code> em Java.</li>
+<li>Qual a diferença entre <code>Optional&lt;T&gt;</code> e simplesmente retornar <code>null</code>?</li>
+</ol>
+<h2 id="questoes-de-multipla-escolha-poscomp">📝 Questões de múltipla escolha (POSCOMP)<a class="headerlink" href="#questoes-de-multipla-escolha-poscomp" title="Permanent link">&para;</a></h2>
+<p>As provas completas de anos anteriores estão disponíveis no <a href="https://www.sbc.org.br/documentos-da-sbc/category/153-provas-e-gabaritos-do-poscomp">site oficial da SBC</a> — vale a pena resolver as provas completas, não só as questões de orientação a objetos. Uma pequena seleção para prática:</p>
+<div class="admonition question">
+<p class="admonition-title">POSCOMP 2018 — Questão 31</p>
+<p>Assinale a alternativa correta em relação ao Paradigma Imperativo de Linguagens de Programação.</p>
+<p>A) Não é baseado na arquitetura de Von Neumann.
+B) É paradigma de linguagens não tipadas.
+C) É paradigma de linguagens orientadas a objeto (apenas).
+D) É baseado na arquitetura de Harvard.
+E) Descreve uma sequência de passos que mudam o estado de um programa.</p>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>E</strong>. O paradigma imperativo é definido justamente pela mudança de estado através de comandos sequenciais (Capítulo 4) — e está historicamente ligado à arquitetura de Von Neumann (memória e programa compartilhando o mesmo espaço de endereçamento), não à de Harvard.</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">POSCOMP 2018 — Questão 38</p>
+<p>Sobre tipos de dados, é correto afirmar que:</p>
+<p>A) Tipos booleanos são valores que são mantidos fixos pelo compilador.
+B) O <code>double</code> é um tipo inteiro duplo, com menor precisão do que o tipo inteiro.
+C) A faixa de valores dos tipos inteiros tem somente dois elementos: um para verdadeiro e outro para falso.
+D) Uma conversão de tipos implícita consiste em uma modificação do tipo de dado, executada automaticamente pelo compilador.
+E) Vetores, matrizes e ponteiros são exemplos de tipos de dados primitivos (básicos).</p>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>D</strong>. Isso é exatamente a definição de coerção/conversão implícita vista nos Capítulos 3 e 7 — realizada automaticamente pelo compilador, sem intervenção explícita do programador (como em <code>int + double</code>, ou na passagem de um <code>int</code> para um parâmetro <code>double</code>).</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">POSCOMP 2018 — Questão 33</p>
+<p>Quando um programa precisa classificar uma matriz de dados numéricos, normalmente usa um subprograma para o processo de classificação. No ponto em que a classificação é necessária, uma instrução como <code>sort_int(list, list_len)</code> é usada. Essa chamada é um exemplo de abstração de:</p>
+<p>A) Dados.
+B) Encapsulamento.
+C) Repetição.
+D) Condição.
+E) Processo.</p>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>E</strong>. Chamar um subprograma sem se preocupar com os detalhes do algoritmo de ordenação usado é abstração de <strong>processo</strong> — o análogo, para comportamento, do que a abstração de dados (TAD, Capítulo 5) faz para estrutura de dados.</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">POSCOMP 2017 — Questão 31</p>
+<p>Quando uma expressão contém duas ocorrências adjacentes de operadores com o mesmo nível de precedência, a questão de qual é avaliado primeiro se resolve pelas regras de:</p>
+<p>A) Associatividade.
+B) Expressões condicionais.
+C) Polimorfismo.
+D) Condutividade.
+E) Coerção.</p>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>A</strong>. Precedência decide entre operadores de <strong>níveis diferentes</strong> (<code>*</code> antes de <code>+</code>); associatividade decide entre operadores <strong>adjacentes do mesmo nível</strong> — vimos os dois conceitos aplicados a expressões Java no Capítulo 3.</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">POSCOMP 2016 — Questão 28</p>
+<p>Assinale a alternativa que apresenta o nome de uma linguagem de tipagem dinâmica.</p>
+<p>A) Java.
+B) C.
+C) Python.
+D) Pascal.
+E) C#.</p>
+<details class="success">
+<summary>Resposta</summary>
+<p><strong>C</strong>. Java, C, Pascal e C# são todas estaticamente tipadas (Capítulo 3); Python é a única dinamicamente tipada da lista.</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">POSCOMP 2018 — Questão 28</p>
+<p>(Questão original envolve um diagrama de classes UML com as classes <code>Artefato</code>, <code>Veículo</code>, <code>Roda</code>, <code>Pneu</code> e <code>Aerofólio</code>, relacionadas por generalização e composição/agregação.) Assinale a alternativa correta sobre qual relacionamento do diagrama se conecta diretamente a polimorfismo.</p>
+<details class="tip">
+<summary>Como abordar</summary>
+<p>Esse tipo de questão exige olhar qual relação do diagrama é uma <strong>generalização</strong> ("é um") — só generalização (herança) habilita polimorfismo de inclusão (Capítulo 7); associações e composições ("tem um") não. Ao revisar provas completas do POSCOMP com diagramas, aplique esse filtro primeiro: identifique a seta de generalização antes de avaliar as alternativas.</p>
+</details>
+</div>
+<h2 id="exercicio-de-sintese">📝 Exercício de síntese<a class="headerlink" href="#exercicio-de-sintese" title="Permanent link">&para;</a></h2>
+<p>Como fechamento do livro, escolha um problema do seu interesse (um pequeno sistema de agenda, biblioteca, loja, ou similar) e modele-o do zero, aplicando deliberadamente pelo menos:</p>
+<ul>
+<li>Uma hierarquia de herança com polimorfismo de inclusão (Capítulos 6 e 7).</li>
+<li>Uma interface com um método <code>default</code> (Capítulo 8).</li>
+<li>Um <code>record</code> para algum dado imutável (Capítulo 3/5).</li>
+<li>Tratamento de exceções customizadas para pelo menos uma regra de negócio (Capítulo 10).</li>
+<li>Uma coleção do Collections Framework, escolhida de forma justificada — não por padrão (Capítulo 11).</li>
+</ul>
+<p>Esse exercício é, propositalmente, mais aberto que os anteriores — a ideia é exercitar as <strong>decisões de design</strong> discutidas ao longo do livro (Capítulo 9), não apenas a sintaxe de cada recurso isoladamente.</p>
+<h2 id="para-saber-mais">🔗 Para saber mais<a class="headerlink" href="#para-saber-mais" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.sbc.org.br/documentos-da-sbc/category/153-provas-e-gabaritos-do-poscomp">Provas e gabaritos do POSCOMP — SBC</a></li>
+<li><a href="https://swish.swi-prolog.org/">SWI-Prolog online (SWISH)</a> — para revisitar o paradigma lógico do Capítulo 1</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
