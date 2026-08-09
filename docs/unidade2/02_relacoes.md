@@ -91,6 +91,7 @@ public class Circle {
     private double r;
 
     public Circle(double r) { this.r = r; }
+    public double getRadius() { return r; }
     public double circumference() { return 2 * PI * r; }
     public double area() { return PI * r * r; }
 }
