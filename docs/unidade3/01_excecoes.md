@@ -136,6 +136,8 @@ class Conta {
     private String numero;
     private double saldo;
 
+    public String getNumero() { return numero; }
+
     void debitar(double valor) throws SaldoInsuficienteException {
         if (valor <= saldo) {
             saldo -= valor;
@@ -146,6 +148,8 @@ class Conta {
 }
 
 class Banco {
+    private List<Conta> contas;
+
     private Conta procurar(String numero) throws ContaNaoEncontradaException {
         return contas.stream()
             .filter(c -> c.getNumero().equals(numero))

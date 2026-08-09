@@ -1,4 +1,4 @@
-# Exercícios Resolvidos
+# Lista de Exercícios
 
 Uma lista de exercícios para revisar os conceitos discutidos ao longo do livro — organizados em dissertativas (cobrindo as três unidades) e uma seleção de questões de múltipla escolha do **POSCOMP** (Exame Nacional de Ingresso na Pós-Graduação em Computação), que costuma cobrar boa parte deste conteúdo.
 

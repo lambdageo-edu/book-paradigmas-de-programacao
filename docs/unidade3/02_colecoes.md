@@ -18,7 +18,7 @@ Segundo a documentação da Oracle, uma **coleção** é um objeto que represent
 
 O Collections Framework é organizado, deliberadamente, em torno de **interfaces** — não de classes concretas. Isso significa que código cliente deveria, na prática, quase sempre declarar variáveis pelo tipo de interface (`List`, `Set`, `Map`), não pela implementação concreta (`ArrayList`, `HashSet`), justamente para poder trocar a implementação depois sem afetar o restante do código — uma aplicação direta do princípio de "programe para interfaces, não para implementações" (Capítulo 9).
 
-```
+```text
 Iterable
   └── Collection
         ├── List     (ArrayList, LinkedList, Vector...)

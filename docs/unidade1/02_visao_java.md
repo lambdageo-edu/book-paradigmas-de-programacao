@@ -62,8 +62,8 @@ A forma mais prática de instalar e gerenciar versões do JDK hoje é por um **g
     curl -s "https://get.sdkman.io" | bash
     source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-    sdk install java 21.0.5-tem   # Eclipse Temurin, Java 21 LTS
-    sdk use java 21.0.5-tem
+    sdk install java 21-tem       # Eclipse Temurin, Java 21 LTS (resolve para o último patch)
+    sdk use java 21-tem
     java -version
     ```
 
