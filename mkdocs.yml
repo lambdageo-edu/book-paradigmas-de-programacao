@@ -67,6 +67,7 @@ extra_css:
   - stylesheets/lambdageo.css
 
 nav:
+  - "⇦ Coleção LambdaGeo": https://lambdageo.github.io/ebooks/
   - Apresentação: index.md
 
   - Unidade 1 — Paradigmas e Fundamentos de Java:
