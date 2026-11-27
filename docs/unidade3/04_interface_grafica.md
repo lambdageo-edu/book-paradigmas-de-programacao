@@ -35,7 +35,7 @@ frame.setVisible(true);
 
 ### Layout
 
-O Java precisa de uma política para organizar os componentes adicionados a um container. O padrão é o **BorderLayout**, que divide a janela em cinco regiões (norte, sul, leste, oeste, centro); adicionar um componente sem especificar região o coloca no centro:
+O Java precisa de uma política para organizar os componentes adicionados a um container. O padrão de um `JFrame` é o **BorderLayout** (já um `JPanel` usa, por padrão, o `FlowLayout`). O `BorderLayout` divide a janela em cinco regiões (norte, sul, leste, oeste, centro); adicionar um componente sem especificar região o coloca no centro:
 
 ```java
 frame.add(bt, BorderLayout.CENTER); // equivalente a:
@@ -135,11 +135,19 @@ public class PrimeiroSwing extends JFrame {
 ```java
 public class SwingOla {
     public static void main(String[] args) {
-        var janela = new PrimeiroSwing();
-        janela.setVisible(true);
+        SwingUtilities.invokeLater(() -> {
+            var janela = new PrimeiroSwing();
+            janela.setVisible(true);
+        });
     }
 }
 ```
+
+### A thread de eventos
+
+O Swing não é *thread-safe*: os componentes devem ser criados e modificados na **thread de despacho de eventos** (*Event Dispatch Thread*, EDT), a mesma que executa os *listeners*. `SwingUtilities.invokeLater` agenda um trecho de código nessa thread, e por isso o `main` acima o usa. Os primeiros exemplos do capítulo omitem esse cuidado apenas para ficarem curtos.
+
+A consequência inversa também importa: uma operação demorada dentro de um *listener* (uma consulta grande ao banco, por exemplo) **congela a interface** até terminar. Para esses casos, o Swing oferece `SwingWorker`, que executa o trabalho em outra thread e devolve o resultado à EDT.
 
 ## 📊 JTable: separando visualização de modelo de dados
 

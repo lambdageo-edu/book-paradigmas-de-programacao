@@ -48,7 +48,7 @@ Uma lista de exercícios para revisar os conceitos discutidos ao longo do livro 
 34. No contexto de metaprogramação, o que é introspecção?
 35. No contexto de metaprogramação, o que é uma anotação?
 36. Quais as principais classes/APIs do Java que dão suporte à introspecção?
-37. Por que dizemos que o Java dá suporte apenas à introspecção, e não à reflexão completa?
+37. Por que dizemos que o Java dá amplo suporte à introspecção, mas apenas um suporte limitado à modificação por reflexão?
 38. Cite exemplos de frameworks Java que fazem uso extensivo de metaprogramação.
 39. O que são funções de alta ordem? Exemplifique com `map`, `filter` e `reduce` em Java.
 40. Qual a diferença entre `Optional<T>` e simplesmente retornar `null`?

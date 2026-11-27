@@ -126,7 +126,7 @@ Algumas regras específicas de interfaces em Java:
 * Por padrão, todo método de uma interface é implicitamente `abstract` e `public` — omitir esses modificadores é a convenção usual.
 * Uma interface **não pode** ter variáveis de instância — apenas constantes `static final`. Interface é especificação pura, sem estado.
 * Uma interface não pode ser instanciada e não tem construtor.
-* Se uma classe implementa uma interface sem fornecer todos os métodos exigidos, ela mesma se torna `abstract`.
+* Uma classe que declara implementar uma interface precisa fornecer todos os métodos abstratos dela; se não fornecer, só compila se for declarada `abstract`.
 * Uma classe pode implementar **quantas interfaces quiser**.
 
 ```java
@@ -154,7 +154,7 @@ Antes do Java 8, interfaces só podiam declarar métodos abstratos — o que cri
 O Java 8 resolveu isso com **métodos `default`** — métodos de interface com corpo, que implementações existentes herdam automaticamente se não os sobrescreverem. Foi assim que o método `sort` pôde ser adicionado à interface `List` sem quebrar código legado:
 
 ```java
-public interface Fool {
+public interface Foo {
     void f1();
     int f2(int x);
 

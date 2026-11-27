@@ -4,13 +4,13 @@
 
 Às vezes precisamos que a mesma mensagem seja recebida por objetos de classes diferentes. Uma mensagem corresponde a um método, e uma classe é, na linguagem, um tipo — então essa necessidade se traduz em ter um **método que opere sobre diferentes tipos**: um método polimórfico. Em linguagens estaticamente tipadas, onde cada variável e parâmetro está amarrado a um tipo, isso parece à primeira vista contradizer a própria checagem estática. É exatamente para resolver essa tensão — flexibilidade sem abrir mão de segurança de tipos — que existem os diferentes mecanismos de polimorfismo.
 
-Algumas definições, seguindo Cardelli:
+Algumas definições, seguindo Cardelli e Wegner:
 
 * **Linguagens polimórficas**: valores e variáveis podem ter mais de um tipo.
 * **Funções polimórficas**: seus parâmetros podem aceitar mais de um tipo.
 * **Tipos polimórficos**: tipos cujas operações se aplicam a valores de mais de um tipo.
 
-Cardelli propõe uma classificação em duas grandes famílias — **ad-hoc** e **universal** — cada uma com dois mecanismos:
+Cardelli e Wegner propõem uma classificação em duas grandes famílias — **ad-hoc** e **universal** — cada uma com dois mecanismos:
 
 ```mermaid
 graph TD
@@ -132,10 +132,12 @@ class Geometry {
 }
 class Circle extends Geometry {
     private double r;
+    Circle(double r) { this.r = r; }
     // ...
 }
 class Rectangle extends Geometry {
     private double w, h;
+    Rectangle(double w, double h) { this.w = w; this.h = h; }
     // ...
 }
 ```
@@ -144,7 +146,7 @@ class Rectangle extends Geometry {
 Geometry geo;
 geo = new Rectangle(3.0, 4.0);
 // ...
-geo = new Circle(3.0, 4.0);
+geo = new Circle(2.0);
 ```
 
 David Watt formaliza: polimorfismo de inclusão é um sistema de tipos em que um tipo pode ter subtipos, que herdam as operações desse tipo — onde um tipo `T` é um conjunto de valores equipado com operações, e um subtipo de `T` é um subconjunto desses valores, equipado com as mesmas operações. Todo valor do subtipo também é um valor do tipo `T`, e portanto pode ser usado em qualquer contexto que espera um valor de tipo `T`.
@@ -172,12 +174,17 @@ class Geometry {
     }
 }
 class Circle extends Geometry {
+    // atributos e construtor como antes
+    Circle(double r) { /* ... */ }
+
     @Override
     public void draw() {
         System.out.println("executando o método de Circle");
     }
 }
 class Rectangle extends Geometry {
+    Rectangle(double w, double h) { /* ... */ }
+
     @Override
     public void draw() {
         System.out.println("executando o método de Rectangle");
@@ -188,11 +195,14 @@ class Rectangle extends Geometry {
 O que este código imprime?
 
 ```java
-Geometry geo = new Circle();
+Geometry geo = new Circle(2.0);
 geo.draw();
 ```
 
 Imprime **"executando o método de Circle"** — mesmo a variável `geo` sendo declarada como `Geometry`. Isso acontece porque em Java o despacho de métodos de instância é **virtual por padrão**: a decisão de qual implementação executar é tomada em **tempo de execução**, com base no tipo real do objeto, não no tipo declarado da variável. Esse mecanismo é chamado de **ligação dinâmica** (*dynamic dispatch*).
+
+!!! note "Inclusão executa o mesmo código ou códigos diferentes?"
+    No início do capítulo, dissemos que o polimorfismo universal executa o **mesmo código** para qualquer tipo admissível. Na inclusão, isso vale para o código que **usa** o supertipo: o laço que chama `geo.draw()` é um só e serve a qualquer subclasse, inclusive às que ainda serão escritas. Já o método que atende à chamada pode variar, quando há sobrescrita — um recurso que a orientação a objetos acrescenta à inclusão. Na sobrecarga é diferente: a escolha entre os métodos acontece na compilação, a cada ponto de chamada.
 
 !!! note "Em C++, ligação dinâmica não é o padrão"
     O mesmo código em C++ **não** produz o mesmo resultado por padrão — a menos que o método seja explicitamente declarado `virtual`:
@@ -222,5 +232,5 @@ Imprime **"executando o método de Circle"** — mesmo a variável `geo` sendo d
 
 ## 🔗 Para saber mais
 
-* Cardelli, L. — [*On Understanding Types, Data Abstraction, and Polymorphism*](http://lucacardelli.name/Papers/OnUnderstanding.A4.pdf)
+* Cardelli, L. & Wegner, P. — [*On Understanding Types, Data Abstraction, and Polymorphism*](http://lucacardelli.name/Papers/OnUnderstanding.A4.pdf)
 * Watt, D. — *Programming Language Design Concepts*, capítulo sobre polimorfismo

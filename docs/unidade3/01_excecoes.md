@@ -4,7 +4,7 @@ Retomando o critério de **confiabilidade** do Capítulo 1: tratamento de exceç
 
 ## 🌳 Hierarquia de exceções em Java
 
-Toda condição excepcional em Java é representada por uma subclasse de `Throwable`, dividida em três ramos:
+Toda condição excepcional em Java é representada por uma subclasse de `Throwable`, que tem duas subclasses diretas: `Error` e `Exception`. Como `RuntimeException` (subclasse de `Exception`) tem regras próprias, na prática distinguimos três grupos:
 
 * **`Error`** — condições graves, geralmente fora do controle do programa (falta de memória, erro interno da JVM). Não se espera que sejam tratadas.
 * **`RuntimeException`** — erros de **lógica de programação** que o programador deveria ter evitado: índice de array fora dos limites, divisão por zero, chamar um método em uma referência `null`. São as chamadas **exceções não verificadas** (*unchecked*).
@@ -189,5 +189,5 @@ Vale antecipar algo que vamos retomar no capítulo de Java Funcional: exceções
 ## 🔗 Para saber mais
 
 * [Exceções em Python — Real Python](https://realpython.com/python-exceptions/)
-* [JEP 213 — try-with-resources](https://openjdk.org/jeps/213)
-* Sobre alternativas a exceções: pesquise "Railway Oriented Programming" e o tipo `Either` em Elixir/Haskell.
+* [Tutorial oficial: the try-with-resources statement](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
+* Sobre alternativas a exceções: pesquise "Railway Oriented Programming" e o tipo `Either` em Haskell. Em Elixir, linguagem dinâmica, a convenção equivalente são as tuplas `{:ok, valor}` e `{:error, motivo}`.

@@ -65,7 +65,7 @@ try (Connection conn = DriverManager.getConnection(url);
 
     stmt.setString(1, "Sergio Costa");
     stmt.setString(2, "sergio@ufma.br");
-    stmt.setString(3, "); DELETE FROM contato; --");
+    stmt.setString(3, "'); DELETE FROM contato; --");
     stmt.execute();
 
     System.out.println("inserido");
@@ -73,7 +73,20 @@ try (Connection conn = DriverManager.getConnection(url);
 ```
 
 !!! danger "Esse terceiro valor não é um erro de exemplo — é a demonstração de por que `PreparedStatement` existe"
-    Repare que o valor do telefone contém, propositalmente, um trecho que **parece** SQL malicioso (`); DELETE FROM contato; --`). Se esse valor fosse concatenado diretamente em uma string SQL — `"INSERT INTO contato VALUES('" + nome + "', ...)"` — o banco executaria o `DELETE`, apagando toda a tabela. Essa é a vulnerabilidade clássica de **injeção de SQL**. Como `PreparedStatement` trata cada `?` como um **parâmetro de dado**, não como texto SQL a ser interpretado, esse valor é gravado exatamente como uma string literal, inofensiva, no banco — o `DELETE` nunca é executado. **Nunca** construa SQL concatenando strings vindas do usuário; use sempre `PreparedStatement` com parâmetros.
+    Repare que o valor do telefone contém, propositalmente, um trecho de SQL malicioso: `'); DELETE FROM contato; --`. Imagine que o programa montasse o comando concatenando strings:
+
+    ```java
+    String sql = "INSERT INTO contato (nome, email, telefone) VALUES ('"
+        + nome + "', '" + email + "', '" + telefone + "')";
+    ```
+
+    O texto enviado ao banco seria este:
+
+    ```sql
+    INSERT INTO contato (nome, email, telefone) VALUES ('Sergio Costa', 'sergio@ufma.br', ''); DELETE FROM contato; --')
+    ```
+
+    A aspa no começo do valor **fecha a string**, o `);` encerra o `INSERT`, o `DELETE` vira um segundo comando e o `--` transforma o resto em comentário. Se o driver aceitar mais de um comando na mesma chamada, a tabela é apagada. Recusar comandos múltiplos não resolve o problema: o atacante continua podendo alterar o sentido do comando original. Essa é a vulnerabilidade clássica de **injeção de SQL**. Com `PreparedStatement`, cada `?` é um **parâmetro de dado**, nunca interpretado como SQL: o valor é gravado literalmente, e o `DELETE` não é executado. **Nunca** construa SQL concatenando strings vindas do usuário.
 
 ### Consultando dados
 

@@ -8,6 +8,8 @@ Isso torna reflexão um tipo de **metaprogramação**: o programa realiza comput
 
 Em programação orientada a objetos, os metadados são organizados em **metaobjetos**. A capacidade de acessá-los em tempo de execução é chamada **introspecção** — um subconjunto da reflexão, que permite ao programa obter informações sobre si mesmo. Para dar suporte a metaprogramação, uma linguagem precisa expor os elementos usados para codificar suas próprias entidades — no caso do Java, dados sobre classes, métodos e atributos de um objeto.
 
+Java oferece **introspecção** ampla, mas uma capacidade **limitada** de modificação: pela API de reflexão é possível criar objetos, invocar métodos e ler ou escrever atributos, mas não acrescentar métodos ou atributos a uma classe já carregada, como se faz em Ruby ou Python.
+
 ## 🏷️ Anotações
 
 Anotações são metadados adicionados a classes, atributos e métodos — expressam alguma intenção do programador em relação ao elemento anotado. Vale marcar a diferença em relação a comentários:
@@ -119,9 +121,11 @@ E, por fim, a `TableModel` genérica, que usa reflexão para descobrir colunas e
 
 ```java
 public class TabelaGenerica<T> extends AbstractTableModel {
+    private final Class<T> tipo;
     private final List<T> dados;
 
-    public TabelaGenerica(RepositorioGenerico<T> repositorio) {
+    public TabelaGenerica(Class<T> tipo, RepositorioGenerico<T> repositorio) {
+        this.tipo = tipo;
         this.dados = repositorio.listar();
     }
 
@@ -160,18 +164,20 @@ public class TabelaGenerica<T> extends AbstractTableModel {
     }
 
     private Stream<Field> camposAnotados() {
-        return Arrays.stream(dados.get(0).getClass().getDeclaredFields())
+        return Arrays.stream(tipo.getDeclaredFields())
             .filter(f -> f.isAnnotationPresent(Coluna.class));
     }
 }
 ```
+
+O construtor recebe a classe (`new TabelaGenerica<>(Filme.class, repositorio)`) para que as colunas sejam conhecidas mesmo quando o repositório não devolve nenhum registro.
 
 Com isso, **qualquer** classe de domínio anotada com `@Coluna` pode virar uma `JTable` sem escrever uma nova `TableModel` para cada uma — é exatamente esse tipo de generalização que sustenta frameworks amplamente usados em Java, como Spring (`@Autowired`, `@RequestMapping`) e Jakarta Persistence/Hibernate (`@Entity`, `@Column`): todos usam reflexão sobre anotações para conectar seu código a comportamento genérico da biblioteca, sem exigir que você escreva boilerplate repetitivo.
 
 ## 📝 Atividades
 
 1. Implemente a classe `TabelaGenerica` deste capítulo (ou uma versão simplificada) e use-a com uma classe `Filme` anotada, exibindo os dados em uma `JTable` real.
-2. Explique, com suas palavras, a diferença entre introspecção e reflexão — dado que o texto afirma que Java oferece, estritamente, apenas o primeiro subconjunto completo.
+2. Explique, com suas palavras, a diferença entre introspecção e reflexão — dado que o texto afirma que Java oferece introspecção ampla, mas só uma capacidade limitada de modificação.
 3. Pesquise: como a anotação `@Override`, que você já usou em capítulos anteriores, é diferente de `@Coluna` deste capítulo? (Dica: pesquise sobre `RetentionPolicy.SOURCE` vs. `RUNTIME`.)
 4. Compare o exemplo de *duck typing* em Python com a solução via reflexão em Java — em que sentido reflexão é uma forma de "recuperar", em uma linguagem estaticamente tipada, parte da flexibilidade que uma linguagem dinamicamente tipada tem por padrão?
 

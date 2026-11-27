@@ -105,7 +105,6 @@ Em Java, encapsulamento é implementado via **modificadores de acesso**:
 ```java
 public class ContaBancaria {
     private double saldo;       // não acessível fora da classe
-    private double limite;
 
     public ContaBancaria(double saldoInicial) {
         this.saldo = saldoInicial;

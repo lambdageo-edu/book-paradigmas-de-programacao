@@ -24,7 +24,7 @@ int a = 5;
 a += 10;                  // atribuição composta: equivale a  a = a + 10;
 ```
 
-Java suporta atribuição composta para todos os operadores aritméticos e bit a bit: `+=`, `-=`, `*=`, `/=`, `%=`, `&=`, `|=`, `^=`, `<<=`, `>>=`.
+Java suporta atribuição composta para todos os operadores aritméticos e bit a bit: `+=`, `-=`, `*=`, `/=`, `%=`, `&=`, `|=`, `^=`, `<<=`, `>>=`, `>>>=`.
 
 Java **não** tem atribuição de tuplas nativa como Python (`a, b, c = 1, 2, 3`) — o mais próximo é desestruturar um *record* via *pattern matching* (visto no capítulo anterior), que é conceitualmente diferente: não atribui a variáveis existentes, mas declara novas.
 
@@ -190,15 +190,15 @@ Vale antecipar algo que retomaremos na Unidade 3: desde o Java 8, muito código 
 
 ```java
 // imperativo — "como" fazer, passo a passo
-List<String> maiusculas = new ArrayList<>();
+List<String> comFor = new ArrayList<>();
 for (String nome : nomes) {
     if (nome.length() > 3) {
-        maiusculas.add(nome.toUpperCase());
+        comFor.add(nome.toUpperCase());
     }
 }
 
 // declarativo — "o que" queremos, via Stream
-List<String> maiusculas = nomes.stream()
+List<String> comStream = nomes.stream()
     .filter(nome -> nome.length() > 3)
     .map(String::toUpperCase)
     .toList();

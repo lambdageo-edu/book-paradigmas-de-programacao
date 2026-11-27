@@ -78,7 +78,7 @@ nav:
 
   - Unidade 2 — Orientação a Objetos em Java:
     - "Cap 5: Classes e Objetos":                       unidade2/01_classes_objetos.md
-    - "Cap 6: Relações — Herança e Encapsulamento":     unidade2/02_relacoes.md
+    - "Cap 6: Relações — Dependência, Associação e Herança":     unidade2/02_relacoes.md
     - "Cap 7: Polimorfismo":                            unidade2/03_polimorfismo.md
     - "Cap 8: Classes Abstratas e Interfaces":          unidade2/04_classes_abstratas_interfaces.md
     - "Cap 9: Princípios e Padrões Orientados a Objetos": unidade2/05_principios_padroes.md

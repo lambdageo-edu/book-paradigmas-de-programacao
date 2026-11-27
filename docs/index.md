@@ -25,7 +25,7 @@ Estabelecemos o vocabulário comum para comparar linguagens — o que é um para
 O núcleo do curso. Estudamos os pilares da orientação a objetos — objetos, classes, encapsulamento, herança, polimorfismo — sempre ancorados em exemplos concretos de Java moderno, com uma comparação recorrente entre a *prática* da linguagem e os *conceitos* de projeto de linguagens que a fundamentam. Fechamos com uma visão geral de princípios e padrões de projeto orientados a objetos.
 
 ### 📗 Unidade 3: Java Avançado
-Exploramos tópicos essenciais para uso profissional de Java: tratamento de exceções, o Java Collections Framework, persistência com JDBC, interfaces gráficas com Swing, reflexão e o estilo funcional trazido pelo Java 8+ (lambdas, streams, `Optional`). O livro termina com uma lista de exercícios resolvidos que integra os conceitos das três unidades.
+Exploramos tópicos essenciais para uso profissional de Java: tratamento de exceções, o Java Collections Framework, persistência com JDBC, interfaces gráficas com Swing, reflexão e o estilo funcional trazido pelo Java 8+ (lambdas, streams, `Optional`). O livro termina com uma lista de exercícios que integra os conceitos das três unidades.
 
 ---
 
