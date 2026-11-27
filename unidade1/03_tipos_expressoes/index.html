@@ -24,7 +24,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -32,10 +32,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -1568,7 +1568,7 @@
 <p>A contrapartida é a perda de flexibilidade: tipagem estática pode restringir prematuramente o comportamento de um valor a um único tipo, dificultando escrever, por exemplo, uma função de ordenação genérica que funcione uniformemente para qualquer tipo comparável. É exatamente esse problema que o <strong>polimorfismo</strong> resolve — veremos isso em detalhe na Unidade 2.</p>
 <h3 id="inferencia-de-tipos">Inferência de tipos<a class="headerlink" href="#inferencia-de-tipos" title="Permanent link">&para;</a></h3>
 <p>Linguagens estáticas modernas — Kotlin, Swift, Scala, Haskell e, parcialmente, o próprio Java — oferecem <strong>inferência de tipos</strong>: o compilador deduz o tipo de uma expressão sem que você precise anotá-lo explicitamente. Desde o <strong>Java 10</strong>, a palavra-chave <code>var</code> permite inferência de tipo para variáveis locais:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">var</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Sergio&quot;</span><span class="p">;</span><span class="w">     </span><span class="c1">// o compilador infere String</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">var</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Sergio"</span><span class="p">;</span><span class="w">     </span><span class="c1">// o compilador infere String</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">var</span><span class="w"> </span><span class="n">idade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w">          </span><span class="c1">// infere int</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kd">var</span><span class="w"> </span><span class="n">notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mf">8.5</span><span class="p">,</span><span class="w"> </span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="mf">7.2</span><span class="p">);</span><span class="w"> </span><span class="c1">// infere List&lt;Double&gt;</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
@@ -1651,7 +1651,7 @@
 <h3 id="tipos-de-referencia">Tipos de referência<a class="headerlink" href="#tipos-de-referencia" title="Permanent link">&para;</a></h3>
 <p>Todo o resto — classes, interfaces, arrays, <code>String</code> — é um <strong>tipo de referência</strong>: a variável guarda uma referência para um objeto alocado no <em>heap</em>, não o objeto em si.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">              </span><span class="c1">// x guarda o valor 10 diretamente</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;olá&quot;</span><span class="p">;</span><span class="w">        </span><span class="c1">// s guarda uma referência para um objeto String no heap</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"olá"</span><span class="p">;</span><span class="w">        </span><span class="c1">// s guarda uma referência para um objeto String no heap</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w">   </span><span class="c1">// arr guarda uma referência para um array no heap</span>
 </code></pre></div>
 <h3 id="boxing-autoboxing-e-wrappers">Boxing, autoboxing e wrappers<a class="headerlink" href="#boxing-autoboxing-e-wrappers" title="Permanent link">&para;</a></h3>
@@ -1670,7 +1670,7 @@
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="c1">// opcional: um construtor compacto para validação</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Ponto</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Double</span><span class="p">.</span><span class="na">isNaN</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">isNaN</span><span class="p">(</span><span class="n">y</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;coordenadas inválidas&quot;</span><span class="p">);</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">"coordenadas inválidas"</span><span class="p">);</span>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="p">}</span>
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
@@ -1702,8 +1702,8 @@
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="mf">3.1416</span><span class="w">     </span><span class="c1">// double</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="mf">3.1416f</span><span class="w">    </span><span class="c1">// float</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kc">false</span><span class="w">      </span><span class="c1">// boolean</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="sc">&#39;%&#39;</span><span class="w">        </span><span class="c1">// char</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="s">&quot;E aí?&quot;</span><span class="w">    </span><span class="c1">// String</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="sc">'%'</span><span class="w">        </span><span class="c1">// char</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="s">"E aí?"</span><span class="w">    </span><span class="c1">// String</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Ponto flutuante e igualdade</p>
@@ -1720,7 +1720,7 @@
 <p>Java segue as regras usuais de <strong>precedência</strong> (multiplicação antes de adição) e <strong>associatividade</strong> (a maioria dos operadores binários é associativa à esquerda; exponenciação, quando existe, costuma ser à direita — embora Java, notavelmente, <strong>não tenha operador de exponenciação</strong>, usando <code>Math.pow(a, b)</code> no lugar).</p>
 <h3 id="expressoes-condicionais-em-java">Expressões condicionais em Java<a class="headerlink" href="#expressoes-condicionais-em-java" title="Permanent link">&para;</a></h3>
 <p>O <strong>operador ternário</strong> já existe desde sempre em Java e é a forma mais direta de uma expressão condicional:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">String</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nota</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">7.0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;aprovado&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;reprovado&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">String</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nota</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">7.0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">"aprovado"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">"reprovado"</span><span class="p">;</span>
 </code></pre></div>
 <p>Mas até o <strong>Java 13</strong> (com <em>switch expressions</em> estabilizadas no Java 14), Java não tinha um equivalente direto ao <code>case</code>-como-expressão de Haskell ou ao <code>when</code> do Kotlin — só o <code>switch</code>-<strong>comando</strong> clássico, herdado de C, com <em>fall-through</em> implícito e sem valor de retorno. Isso mudou:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">// switch clássico (comando, não expressão) — ainda válido, mas verboso</span>
@@ -1761,11 +1761,11 @@
 <p>Isso é uma mudança real de estilo: o compilador agora garante <strong>exaustividade</strong> — se alguém adicionar um terceiro tipo de <code>Forma</code> no futuro e esquecer de tratá-lo aqui, o código não compila. É o mesmo tipo de garantia que atrai tanta gente para tipos algébricos em linguagens funcionais.</p>
 <h3 id="text-blocks-java-15">Text blocks (Java 15+)<a class="headerlink" href="#text-blocks-java-15" title="Permanent link">&para;</a></h3>
 <p>Para strings literais multilinha — comum em SQL, JSON, HTML embutido — o Java 15 introduziu <em>text blocks</em>, delimitados por <code>"""</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"""</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="s">    SELECT nome, email</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="s">    FROM contato</span>
 <a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="s">    WHERE ativo = true</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="s">    &quot;&quot;&quot;</span><span class="p">;</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="s">    """</span><span class="p">;</span>
 </code></pre></div>
 <p>Comparado à concatenação manual de strings com <code>+</code> e <code>\n</code>, que era a única opção até então, isso reduz bastante ruído visual em código que monta texto estruturado.</p>
 <h2 id="variaveis-amarracao-e-escopo">📦 Variáveis, amarração e escopo<a class="headerlink" href="#variaveis-amarracao-e-escopo" title="Permanent link">&para;</a></h2>
@@ -1860,10 +1860,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>
