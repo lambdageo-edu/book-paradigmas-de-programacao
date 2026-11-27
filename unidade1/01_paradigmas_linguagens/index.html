@@ -861,7 +861,7 @@
   <span class="md-ellipsis">
     
   
-    Cap 6: Relações — Herança e Encapsulamento
+    Cap 6: Relações — Dependência, Associação e Herança
   
 
     
@@ -1569,7 +1569,7 @@
 </code></pre></div>
 <p>O grande problema dessas linguagens de <strong>primeira geração</strong> era a <strong>falta de portabilidade</strong>: um programa escrito para uma máquina não rodava em outra.</p>
 <h3 id="as-primeiras-linguagens-de-alto-nivel">As primeiras linguagens de alto nível<a class="headerlink" href="#as-primeiras-linguagens-de-alto-nivel" title="Permanent link">&para;</a></h3>
-<p>As linguagens de alto nível resolveram parte do problema de portabilidade, mas herdaram do assembly um controle de fluxo baseado em saltos condicionais e incondicionais (<code>goto</code>) — um mecanismo flexível, mas que produz código cujo fluxo de execução não acompanha a ordem em que o texto é lido. Isso prejudica legibilidade e manutenibilidade, e foi um dos fatores por trás da chamada "crise do software" nos anos 1970 (voltaremos a esse ponto adiante).</p>
+<p>As linguagens de alto nível resolveram parte do problema de portabilidade, mas herdaram do assembly um controle de fluxo baseado em saltos condicionais e incondicionais (<code>goto</code>) — um mecanismo flexível, mas que produz código cujo fluxo de execução não acompanha a ordem em que o texto é lido. Isso prejudica legibilidade e manutenibilidade, e foi um dos fatores por trás da chamada "crise do software", no fim dos anos 1960.</p>
 <p>As quatro linguagens fundadoras dessa era:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Fortran (1957)</label><label for="__tabbed_1_2">Lisp (1958)</label><label for="__tabbed_1_3">Algol60 (1960)</label><label for="__tabbed_1_4">Cobol (1959)</label></div>
 <div class="tabbed-content">
@@ -1693,10 +1693,13 @@
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">dis</span><span class="o">.</span><span class="n">dis</span><span class="p">(</span><span class="n">dobro</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>  4           0 LOAD_CONST               1 (2)
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>              2 LOAD_FAST                0 (x)
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>              4 BINARY_MULTIPLY
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>              6 RETURN_VALUE
+<p>Saída no Python 3.13 (os nomes das instruções mudam entre versões do interpretador):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>  3           RESUME                   0
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  4           LOAD_CONST               1 (2)
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>              LOAD_FAST                0 (x)
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>              BINARY_OP                5 (*)
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>              RETURN_VALUE
 </code></pre></div>
 <hr />
 <h2 id="caracteristicas-de-linguagens-de-programacao">📏 Características de linguagens de programação<a class="headerlink" href="#caracteristicas-de-linguagens-de-programacao" title="Permanent link">&para;</a></h2>
@@ -1717,7 +1720,7 @@
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span><span class="n">q</span><span class="p">;</span>
 </code></pre></div>
-<p>Java optou por <strong>não</strong> oferecer sobrecarga de operadores (diferente de C++, que já a tinha desde o início). Scala vai no sentido oposto e permite forte sobrecarga — poderosa, mas fácil de abusar. Os projetistas de Go justificam a mesma escolha de Java citando a experiência de que múltiplos métodos com o mesmo nome e assinaturas diferentes, embora ocasionalmente úteis, tendem a deixar o código mais confuso e frágil na prática.</p>
+<p>Java optou por <strong>não</strong> oferecer sobrecarga de operadores (diferente de C++, que a tem), mas permite sobrecarga de <strong>métodos</strong>. Scala vai no sentido oposto e dá grande liberdade para definir operadores — poderosa, mas fácil de abusar. Go é ainda mais restritiva que Java e não oferece nenhuma das duas: seus projetistas argumentam que múltiplos métodos com o mesmo nome e assinaturas diferentes, embora ocasionalmente úteis, podem deixar o código confuso e frágil na prática.</p>
 <p><strong>Ortogonalidade.</strong> Diz respeito à capacidade de combinar os conceitos básicos da linguagem livremente, sem produzir efeitos anômalos — quanto menos exceções às regras gerais, mais ortogonal é a linguagem. Exemplos de baixa ortogonalidade:</p>
 <ul>
 <li>Em C, o tipo <code>void</code> só é válido em declarações de função e ponteiros — não existe "variável void".</li>
@@ -1756,10 +1759,12 @@
 <li><strong>Checagem de tipos em tempo de compilação</strong>: linguagens estaticamente tipadas capturam erros de tipo antes da execução — Java tende a ser mais confiável que Python nesse eixo.</li>
 <li><strong>Tipagem forte</strong>: evita conversões implícitas perigosas. O código abaixo compila em C, mas não em C++ — porque C++ é mais fortemente tipada quanto a conversões implícitas de ponteiro:</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w">   </span><span class="c1">// compila em C (com aviso), é erro em C++</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">exemplo</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="w">  </span><span class="c1">// void* → int*: aceito em C, erro em C++</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">}</span>
 </code></pre></div>
 <ul>
 <li><strong>Tratamento de exceções</strong>: permite interceptar erros e, em certos casos, obriga o programador a tratá-los — em Java, exceções checadas (como as de acesso a banco de dados) precisam ser declaradas ou tratadas, algo que linguagens baseadas apenas em códigos de erro não conseguem impor.</li>

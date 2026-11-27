@@ -554,7 +554,7 @@
   <span class="md-ellipsis">
     
   
-    Cap 6: Relações — Herança e Encapsulamento
+    Cap 6: Relações — Dependência, Associação e Herança
   
 
     
@@ -1418,7 +1418,7 @@
 <li>Por padrão, todo método de uma interface é implicitamente <code>abstract</code> e <code>public</code> — omitir esses modificadores é a convenção usual.</li>
 <li>Uma interface <strong>não pode</strong> ter variáveis de instância — apenas constantes <code>static final</code>. Interface é especificação pura, sem estado.</li>
 <li>Uma interface não pode ser instanciada e não tem construtor.</li>
-<li>Se uma classe implementa uma interface sem fornecer todos os métodos exigidos, ela mesma se torna <code>abstract</code>.</li>
+<li>Uma classe que declara implementar uma interface precisa fornecer todos os métodos abstratos dela; se não fornecer, só compila se for declarada <code>abstract</code>.</li>
 <li>Uma classe pode implementar <strong>quantas interfaces quiser</strong>.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CenteredRectangle</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Centered</span><span class="w"> </span><span class="p">{</span>
@@ -1439,7 +1439,7 @@
 <h3 id="interfaces-desde-o-java-8-metodos-default-e-static">Interfaces desde o Java 8: métodos <code>default</code> e <code>static</code><a class="headerlink" href="#interfaces-desde-o-java-8-metodos-default-e-static" title="Permanent link">&para;</a></h3>
 <p>Antes do Java 8, interfaces só podiam declarar métodos abstratos — o que criava um problema real de evolução de API: adicionar um método novo a uma interface <strong>quebrava</strong> toda classe que já a implementava, já que ela precisaria escrever uma implementação nova. Isso não acontecia com classes abstratas, onde bastava adicionar um método concreto.</p>
 <p>O Java 8 resolveu isso com <strong>métodos <code>default</code></strong> — métodos de interface com corpo, que implementações existentes herdam automaticamente se não os sobrescreverem. Foi assim que o método <code>sort</code> pôde ser adicionado à interface <code>List</code> sem quebrar código legado:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Fool</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">f1</span><span class="p">();</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">f2</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>

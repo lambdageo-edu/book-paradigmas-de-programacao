@@ -554,7 +554,7 @@
   <span class="md-ellipsis">
     
   
-    Cap 6: Relações — Herança e Encapsulamento
+    Cap 6: Relações — Dependência, Associação e Herança
   
 
     
@@ -1241,7 +1241,7 @@
 <h1 id="cap-10-tratamento-de-excecoes">Cap 10: Tratamento de Exceções<a class="headerlink" href="#cap-10-tratamento-de-excecoes" title="Permanent link">&para;</a></h1>
 <p>Retomando o critério de <strong>confiabilidade</strong> do Capítulo 1: tratamento de exceções é um dos mecanismos de linguagem que mais contribui para confiabilidade, porque permite interceptar condições de erro — e, em certos casos, <strong>obriga</strong> o programador a lidar com elas — em vez de deixar o programa simplesmente continuar em um estado inconsistente ou falhar silenciosamente.</p>
 <h2 id="hierarquia-de-excecoes-em-java">🌳 Hierarquia de exceções em Java<a class="headerlink" href="#hierarquia-de-excecoes-em-java" title="Permanent link">&para;</a></h2>
-<p>Toda condição excepcional em Java é representada por uma subclasse de <code>Throwable</code>, dividida em três ramos:</p>
+<p>Toda condição excepcional em Java é representada por uma subclasse de <code>Throwable</code>, que tem duas subclasses diretas: <code>Error</code> e <code>Exception</code>. Como <code>RuntimeException</code> (subclasse de <code>Exception</code>) tem regras próprias, na prática distinguimos três grupos:</p>
 <ul>
 <li><strong><code>Error</code></strong> — condições graves, geralmente fora do controle do programa (falta de memória, erro interno da JVM). Não se espera que sejam tratadas.</li>
 <li><strong><code>RuntimeException</code></strong> — erros de <strong>lógica de programação</strong> que o programador deveria ter evitado: índice de array fora dos limites, divisão por zero, chamar um método em uma referência <code>null</code>. São as chamadas <strong>exceções não verificadas</strong> (<em>unchecked</em>).</li>
@@ -1387,8 +1387,8 @@
 <h2 id="para-saber-mais">🔗 Para saber mais<a class="headerlink" href="#para-saber-mais" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://realpython.com/python-exceptions/">Exceções em Python — Real Python</a></li>
-<li><a href="https://openjdk.org/jeps/213">JEP 213 — try-with-resources</a></li>
-<li>Sobre alternativas a exceções: pesquise "Railway Oriented Programming" e o tipo <code>Either</code> em Elixir/Haskell.</li>
+<li><a href="https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html">Tutorial oficial: the try-with-resources statement</a></li>
+<li>Sobre alternativas a exceções: pesquise "Railway Oriented Programming" e o tipo <code>Either</code> em Haskell. Em Elixir, linguagem dinâmica, a convenção equivalente são as tuplas <code>{:ok, valor}</code> e <code>{:error, motivo}</code>.</li>
 </ul>
 
 

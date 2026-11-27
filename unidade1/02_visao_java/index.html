@@ -508,6 +508,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="🧩 Paradigmas suportados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#respondendo-ao-checklist-do-capitulo-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Respondendo ao checklist do Capítulo 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -761,7 +778,7 @@
   <span class="md-ellipsis">
     
   
-    Cap 6: Relações — Herança e Encapsulamento
+    Cap 6: Relações — Dependência, Associação e Herança
   
 
     
@@ -1224,6 +1241,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="🧩 Paradigmas suportados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#respondendo-ao-checklist-do-capitulo-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Respondendo ao checklist do Capítulo 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1327,7 +1361,7 @@
 
 
 <h1 id="cap-2-panorama-da-linguagem-java">Cap 2: Panorama da Linguagem Java<a class="headerlink" href="#cap-2-panorama-da-linguagem-java" title="Permanent link">&para;</a></h1>
-<p>Antes de mergulhar em sintaxe, vale aplicar à própria linguagem Java o checklist de perguntas que fechou o capítulo anterior: de onde ela veio, que problema resolveu, e como se posiciona hoje frente a outras linguagens.</p>
+<p>Antes de mergulhar em sintaxe, vale aplicar à própria linguagem Java o checklist de perguntas que fechou o capítulo anterior: de onde ela veio, que problema resolveu, e como se posiciona hoje frente a outras linguagens. As respostas ao checklist estão resumidas na seção "Paradigmas suportados".</p>
 <h2 id="breve-historico">🕰️ Breve histórico<a class="headerlink" href="#breve-historico" title="Permanent link">&para;</a></h2>
 <p>Java nasceu em junho de 1991 como um projeto interno da Sun Microsystems chamado <strong>"Oak"</strong>, liderado por James Gosling. O objetivo original não era nem web nem servidores corporativos — era eletrônica de consumo: uma linguagem e uma máquina virtual que pudessem rodar de forma segura e portável em dispositivos variados, com sintaxe parecida com C, porém mais simples e mais uniforme (fortemente influenciada por C++, mas evitando várias de suas armadilhas).</p>
 <p>A primeira versão pública, <strong>Java 1.0</strong>, saiu em 1995 sob o lema <strong>"Write Once, Run Anywhere"</strong> — um programa Java compilado roda em qualquer plataforma que tenha uma JVM, sem recompilação. O modelo de segurança configurável (sandbox de <em>applets</em>) fez a linguagem decolar junto com a explosão da web nos anos 1990.</p>
@@ -1362,9 +1396,14 @@
 <td>Sistema de módulos (JPMS), início do ritmo de release semestral</td>
 </tr>
 <tr>
+<td>Java 10</td>
+<td>2018</td>
+<td><code>var</code> para inferência de tipo local</td>
+</tr>
+<tr>
 <td>Java 11</td>
 <td>2018</td>
-<td>LTS; <code>var</code> para inferência de tipo local; novo <code>HttpClient</code></td>
+<td>LTS; novo <code>HttpClient</code>; execução direta de arquivos <code>.java</code></td>
 </tr>
 <tr>
 <td>Java 17</td>
@@ -1379,7 +1418,7 @@
 <tr>
 <td>Java 25</td>
 <td>2025</td>
-<td>LTS mais recente; <em>structured concurrency</em>, evolução de <em>scoped values</em></td>
+<td>LTS mais recente; <em>scoped values</em> finalizados (<em>structured concurrency</em> segue em <em>preview</em>)</td>
 </tr>
 </tbody>
 </table>
@@ -1457,7 +1496,7 @@
 <h2 id="estrutura-basica-da-linguagem">🧬 Estrutura básica da linguagem<a class="headerlink" href="#estrutura-basica-da-linguagem" title="Permanent link">&para;</a></h2>
 <p>A sintaxe de Java foi fortemente influenciada por C/C++ — chaves para blocos, ponto e vírgula ao final de comandos, tipos declarados antes dos identificadores. As diferenças mais importantes em relação a C++:</p>
 <ul>
-<li>Java <strong>não é uma linguagem híbrida</strong>: todo código roda sobre a JVM (não compila diretamente para código de máquina nativo, embora ferramentas como o GraalVM Native Image tornem isso possível hoje para casos específicos).</li>
+<li>Java <strong>não é uma linguagem híbrida</strong> no sentido em que C++ é: C++ preserva o C e permite funções e variáveis soltas, fora de classes; em Java, o código fica dentro de classes e de outros tipos. Não confunda com a execução "híbrida" (<em>bytecode</em> + máquina virtual) do Capítulo 1.</li>
 <li>Java tem <strong>coletor de lixo (garbage collector)</strong> integrado: não existe <code>free</code>/<code>delete</code> manual.</li>
 <li>Um programa Java é, estruturalmente, uma <strong>coleção de classes que se relacionam</strong>, cada uma agrupando atributos e métodos — o que já antecipa o assunto central da Unidade 2.</li>
 </ul>
@@ -1469,6 +1508,37 @@
 <li><strong>Programação reflexiva</strong>, via a API de <em>reflection</em> (Unidade 3, capítulo "Reflexão").</li>
 <li><strong>Programação concorrente</strong>, historicamente via <code>Thread</code>/<code>ExecutorService</code>, e desde o Java 21 também via <strong>virtual threads</strong> (<em>Project Loom</em>) — threads leves gerenciadas pela JVM, que tornam código concorrente bloqueante barato de escalar sem reescrever tudo em estilo assíncrono.</li>
 </ul>
+<h3 id="respondendo-ao-checklist-do-capitulo-1">Respondendo ao checklist do Capítulo 1<a class="headerlink" href="#respondendo-ao-checklist-do-capitulo-1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pergunta</th>
+<th>Java</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sistema de tipos</td>
+<td>Estático e forte, com inferência local (<code>var</code>, desde o Java 10)</td>
+</tr>
+<tr>
+<td>Paradigma predominante</td>
+<td>Orientado a objetos, incorporando programação genérica, funcional, reflexiva e concorrente</td>
+</tr>
+<tr>
+<td><em>Class-based</em> ou <em>prototype-based</em>?</td>
+<td><em>Class-based</em></td>
+</tr>
+<tr>
+<td>Casamento de padrões</td>
+<td>Sim: <code>instanceof</code> (Java 16), <code>switch</code> e <em>record patterns</em> (Java 21)</td>
+</tr>
+<tr>
+<td>Funções são valores de primeira classe?</td>
+<td>Métodos não são valores; lambdas e referências a métodos são objetos de interfaces funcionais, que podem ser passados, retornados e armazenados</td>
+</tr>
+</tbody>
+</table>
 <h2 id="comparacoes-com-outras-linguagens">⚖️ Comparações com outras linguagens<a class="headerlink" href="#comparacoes-com-outras-linguagens" title="Permanent link">&para;</a></h2>
 <p>Comparar Java com linguagens vizinhas ajuda a fixar suas decisões de design — vamos revisitar vários desses pontos com mais profundidade ao longo do livro.</p>
 <h3 id="java-c">Java × C<a class="headerlink" href="#java-c" title="Permanent link">&para;</a></h3>

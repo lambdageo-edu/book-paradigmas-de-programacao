@@ -554,7 +554,7 @@
   <span class="md-ellipsis">
     
   
-    Cap 6: Relações — Herança e Encapsulamento
+    Cap 6: Relações — Dependência, Associação e Herança
   
 
     
@@ -925,6 +925,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#a-thread-de-eventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A thread de eventos
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1162,6 +1173,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#a-thread-de-eventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A thread de eventos
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1255,7 +1277,7 @@
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">frame</span><span class="p">.</span><span class="na">setVisible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="layout">Layout<a class="headerlink" href="#layout" title="Permanent link">&para;</a></h3>
-<p>O Java precisa de uma política para organizar os componentes adicionados a um container. O padrão é o <strong>BorderLayout</strong>, que divide a janela em cinco regiões (norte, sul, leste, oeste, centro); adicionar um componente sem especificar região o coloca no centro:</p>
+<p>O Java precisa de uma política para organizar os componentes adicionados a um container. O padrão de um <code>JFrame</code> é o <strong>BorderLayout</strong> (já um <code>JPanel</code> usa, por padrão, o <code>FlowLayout</code>). O <code>BorderLayout</code> divide a janela em cinco regiões (norte, sul, leste, oeste, centro); adicionar um componente sem especificar região o coloca no centro:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">frame</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">bt</span><span class="p">,</span><span class="w"> </span><span class="n">BorderLayout</span><span class="p">.</span><span class="na">CENTER</span><span class="p">);</span><span class="w"> </span><span class="c1">// equivalente a:</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">frame</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">bt</span><span class="p">);</span>
 </code></pre></div>
@@ -1327,11 +1349,16 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SwingOla</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="n">janela</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PrimeiroSwing</span><span class="p">();</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">        </span><span class="n">janela</span><span class="p">.</span><span class="na">setVisible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">}</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">        </span><span class="n">SwingUtilities</span><span class="p">.</span><span class="na">invokeLater</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">            </span><span class="kd">var</span><span class="w"> </span><span class="n">janela</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PrimeiroSwing</span><span class="p">();</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">            </span><span class="n">janela</span><span class="p">.</span><span class="na">setVisible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span><span class="p">});</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="p">}</span>
 </code></pre></div>
+<h3 id="a-thread-de-eventos">A thread de eventos<a class="headerlink" href="#a-thread-de-eventos" title="Permanent link">&para;</a></h3>
+<p>O Swing não é <em>thread-safe</em>: os componentes devem ser criados e modificados na <strong>thread de despacho de eventos</strong> (<em>Event Dispatch Thread</em>, EDT), a mesma que executa os <em>listeners</em>. <code>SwingUtilities.invokeLater</code> agenda um trecho de código nessa thread, e por isso o <code>main</code> acima o usa. Os primeiros exemplos do capítulo omitem esse cuidado apenas para ficarem curtos.</p>
+<p>A consequência inversa também importa: uma operação demorada dentro de um <em>listener</em> (uma consulta grande ao banco, por exemplo) <strong>congela a interface</strong> até terminar. Para esses casos, o Swing oferece <code>SwingWorker</code>, que executa o trabalho em outra thread e devolve o resultado à EDT.</p>
 <h2 id="jtable-separando-visualizacao-de-modelo-de-dados">📊 JTable: separando visualização de modelo de dados<a class="headerlink" href="#jtable-separando-visualizacao-de-modelo-de-dados" title="Permanent link">&para;</a></h2>
 <p><code>JTable</code> é o componente do Swing para apresentar dados em formato tabular — e ilustra bem outro princípio já visto (Capítulo 9): <strong>separar a visualização do modelo</strong>. A <code>JTable</code> não sabe <em>quais objetos</em> está mostrando; ela apenas consulta uma interface <code>TableModel</code>:</p>
 <ul>

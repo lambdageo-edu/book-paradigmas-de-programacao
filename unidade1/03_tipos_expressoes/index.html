@@ -861,7 +861,7 @@
   <span class="md-ellipsis">
     
   
-    Cap 6: Relações — Herança e Encapsulamento
+    Cap 6: Relações — Dependência, Associação e Herança
   
 
     
@@ -1693,7 +1693,7 @@
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">record</span> <span class="nc">Circulo</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">raio</span><span class="p">)</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Forma</span><span class="w"> </span><span class="p">{}</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">record</span> <span class="nc">Retangulo</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">largura</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">altura</span><span class="p">)</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Forma</span><span class="w"> </span><span class="p">{}</span>
 </code></pre></div>
-<p>Combinado com <em>pattern matching</em> (próxima seção), isso permite ao compilador verificar exaustividade — algo que só linguagens com tipos algébricos, como Haskell ou Elixir, ofereciam tradicionalmente.</p>
+<p>Combinado com <em>pattern matching</em> (próxima seção), isso permite ao compilador verificar exaustividade — algo que linguagens estaticamente tipadas com tipos algébricos, como Haskell, já ofereciam tradicionalmente.</p>
 <h2 id="conceito-sobre-expressoes">➕ Conceito sobre expressões<a class="headerlink" href="#conceito-sobre-expressoes" title="Permanent link">&para;</a></h2>
 <p>Uma <strong>expressão</strong> é uma construção que pode ser avaliada, produzindo um valor.</p>
 <h3 id="literais">Literais<a class="headerlink" href="#literais" title="Permanent link">&para;</a></h3>
@@ -1801,7 +1801,7 @@
 <li><a href="https://openjdk.org/jeps/395">JEP 395 — Records</a></li>
 <li><a href="https://openjdk.org/jeps/409">JEP 409 — Sealed Classes</a></li>
 <li><a href="https://openjdk.org/jeps/441">JEP 441 — Pattern Matching for switch</a></li>
-<li>Cardelli, L. — <em>On Understanding Types, Data Abstraction, and Polymorphism</em></li>
+<li>Cardelli, L. &amp; Wegner, P. — <em>On Understanding Types, Data Abstraction, and Polymorphism</em></li>
 </ul>
 
 
