@@ -65,5 +65,5 @@ Tratam de como objetos colaboram e distribuem responsabilidades.
 
 * Gamma, Helm, Johnson & Vlissides — *Design Patterns: Elements of Reusable Object-Oriented Software* (1994)
 * Martin, R. C. — *Clean Architecture* / artigos originais sobre os princípios SOLID
-* Terra, R. et al. — [*Engenharia de Software Moderna*](https://engsoftmoderna.info/) — capítulos 5 (Princípios) e 6 (Padrões de Projeto), livro digital gratuito
+* Valente, Marco Tulio — [*Engenharia de Software Moderna*](https://engsoftmoderna.info/) — capítulos 5 (Princípios) e 6 (Padrões de Projeto), livro digital gratuito
 * [Refactoring.Guru — catálogo ilustrado de padrões de projeto](https://refactoring.guru/design-patterns)
