@@ -1,6 +1,6 @@
-# Cap 6: Relações — Herança e Encapsulamento
+# Cap 6: Relações — Dependência, Associação e Herança
 
-Um programa orientado a objetos é uma coleção de objetos que colaboram trocando mensagens. Para modelar isso com clareza, a UML define três tipos de relacionamento entre classes, em ordem crescente de força.
+Um programa orientado a objetos é uma coleção de objetos que colaboram trocando mensagens. Para modelar isso com clareza, a UML define três tipos de relacionamento entre classes, em ordem crescente de força. (A UML tem ainda a *realização*, entre uma classe e a interface que ela implementa, assunto do Capítulo 8.)
 
 ## 🔗 Dependência ("usa um")
 

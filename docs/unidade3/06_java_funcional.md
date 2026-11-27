@@ -12,7 +12,9 @@ Retomando o Capítulo 1: Java não foi projetada para ser uma linguagem híbrida
 Antes do Java 8, "passar comportamento como argumento" exigia sempre uma **classe anônima** implementando uma interface com um único método — verboso mesmo para uma operação trivial:
 
 ```java
-list.reduce(new BinaryOperator<Integer>() {
+List<Integer> list = List.of(1, 2, 3, 4);
+
+list.stream().reduce(new BinaryOperator<Integer>() {
     @Override
     public Integer apply(Integer t, Integer u) {
         return t * u;
@@ -28,7 +30,7 @@ list.reduce(new BinaryOperator<Integer>() {
 Com **notação lambda**, o mesmo código:
 
 ```java
-list.reduce((x, y) -> x * y).ifPresent(System.out::println);
+list.stream().reduce((x, y) -> x * y).ifPresent(System.out::println);
 ```
 
 Isso só é possível porque `BinaryOperator<T>` e `Consumer<T>` são **interfaces funcionais** — interfaces com exatamente um método abstrato, conceito já visto no Capítulo 8. Uma lambda é, tecnicamente, uma implementação anônima e concisa de uma interface funcional; o compilador infere qual interface implementar a partir do contexto de uso.
@@ -90,6 +92,26 @@ Map<Boolean, List<String>> aprovados = List.of("Ana:8", "Bruno:5", "Carla:9").st
 !!! tip "Stream não é sempre a melhor escolha"
     Streams brilham em pipelines de transformação — filtrar, mapear, agregar. Para um laço simples com efeitos colaterais óbvios (por exemplo, atualizar um contador externo a cada iteração), um `for` tradicional continua sendo mais claro e, geralmente, tão eficiente quanto. Prefira Streams quando elas deixam a **intenção** mais legível — não como substituição automática de todo `for`.
 
+### Strategy com lambdas
+
+O padrão **Strategy** (Capítulo 9) encapsula algoritmos intercambiáveis atrás de uma interface comum. Quando a estratégia é um único método, uma interface funcional e uma lambda bastam, sem criar uma classe para cada variação:
+
+```java
+static double precoFinal(double valor, DoubleUnaryOperator desconto) {
+    return desconto.applyAsDouble(valor);
+}
+```
+
+```java
+DoubleUnaryOperator semDesconto = v -> v;
+DoubleUnaryOperator estudante = v -> v * 0.5;
+
+System.out.println(precoFinal(40.0, semDesconto)); // 40.0
+System.out.println(precoFinal(40.0, estudante));   // 20.0
+```
+
+O próprio `sort` faz isso: o `Comparator` recebido é a estratégia de ordenação.
+
 ## ❓ Optional: modelando "pode não haver valor"
 
 Um problema recorrente em Java — e em muitas linguagens com referências nulas — é `NullPointerException`, já citado no Capítulo 1 como um dos fatores que reduzem confiabilidade. Desde o Java 8, `Optional<T>` oferece um jeito explícito de modelar "esse método pode não ter um resultado", sem depender de `null`:
@@ -102,12 +124,13 @@ public Optional<Usuario> buscarPorId(String id) {
 ```
 
 ```java
-Optional<Usuario> resultado = buscarPorId("u1");
-
-// em vez de checar null manualmente:
-if (resultado != null && resultado.get() != null) { /* ... */ }
+// sem Optional: o método devolveria null, e quem chama precisa se lembrar de checar
+Usuario usuario = repositorio.get("u1");
+if (usuario != null) { /* ... */ }
 
 // o idiomático com Optional:
+Optional<Usuario> resultado = buscarPorId("u1");
+
 String nome = resultado
     .map(Usuario::getNome)
     .orElse("desconhecido");
@@ -123,7 +146,7 @@ resultado.ifPresentOrElse(
 
 ## 🔀 Conectando com o capítulo de exceções: uma via alternativa a `try`/`catch`
 
-Retomando o que ficou em aberto no Capítulo 10: `Optional` cobre bem o caso "valor pode não existir", mas não carrega informação sobre **por que** faltou. Para modelar falhas com uma explicação, sem lançar exceções, um padrão comum (embora não nativo do Java, diferente de linguagens como Kotlin ou Elixir) é definir um tipo `Resultado` próprio usando `sealed interface` e `record` (Capítulo 3):
+Retomando o que ficou em aberto no Capítulo 10: `Optional` cobre bem o caso "valor pode não existir", mas não carrega informação sobre **por que** faltou. Para modelar falhas com uma explicação, sem lançar exceções, um padrão comum (embora não nativo do Java, diferente de Kotlin, com `Result`, ou Haskell, com `Either`) é definir um tipo `Resultado` próprio usando `sealed interface` e `record` (Capítulo 3):
 
 ```java
 public sealed interface Resultado<T> permits Sucesso, Falha {}
@@ -160,5 +183,5 @@ Isso não substitui exceções — continua sendo a ferramenta certa para condi�
 ## 🔗 Para saber mais
 
 * [Documentação oficial: Java Stream API](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html)
-* [JEP 335 / documentação sobre `Optional`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html)
-* Pesquise sobre o tipo `Result` em Kotlin e o tipo `Either` em Elixir/Haskell, para comparar com a modelagem de `Resultado<T>` proposta aqui.
+* [Documentação oficial: `Optional`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html)
+* Pesquise sobre o tipo `Result` em Kotlin e o tipo `Either` em Haskell, para comparar com a modelagem de `Resultado<T>` proposta aqui.

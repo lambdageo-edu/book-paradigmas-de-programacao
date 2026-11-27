@@ -170,7 +170,7 @@ public record Circulo(double raio) implements Forma {}
 public record Retangulo(double largura, double altura) implements Forma {}
 ```
 
-Combinado com *pattern matching* (próxima seção), isso permite ao compilador verificar exaustividade — algo que só linguagens com tipos algébricos, como Haskell ou Elixir, ofereciam tradicionalmente.
+Combinado com *pattern matching* (próxima seção), isso permite ao compilador verificar exaustividade — algo que linguagens estaticamente tipadas com tipos algébricos, como Haskell, já ofereciam tradicionalmente.
 
 ## ➕ Conceito sobre expressões
 
@@ -314,4 +314,4 @@ O **escopo** de uma declaração é a porção do programa onde ela produz efeit
 * [JEP 395 — Records](https://openjdk.org/jeps/395)
 * [JEP 409 — Sealed Classes](https://openjdk.org/jeps/409)
 * [JEP 441 — Pattern Matching for switch](https://openjdk.org/jeps/441)
-* Cardelli, L. — *On Understanding Types, Data Abstraction, and Polymorphism*
+* Cardelli, L. & Wegner, P. — *On Understanding Types, Data Abstraction, and Polymorphism*

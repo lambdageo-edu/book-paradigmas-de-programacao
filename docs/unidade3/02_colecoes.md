@@ -12,7 +12,8 @@ Segundo a documentação da Oracle, uma **coleção** é um objeto que represent
 | Java 6 | `Deque` — fila de duas pontas |
 | Java 8 | Stream API — processamento declarativo sobre coleções (veremos em detalhe no capítulo de Java Funcional) |
 | Java 9 | Métodos de fábrica imutáveis — `List.of(...)`, `Set.of(...)`, `Map.of(...)` |
-| Java 10 | `List.copyOf`, `toUnmodifiableList()` em Streams |
+| Java 10 | `List.copyOf`, `Collectors.toUnmodifiableList()` |
+| Java 21 | *Sequenced Collections*: acesso uniforme ao primeiro e ao último elemento |
 
 ### Hierarquia de interfaces
 
@@ -51,6 +52,18 @@ Para listas **imutáveis** — comuns quando você quer expor dados sem risco de
 ```java
 List<String> constantes = List.of("A", "B", "C");
 // constantes.add("D"); // lança UnsupportedOperationException em tempo de execução
+```
+
+## ↔️ Coleções sequenciadas (Java 21)
+
+Até o Java 20, pegar o último elemento dependia da coleção: `lista.get(lista.size() - 1)`, `deque.getLast()`, `conjuntoOrdenado.last()`. O Java 21 criou interfaces comuns para coleções que têm uma **ordem de encontro** definida: `SequencedCollection`, `SequencedSet` e `SequencedMap`. `List` e `Deque` são `SequencedCollection`; `LinkedHashSet` e `TreeSet` são `SequencedSet`; `LinkedHashMap` e `TreeMap` são `SequencedMap`. `HashSet` e `HashMap` ficam de fora, porque não garantem ordem.
+
+```java
+List<String> nomes = new ArrayList<>(List.of("Ana", "Bruno", "Carla"));
+
+System.out.println(nomes.getFirst()); // Ana
+System.out.println(nomes.getLast());  // Carla
+System.out.println(nomes.reversed()); // [Carla, Bruno, Ana] — uma visão invertida, sem copiar
 ```
 
 ## 🔁 Queue e Deque
@@ -121,6 +134,11 @@ Um detalhe fácil de ignorar, mas que quebra silenciosamente `HashSet` e `HashMa
 ```java
 public class Ponto {
     private final int x, y;
+
+    public Ponto(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
 
     @Override
     public boolean equals(Object o) {

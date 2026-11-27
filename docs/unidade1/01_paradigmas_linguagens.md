@@ -54,7 +54,7 @@ O grande problema dessas linguagens de **primeira geração** era a **falta de p
 
 ### As primeiras linguagens de alto nível
 
-As linguagens de alto nível resolveram parte do problema de portabilidade, mas herdaram do assembly um controle de fluxo baseado em saltos condicionais e incondicionais (`goto`) — um mecanismo flexível, mas que produz código cujo fluxo de execução não acompanha a ordem em que o texto é lido. Isso prejudica legibilidade e manutenibilidade, e foi um dos fatores por trás da chamada "crise do software" nos anos 1970 (voltaremos a esse ponto adiante).
+As linguagens de alto nível resolveram parte do problema de portabilidade, mas herdaram do assembly um controle de fluxo baseado em saltos condicionais e incondicionais (`goto`) — um mecanismo flexível, mas que produz código cujo fluxo de execução não acompanha a ordem em que o texto é lido. Isso prejudica legibilidade e manutenibilidade, e foi um dos fatores por trás da chamada "crise do software", no fim dos anos 1960.
 
 As quatro linguagens fundadoras dessa era:
 
@@ -185,11 +185,15 @@ def dobro(x):
 dis.dis(dobro)
 ```
 
+Saída no Python 3.13 (os nomes das instruções mudam entre versões do interpretador):
+
 ```text
-  4           0 LOAD_CONST               1 (2)
-              2 LOAD_FAST                0 (x)
-              4 BINARY_MULTIPLY
-              6 RETURN_VALUE
+  3           RESUME                   0
+
+  4           LOAD_CONST               1 (2)
+              LOAD_FAST                0 (x)
+              BINARY_OP                5 (*)
+              RETURN_VALUE
 ```
 
 ---
@@ -219,7 +223,7 @@ count++;
 a = *p * *q;
 ```
 
-Java optou por **não** oferecer sobrecarga de operadores (diferente de C++, que já a tinha desde o início). Scala vai no sentido oposto e permite forte sobrecarga — poderosa, mas fácil de abusar. Os projetistas de Go justificam a mesma escolha de Java citando a experiência de que múltiplos métodos com o mesmo nome e assinaturas diferentes, embora ocasionalmente úteis, tendem a deixar o código mais confuso e frágil na prática.
+Java optou por **não** oferecer sobrecarga de operadores (diferente de C++, que a tem), mas permite sobrecarga de **métodos**. Scala vai no sentido oposto e dá grande liberdade para definir operadores — poderosa, mas fácil de abusar. Go é ainda mais restritiva que Java e não oferece nenhuma das duas: seus projetistas argumentam que múltiplos métodos com o mesmo nome e assinaturas diferentes, embora ocasionalmente úteis, podem deixar o código confuso e frágil na prática.
 
 **Ortogonalidade.** Diz respeito à capacidade de combinar os conceitos básicos da linguagem livremente, sem produzir efeitos anômalos — quanto menos exceções às regras gerais, mais ortogonal é a linguagem. Exemplos de baixa ortogonalidade:
 
@@ -273,10 +277,12 @@ Um programa é confiável se ele se comporta conforme sua especificação **em t
 * **Tipagem forte**: evita conversões implícitas perigosas. O código abaixo compila em C, mas não em C++ — porque C++ é mais fortemente tipada quanto a conversões implícitas de ponteiro:
 
 ```c
-void f(int *p) { }
+#include <stdlib.h>
 
-int a;
-f(a);   // compila em C (com aviso), é erro em C++
+void exemplo(void) {
+    int *p = malloc(sizeof(int));  // void* → int*: aceito em C, erro em C++
+    free(p);
+}
 ```
 
 * **Tratamento de exceções**: permite interceptar erros e, em certos casos, obriga o programador a tratá-los — em Java, exceções checadas (como as de acesso a banco de dados) precisam ser declaradas ou tratadas, algo que linguagens baseadas apenas em códigos de erro não conseguem impor.

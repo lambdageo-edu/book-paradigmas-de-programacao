@@ -1,6 +1,6 @@
 # Cap 2: Panorama da Linguagem Java
 
-Antes de mergulhar em sintaxe, vale aplicar à própria linguagem Java o checklist de perguntas que fechou o capítulo anterior: de onde ela veio, que problema resolveu, e como se posiciona hoje frente a outras linguagens.
+Antes de mergulhar em sintaxe, vale aplicar à própria linguagem Java o checklist de perguntas que fechou o capítulo anterior: de onde ela veio, que problema resolveu, e como se posiciona hoje frente a outras linguagens. As respostas ao checklist estão resumidas na seção "Paradigmas suportados".
 
 ## 🕰️ Breve histórico
 
@@ -16,10 +16,11 @@ Alguns marcos importantes da evolução da linguagem:
 | Java 5 | 2004 | **Generics**, enums, anotações, autoboxing, `for-each` |
 | Java 8 | 2014 | **Lambdas**, Stream API, `Optional`, métodos `default` em interfaces |
 | Java 9 | 2017 | Sistema de módulos (JPMS), início do ritmo de release semestral |
-| Java 11 | 2018 | LTS; `var` para inferência de tipo local; novo `HttpClient` |
+| Java 10 | 2018 | `var` para inferência de tipo local |
+| Java 11 | 2018 | LTS; novo `HttpClient`; execução direta de arquivos `.java` |
 | Java 17 | 2021 | LTS; **sealed classes**, pattern matching básico, *records* estabilizados |
 | **Java 21** | 2023 | **LTS**; **virtual threads** (Project Loom), pattern matching para `switch`, *record patterns* |
-| Java 25 | 2025 | LTS mais recente; *structured concurrency*, evolução de *scoped values* |
+| Java 25 | 2025 | LTS mais recente; *scoped values* finalizados (*structured concurrency* segue em *preview*) |
 
 Desde a versão 9, a Oracle adotou um **ritmo de release semestral** (março e setembro), com uma versão **LTS (Long-Term Support)** a cada dois anos — atualmente Java 17, 21 e 25. Este livro usa **Java 21 LTS** como base para todos os exemplos, por ser a versão LTS mais amplamente adotada em produção no momento em que este material foi escrito, já incorporando recursos modernos como *records*, `var`, *pattern matching* e *virtual threads*.
 
@@ -110,7 +111,7 @@ Olá, mundo!
 
 A sintaxe de Java foi fortemente influenciada por C/C++ — chaves para blocos, ponto e vírgula ao final de comandos, tipos declarados antes dos identificadores. As diferenças mais importantes em relação a C++:
 
-* Java **não é uma linguagem híbrida**: todo código roda sobre a JVM (não compila diretamente para código de máquina nativo, embora ferramentas como o GraalVM Native Image tornem isso possível hoje para casos específicos).
+* Java **não é uma linguagem híbrida** no sentido em que C++ é: C++ preserva o C e permite funções e variáveis soltas, fora de classes; em Java, o código fica dentro de classes e de outros tipos. Não confunda com a execução "híbrida" (*bytecode* + máquina virtual) do Capítulo 1.
 * Java tem **coletor de lixo (garbage collector)** integrado: não existe `free`/`delete` manual.
 * Um programa Java é, estruturalmente, uma **coleção de classes que se relacionam**, cada uma agrupando atributos e métodos — o que já antecipa o assunto central da Unidade 2.
 
@@ -122,6 +123,16 @@ Java foi projetada primariamente em torno do paradigma **orientado a objetos bas
 * **Programação funcional**, via lambdas, referências a métodos e a Stream API (Unidade 3, capítulo "Java Funcional").
 * **Programação reflexiva**, via a API de *reflection* (Unidade 3, capítulo "Reflexão").
 * **Programação concorrente**, historicamente via `Thread`/`ExecutorService`, e desde o Java 21 também via **virtual threads** (*Project Loom*) — threads leves gerenciadas pela JVM, que tornam código concorrente bloqueante barato de escalar sem reescrever tudo em estilo assíncrono.
+
+### Respondendo ao checklist do Capítulo 1
+
+| Pergunta | Java |
+|---|---|
+| Sistema de tipos | Estático e forte, com inferência local (`var`, desde o Java 10) |
+| Paradigma predominante | Orientado a objetos, incorporando programação genérica, funcional, reflexiva e concorrente |
+| *Class-based* ou *prototype-based*? | *Class-based* |
+| Casamento de padrões | Sim: `instanceof` (Java 16), `switch` e *record patterns* (Java 21) |
+| Funções são valores de primeira classe? | Métodos não são valores; lambdas e referências a métodos são objetos de interfaces funcionais, que podem ser passados, retornados e armazenados |
 
 ## ⚖️ Comparações com outras linguagens
 
