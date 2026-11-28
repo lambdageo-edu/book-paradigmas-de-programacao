@@ -657,6 +657,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#membros-de-instancia-membros-estaticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Membros de instância × membros estáticos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#records-como-objetos-de-estado-imutavel" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1195,6 +1206,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#membros-de-instancia-membros-estaticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Membros de instância × membros estáticos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#records-como-objetos-de-estado-imutavel" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1358,9 +1380,57 @@
 <a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="p">}</span>
 </code></pre></div>
 <p>Sem o <code>private</code>, qualquer código externo poderia fazer <code>conta.saldo = -1000</code>, contornando toda validação — é exatamente esse tipo de "estupidez acidental ou proposital" (para usar a expressão de <em>Java in a Nutshell</em>) que o encapsulamento existe para prevenir.</p>
+<p>Java tem quatro níveis de acesso, do mais restrito ao mais aberto:</p>
+<table>
+<thead>
+<tr>
+<th>Modificador</th>
+<th>Quem acessa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>private</code></td>
+<td>apenas a própria classe</td>
+</tr>
+<tr>
+<td>nenhum (<em>package-private</em>)</td>
+<td>classes do mesmo pacote</td>
+</tr>
+<tr>
+<td><code>protected</code></td>
+<td>classes do mesmo pacote e subclasses, mesmo em outros pacotes</td>
+</tr>
+<tr>
+<td><code>public</code></td>
+<td>qualquer classe</td>
+</tr>
+</tbody>
+</table>
+<h3 id="membros-de-instancia-membros-estaticos">Membros de instância × membros estáticos<a class="headerlink" href="#membros-de-instancia-membros-estaticos" title="Permanent link">&para;</a></h3>
+<p>Um <strong>atributo de instância</strong> tem uma cópia em cada objeto. Um atributo <strong>estático</strong> (<code>static</code>) pertence à classe: há uma única cópia, compartilhada por todas as instâncias. Do mesmo modo, um <strong>método de instância</strong> é chamado sobre um objeto e enxerga o estado dele (<code>this</code>), enquanto um <strong>método estático</strong> é chamado pela classe e não tem <code>this</code>. Já uma <strong>variável local</strong> é declarada dentro de um método e só existe durante a execução daquele bloco.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Matricula</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// um só, para a classe toda</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="p">;</span><span class="w">       </span><span class="c1">// um por objeto</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Matricula</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="n">total</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">proximo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total</span><span class="p">;</span><span class="w">        </span><span class="c1">// variável local do construtor</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">proximo</span><span class="p">;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getNumero</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">numero</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">      </span><span class="c1">// método de instância</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getTotal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">total</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// método estático</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">var</span><span class="w"> </span><span class="n">m1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Matricula</span><span class="p">();</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">var</span><span class="w"> </span><span class="n">m2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Matricula</span><span class="p">();</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">m1</span><span class="p">.</span><span class="na">getNumero</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m2</span><span class="p">.</span><span class="na">getNumero</span><span class="p">());</span><span class="w"> </span><span class="c1">// 1 2</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Matricula</span><span class="p">.</span><span class="na">getTotal</span><span class="p">());</span><span class="w">                  </span><span class="c1">// 2</span>
+</code></pre></div>
 <h3 id="records-como-objetos-de-estado-imutavel">Records como objetos de estado imutável<a class="headerlink" href="#records-como-objetos-de-estado-imutavel" title="Permanent link">&para;</a></h3>
 <p>Vale revisitar aqui o <em>record</em>, introduzido no Capítulo 3: para objetos cujo papel é apenas <strong>carregar um estado imutável</strong> (sem comportamento complexo nem necessidade de encapsulamento mutável), <em>record</em> é hoje a forma idiomática em Java — evita boilerplate sem abrir mão de encapsulamento (os campos de um <em>record</em> são sempre <code>private final</code>, com <em>getters</em> gerados automaticamente):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">record</span> <span class="nc">Coordenada</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">latitude</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">longitude</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">record</span> <span class="nc">Coordenada</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">latitude</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">longitude</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </code></pre></div>
 <p>Isso não substitui classes "tradicionais" — objetos com comportamento rico e estado mutável continuam sendo classes normais, como <code>ContaBancaria</code> acima. Mas para o caso comum de "só um pacote de dados imutável", <em>record</em> é hoje preferível a escrever uma classe manualmente.</p>
 <h2 id="atividade-pratica">🧪 Atividade prática<a class="headerlink" href="#atividade-pratica" title="Permanent link">&para;</a></h2>

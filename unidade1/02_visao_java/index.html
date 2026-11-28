@@ -1364,7 +1364,7 @@
 <p>Antes de mergulhar em sintaxe, vale aplicar à própria linguagem Java o checklist de perguntas que fechou o capítulo anterior: de onde ela veio, que problema resolveu, e como se posiciona hoje frente a outras linguagens. As respostas ao checklist estão resumidas na seção "Paradigmas suportados".</p>
 <h2 id="breve-historico">🕰️ Breve histórico<a class="headerlink" href="#breve-historico" title="Permanent link">&para;</a></h2>
 <p>Java nasceu em junho de 1991 como um projeto interno da Sun Microsystems chamado <strong>"Oak"</strong>, liderado por James Gosling. O objetivo original não era nem web nem servidores corporativos — era eletrônica de consumo: uma linguagem e uma máquina virtual que pudessem rodar de forma segura e portável em dispositivos variados, com sintaxe parecida com C, porém mais simples e mais uniforme (fortemente influenciada por C++, mas evitando várias de suas armadilhas).</p>
-<p>A primeira versão pública, <strong>Java 1.0</strong>, saiu em 1995 sob o lema <strong>"Write Once, Run Anywhere"</strong> — um programa Java compilado roda em qualquer plataforma que tenha uma JVM, sem recompilação. O modelo de segurança configurável (sandbox de <em>applets</em>) fez a linguagem decolar junto com a explosão da web nos anos 1990.</p>
+<p>A linguagem foi anunciada publicamente em 1995, e a versão <strong>Java 1.0</strong> foi lançada em janeiro de 1996, sob o lema <strong>"Write Once, Run Anywhere"</strong> — um programa Java compilado roda em qualquer plataforma que tenha uma JVM, sem recompilação. O modelo de segurança configurável (sandbox de <em>applets</em>) fez a linguagem decolar junto com a explosão da web nos anos 1990.</p>
 <p>Alguns marcos importantes da evolução da linguagem:</p>
 <table>
 <thead>
@@ -1408,7 +1408,7 @@
 <tr>
 <td>Java 17</td>
 <td>2021</td>
-<td>LTS; <strong>sealed classes</strong>, pattern matching básico, <em>records</em> estabilizados</td>
+<td>LTS; <strong>sealed classes</strong> (<em>records</em> e <em>pattern matching</em> de <code>instanceof</code> já eram definitivos desde o Java 16)</td>
 </tr>
 <tr>
 <td><strong>Java 21</strong></td>
@@ -1461,9 +1461,11 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">"https://get.sdkman.io"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">source</span><span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.sdkman/bin/sdkman-init.sh"</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>sdk<span class="w"> </span>install<span class="w"> </span>java<span class="w"> </span><span class="m">21</span>-tem<span class="w">       </span><span class="c1"># Eclipse Temurin, Java 21 LTS (resolve para o último patch)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>sdk<span class="w"> </span>use<span class="w"> </span>java<span class="w"> </span><span class="m">21</span>-tem
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>java<span class="w"> </span>-version
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>sdk<span class="w"> </span>list<span class="w"> </span>java<span class="w">                  </span><span class="c1"># mostra os identificadores disponíveis</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># escolha um Eclipse Temurin (sufixo -tem) da linha 21, trocando 21.x.y pela versão listada</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>sdk<span class="w"> </span>install<span class="w"> </span>java<span class="w"> </span><span class="m">21</span>.x.y-tem
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>sdk<span class="w"> </span>use<span class="w"> </span>java<span class="w"> </span><span class="m">21</span>.x.y-tem
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>java<span class="w"> </span>-version
 </code></pre></div>
 </div>
 <div class="tabbed-block">

@@ -939,18 +939,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#java-stream-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🌊 Java Stream API
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🌊 Java Stream API">
+    <nav class="md-nav" aria-label="λ Expressões Lambda, Interfaces Funcionais e Method References">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -966,6 +955,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java-stream-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌊 Java Stream API
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1103,18 +1103,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#java-stream-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🌊 Java Stream API
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🌊 Java Stream API">
+    <nav class="md-nav" aria-label="λ Expressões Lambda, Interfaces Funcionais e Method References">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1130,6 +1119,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java-stream-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌊 Java Stream API
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1196,7 +1196,7 @@
 
 <h1 id="cap-15-java-funcional">Cap 15: Java Funcional<a class="headerlink" href="#cap-15-java-funcional" title="Permanent link">&para;</a></h1>
 <h2 id="trazendo-ideias-funcionais-para-uma-linguagem-imperativa">🌉 Trazendo ideias funcionais para uma linguagem imperativa<a class="headerlink" href="#trazendo-ideias-funcionais-para-uma-linguagem-imperativa" title="Permanent link">&para;</a></h2>
-<p>Retomando o Capítulo 1: Java não foi projetada para ser uma linguagem híbrida, e seu núcleo continua sendo orientado a objetos baseado em classes. Mas, principalmente a partir do <strong>Java 8</strong> (2014), a linguagem incorporou de forma consistente conceitos centrais do paradigma funcional:</p>
+<p>Retomando o Capítulo 2: Java não foi projetada para ser uma linguagem híbrida, e seu núcleo continua sendo orientado a objetos baseado em classes. Mas, principalmente a partir do <strong>Java 8</strong> (2014), a linguagem incorporou de forma consistente conceitos centrais do paradigma funcional:</p>
 <ul>
 <li><strong>Dados imutáveis</strong> e isolamento de efeitos colaterais — não no sentido estrito de proibi-los (Java continua permitindo mutação livremente), mas de oferecer ferramentas para <strong>isolar</strong> onde eles acontecem.</li>
 <li><strong>Funções como valores de primeira classe</strong> — o que possibilita funções de alta ordem como <code>map</code>, <code>filter</code> e <code>reduce</code>, no mesmo sentido amplo discutido no Capítulo 1.</li>
@@ -1262,54 +1262,54 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">list</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">x</span><span class="p">));</span><span class="w"> </span><span class="c1">// lambda</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">list</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span><span class="w">        </span><span class="c1">// method reference — mesmo efeito, mais direto</span>
 </code></pre></div>
+<h3 id="strategy-com-lambdas">Strategy com lambdas<a class="headerlink" href="#strategy-com-lambdas" title="Permanent link">&para;</a></h3>
+<p>O padrão <strong>Strategy</strong> (Capítulo 9) encapsula algoritmos intercambiáveis atrás de uma interface comum. Quando a estratégia é um único método, uma interface funcional e uma lambda bastam, sem criar uma classe para cada variação:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">precoFinal</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">valor</span><span class="p">,</span><span class="w"> </span><span class="n">DoubleUnaryOperator</span><span class="w"> </span><span class="n">desconto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">desconto</span><span class="p">.</span><span class="na">applyAsDouble</span><span class="p">(</span><span class="n">valor</span><span class="p">);</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">DoubleUnaryOperator</span><span class="w"> </span><span class="n">semDesconto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">DoubleUnaryOperator</span><span class="w"> </span><span class="n">estudante</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">precoFinal</span><span class="p">(</span><span class="mf">40.0</span><span class="p">,</span><span class="w"> </span><span class="n">semDesconto</span><span class="p">));</span><span class="w"> </span><span class="c1">// 40.0</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">precoFinal</span><span class="p">(</span><span class="mf">40.0</span><span class="p">,</span><span class="w"> </span><span class="n">estudante</span><span class="p">));</span><span class="w">   </span><span class="c1">// 20.0</span>
+</code></pre></div>
+<p>O próprio <code>sort</code> faz isso: o <code>Comparator</code> recebido é a estratégia de ordenação.</p>
 <h2 id="java-stream-api">🌊 Java Stream API<a class="headerlink" href="#java-stream-api" title="Permanent link">&para;</a></h2>
 <p>A Stream API, também introduzida no Java 8, aplica esse repertório funcional ao processamento de <strong>coleções</strong> — reencontrando, de forma mais explícita, a comparação entre estilo imperativo e declarativo do Capítulo 1:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nomes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Ana"</span><span class="p">,</span><span class="w"> </span><span class="s">"Bruno"</span><span class="p">,</span><span class="w"> </span><span class="s">"Carla"</span><span class="p">,</span><span class="w"> </span><span class="s">"Davi"</span><span class="p">,</span><span class="w"> </span><span class="s">"Elisa"</span><span class="p">);</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">// imperativo</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nomes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nome</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="n">resultado</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">nome</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">());</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">}</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">// declarativo, com Stream</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">resultado2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nomes</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">nome</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">nome</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">toUpperCase</span><span class="p">)</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="p">.</span><span class="na">toList</span><span class="p">();</span><span class="w"> </span><span class="c1">// Java 16+; antes disso, era .collect(Collectors.toList())</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nomes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Ana"</span><span class="p">,</span><span class="w"> </span><span class="s">"Bruno"</span><span class="p">,</span><span class="w"> </span><span class="s">"Carla"</span><span class="p">,</span><span class="w"> </span><span class="s">"Davi"</span><span class="p">,</span><span class="w"> </span><span class="s">"Elisa"</span><span class="p">);</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">// imperativo</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">nomes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nome</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="n">resultado</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">nome</span><span class="p">.</span><span class="na">toUpperCase</span><span class="p">());</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1">// declarativo, com Stream</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">resultado2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nomes</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">nome</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">nome</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">toUpperCase</span><span class="p">)</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="p">.</span><span class="na">toList</span><span class="p">();</span><span class="w"> </span><span class="c1">// Java 16+; antes disso, era .collect(Collectors.toList())</span>
 </code></pre></div>
 <p>Uma Stream é uma sequência de operações encadeadas, dividida em duas categorias:</p>
 <ul>
 <li><strong>Intermediárias</strong> (<code>filter</code>, <code>map</code>, <code>sorted</code>, <code>distinct</code>...) — retornam outra Stream, permitindo encadeamento; são <strong>preguiçosas</strong> (<em>lazy</em>): nada é executado até que uma operação terminal seja chamada.</li>
 <li><strong>Terminais</strong> (<code>collect</code>, <code>toList</code>, <code>forEach</code>, <code>reduce</code>, <code>count</code>, <code>sum</code>...) — disparam de fato o processamento e produzem um resultado (ou efeito).</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">double</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mf">8.5</span><span class="p">,</span><span class="w"> </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">9.2</span><span class="p">,</span><span class="w"> </span><span class="mf">6.5</span><span class="p">).</span><span class="na">stream</span><span class="p">()</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="p">.</span><span class="na">mapToDouble</span><span class="p">(</span><span class="n">Double</span><span class="p">::</span><span class="n">doubleValue</span><span class="p">)</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="p">.</span><span class="na">average</span><span class="p">()</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p">.</span><span class="na">orElse</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">Map</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">aprovados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Ana:8"</span><span class="p">,</span><span class="w"> </span><span class="s">"Bruno:5"</span><span class="p">,</span><span class="w"> </span><span class="s">"Carla:9"</span><span class="p">).</span><span class="na">stream</span><span class="p">()</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">partitioningBy</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">":"</span><span class="p">)</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">7</span><span class="p">));</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">double</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mf">8.5</span><span class="p">,</span><span class="w"> </span><span class="mf">7.0</span><span class="p">,</span><span class="w"> </span><span class="mf">9.2</span><span class="p">,</span><span class="w"> </span><span class="mf">6.5</span><span class="p">).</span><span class="na">stream</span><span class="p">()</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="p">.</span><span class="na">mapToDouble</span><span class="p">(</span><span class="n">Double</span><span class="p">::</span><span class="n">doubleValue</span><span class="p">)</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="p">.</span><span class="na">average</span><span class="p">()</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="p">.</span><span class="na">orElse</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">Map</span><span class="o">&lt;</span><span class="n">Boolean</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">aprovados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">"Ana:8"</span><span class="p">,</span><span class="w"> </span><span class="s">"Bruno:5"</span><span class="p">,</span><span class="w"> </span><span class="s">"Carla:9"</span><span class="p">).</span><span class="na">stream</span><span class="p">()</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">partitioningBy</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">":"</span><span class="p">)</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">7</span><span class="p">));</span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Stream não é sempre a melhor escolha</p>
 <p>Streams brilham em pipelines de transformação — filtrar, mapear, agregar. Para um laço simples com efeitos colaterais óbvios (por exemplo, atualizar um contador externo a cada iteração), um <code>for</code> tradicional continua sendo mais claro e, geralmente, tão eficiente quanto. Prefira Streams quando elas deixam a <strong>intenção</strong> mais legível — não como substituição automática de todo <code>for</code>.</p>
 </div>
-<h3 id="strategy-com-lambdas">Strategy com lambdas<a class="headerlink" href="#strategy-com-lambdas" title="Permanent link">&para;</a></h3>
-<p>O padrão <strong>Strategy</strong> (Capítulo 9) encapsula algoritmos intercambiáveis atrás de uma interface comum. Quando a estratégia é um único método, uma interface funcional e uma lambda bastam, sem criar uma classe para cada variação:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">static</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">precoFinal</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">valor</span><span class="p">,</span><span class="w"> </span><span class="n">DoubleUnaryOperator</span><span class="w"> </span><span class="n">desconto</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">desconto</span><span class="p">.</span><span class="na">applyAsDouble</span><span class="p">(</span><span class="n">valor</span><span class="p">);</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">DoubleUnaryOperator</span><span class="w"> </span><span class="n">semDesconto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">DoubleUnaryOperator</span><span class="w"> </span><span class="n">estudante</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">precoFinal</span><span class="p">(</span><span class="mf">40.0</span><span class="p">,</span><span class="w"> </span><span class="n">semDesconto</span><span class="p">));</span><span class="w"> </span><span class="c1">// 40.0</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">precoFinal</span><span class="p">(</span><span class="mf">40.0</span><span class="p">,</span><span class="w"> </span><span class="n">estudante</span><span class="p">));</span><span class="w">   </span><span class="c1">// 20.0</span>
-</code></pre></div>
-<p>O próprio <code>sort</code> faz isso: o <code>Comparator</code> recebido é a estratégia de ordenação.</p>
 <h2 id="optional-modelando-pode-nao-haver-valor">❓ Optional: modelando "pode não haver valor"<a class="headerlink" href="#optional-modelando-pode-nao-haver-valor" title="Permanent link">&para;</a></h2>
 <p>Um problema recorrente em Java — e em muitas linguagens com referências nulas — é <code>NullPointerException</code>, já citado no Capítulo 1 como um dos fatores que reduzem confiabilidade. Desde o Java 8, <code>Optional&lt;T&gt;</code> oferece um jeito explícito de modelar "esse método pode não ter um resultado", sem depender de <code>null</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">public</span><span class="w"> </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Usuario</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">buscarPorId</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1356,7 +1356,7 @@
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">Falha</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">"erro: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="na">motivo</span><span class="p">();</span>
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">};</span>
 </code></pre></div>
-<p>Isso não substitui exceções — continua sendo a ferramenta certa para condições verdadeiramente excepcionais e não-locais — mas ilustra bem como os recursos vistos ao longo deste livro (interfaces <code>sealed</code>, <em>pattern matching</em>, generics) se combinam para trazer, de forma idiomática, uma técnica típica de linguagens funcionais para dentro de Java moderno.</p>
+<p>Isso não substitui as exceções, que continuam sendo a ferramenta certa para condições verdadeiramente excepcionais e não locais. O exemplo, porém, ilustra bem como os recursos vistos ao longo deste livro (interfaces <code>sealed</code>, <em>pattern matching</em>, generics) se combinam para trazer, de forma idiomática, uma técnica típica de linguagens funcionais para dentro de Java moderno.</p>
 <h2 id="atividades">📝 Atividades<a class="headerlink" href="#atividades" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Reescreva, usando Stream, um laço <code>for</code> que soma apenas os números pares de uma <code>List&lt;Integer&gt;</code>.</li>

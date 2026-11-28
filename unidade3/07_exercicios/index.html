@@ -1234,7 +1234,7 @@ D) É baseado na arquitetura de Harvard.
 E) Descreve uma sequência de passos que mudam o estado de um programa.</p>
 <details class="success">
 <summary>Resposta</summary>
-<p><strong>E</strong>. O paradigma imperativo é definido justamente pela mudança de estado através de comandos sequenciais (Capítulo 4) — e está historicamente ligado à arquitetura de Von Neumann (memória e programa compartilhando o mesmo espaço de endereçamento), não à de Harvard.</p>
+<p><strong>E</strong>. O paradigma imperativo é definido justamente pela mudança de estado através de comandos sequenciais (Capítulo 4) — e está historicamente ligado à arquitetura de Von Neumann (dados e instruções compartilhando a mesma memória), não à de Harvard.</p>
 </details>
 </div>
 <div class="admonition question">
@@ -1289,13 +1289,9 @@ E) C#.</p>
 <p><strong>C</strong>. Java, C, Pascal e C# são todas estaticamente tipadas (Capítulo 3); Python é a única dinamicamente tipada da lista.</p>
 </details>
 </div>
-<div class="admonition question">
-<p class="admonition-title">POSCOMP 2018 — Questão 28</p>
-<p>(Questão original envolve um diagrama de classes UML com as classes <code>Artefato</code>, <code>Veículo</code>, <code>Roda</code>, <code>Pneu</code> e <code>Aerofólio</code>, relacionadas por generalização e composição/agregação.) Assinale a alternativa correta sobre qual relacionamento do diagrama se conecta diretamente a polimorfismo.</p>
-<details class="tip">
-<summary>Como abordar</summary>
-<p>Esse tipo de questão exige olhar qual relação do diagrama é uma <strong>generalização</strong> ("é um") — só generalização (herança) habilita polimorfismo de inclusão (Capítulo 7); associações e composições ("tem um") não. Ao revisar provas completas do POSCOMP com diagramas, aplique esse filtro primeiro: identifique a seta de generalização antes de avaliar as alternativas.</p>
-</details>
+<div class="admonition tip">
+<p class="admonition-title">Como abordar questões com diagramas UML</p>
+<p>Algumas questões pedem para relacionar um diagrama de classes com polimorfismo. Procure primeiro a <strong>generalização</strong> ("é um"): é ela que habilita o polimorfismo de inclusão por herança (Capítulo 7). Associações e composições ("tem um") não criam relação de subtipo.</p>
 </div>
 <h2 id="exercicio-de-sintese">📝 Exercício de síntese<a class="headerlink" href="#exercicio-de-sintese" title="Permanent link">&para;</a></h2>
 <p>Como fechamento do livro, escolha um problema do seu interesse (um pequeno sistema de agenda, biblioteca, loja, ou similar) e modele-o do zero, aplicando deliberadamente pelo menos:</p>
