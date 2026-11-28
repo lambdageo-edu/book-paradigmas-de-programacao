@@ -108,7 +108,7 @@ Abstrai-se de **como** o computador executa a tarefa, especificando apenas **o q
 * **Lógico**: uma coleção de fatos e regras sobre a qual se fazem perguntas — Prolog, Mercury.
 
 !!! note "Por que só estes dois grandes grupos?"
-    Existem outras classificações mais finas (paradigma orientado a eventos, reativo, concorrente...), mas para os fins comparativos deste curso, a divisão imperativo × declarativo — com objetos de um lado e funções/lógica do outro — é suficiente e é a que aparece na maior parte da literatura clássica (Watt, Sebesta, Van Roy).
+    Existem classificações bem mais finas — Peter Van Roy, por exemplo, distingue dezenas de paradigmas, e também se fala em programação orientada a eventos, reativa ou concorrente. Para os fins comparativos deste curso, a divisão imperativo × declarativo — com objetos de um lado e funções/lógica do outro — é suficiente.
 
 ### Programação Estruturada, em mais detalhe
 

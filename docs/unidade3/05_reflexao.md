@@ -33,6 +33,12 @@ class Discente:
         self.nome = nome
     def getNome(self):
         return self.nome
+
+class Tecnico:
+    def __init__(self, nome):
+        self.nome = nome
+    def getNome(self):
+        return self.nome
 ```
 
 Como Python não checa tipos em tempo de compilação, uma função pode aplicar `getNome()` a qualquer objeto da lista, sem exigir que compartilhem uma superclasse comum — o único pré-requisito é que o método exista, verificado só em tempo de execução:

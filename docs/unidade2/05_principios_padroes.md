@@ -34,7 +34,7 @@ Os padrões GoF se dividem em três categorias:
 Tratam da criação de objetos, abstraindo o processo de instanciação.
 
 * **Factory Method**: delega a criação de objetos a subclasses, em vez de usar `new` diretamente — útil quando a classe exata a instanciar só é conhecida em tempo de execução.
-* **Singleton**: garante que uma classe tenha uma única instância, com um ponto de acesso global — usado (às vezes em excesso) para recursos compartilhados como conexões de configuração.
+* **Singleton**: garante que uma classe tenha uma única instância, com um ponto de acesso global — usado (às vezes em excesso) para recursos compartilhados, como o objeto de configuração de uma aplicação.
 * **Builder**: separa a construção de um objeto complexo (com muitos parâmetros opcionais) de sua representação final — em Java, é comum ver isso implementado manualmente ou com bibliotecas como Lombok (`@Builder`).
 
 ### Padrões Estruturais

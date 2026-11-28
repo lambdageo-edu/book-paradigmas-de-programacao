@@ -6,7 +6,7 @@ Antes de mergulhar em sintaxe, vale aplicar à própria linguagem Java o checkli
 
 Java nasceu em junho de 1991 como um projeto interno da Sun Microsystems chamado **"Oak"**, liderado por James Gosling. O objetivo original não era nem web nem servidores corporativos — era eletrônica de consumo: uma linguagem e uma máquina virtual que pudessem rodar de forma segura e portável em dispositivos variados, com sintaxe parecida com C, porém mais simples e mais uniforme (fortemente influenciada por C++, mas evitando várias de suas armadilhas).
 
-A primeira versão pública, **Java 1.0**, saiu em 1995 sob o lema **"Write Once, Run Anywhere"** — um programa Java compilado roda em qualquer plataforma que tenha uma JVM, sem recompilação. O modelo de segurança configurável (sandbox de *applets*) fez a linguagem decolar junto com a explosão da web nos anos 1990.
+A linguagem foi anunciada publicamente em 1995, e a versão **Java 1.0** foi lançada em janeiro de 1996, sob o lema **"Write Once, Run Anywhere"** — um programa Java compilado roda em qualquer plataforma que tenha uma JVM, sem recompilação. O modelo de segurança configurável (sandbox de *applets*) fez a linguagem decolar junto com a explosão da web nos anos 1990.
 
 Alguns marcos importantes da evolução da linguagem:
 
@@ -18,7 +18,7 @@ Alguns marcos importantes da evolução da linguagem:
 | Java 9 | 2017 | Sistema de módulos (JPMS), início do ritmo de release semestral |
 | Java 10 | 2018 | `var` para inferência de tipo local |
 | Java 11 | 2018 | LTS; novo `HttpClient`; execução direta de arquivos `.java` |
-| Java 17 | 2021 | LTS; **sealed classes**, pattern matching básico, *records* estabilizados |
+| Java 17 | 2021 | LTS; **sealed classes** (*records* e *pattern matching* de `instanceof` já eram definitivos desde o Java 16) |
 | **Java 21** | 2023 | **LTS**; **virtual threads** (Project Loom), pattern matching para `switch`, *record patterns* |
 | Java 25 | 2025 | LTS mais recente; *scoped values* finalizados (*structured concurrency* segue em *preview*) |
 
@@ -63,8 +63,10 @@ A forma mais prática de instalar e gerenciar versões do JDK hoje é por um **g
     curl -s "https://get.sdkman.io" | bash
     source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-    sdk install java 21-tem       # Eclipse Temurin, Java 21 LTS (resolve para o último patch)
-    sdk use java 21-tem
+    sdk list java                  # mostra os identificadores disponíveis
+    # escolha um Eclipse Temurin (sufixo -tem) da linha 21, trocando 21.x.y pela versão listada
+    sdk install java 21.x.y-tem
+    sdk use java 21.x.y-tem
     java -version
     ```
 

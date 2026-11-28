@@ -79,7 +79,7 @@ Para capturar o clique de um botão, é preciso um receptor que implemente a int
 class Finaliza implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.exit(1);
+        System.exit(0);
     }
 }
 ```
@@ -95,7 +95,7 @@ Em vez de uma classe nomeada, uma **classe anônima** evita o boilerplate de dec
 btFechar.addActionListener(new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent ev) {
-        System.exit(1);
+        System.exit(0);
     }
 });
 ```
@@ -103,7 +103,7 @@ btFechar.addActionListener(new ActionListener() {
 E como `ActionListener` tem um único método abstrato — é, na definição do Capítulo 8, uma **interface funcional** — desde o Java 8 é possível usar diretamente uma expressão lambda, muito mais concisa:
 
 ```java
-btFechar.addActionListener(e -> System.exit(1));
+btFechar.addActionListener(e -> System.exit(0));
 ```
 
 ### Organizando em uma classe própria
@@ -124,7 +124,7 @@ public class PrimeiroSwing extends JFrame {
         add(bt);
 
         JButton btFechar = new JButton("Diga Adeus");
-        btFechar.addActionListener(e -> System.exit(1));
+        btFechar.addActionListener(e -> System.exit(0));
         add(btFechar);
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -171,6 +171,8 @@ var tabela = new JTable(modelo);
 ```
 
 Para dados vindos de uma fonte dinâmica — como o banco de dados do capítulo anterior — o caminho natural é escrever seu **próprio** `TableModel`, estendendo `AbstractTableModel` e delegando o carregamento a um DAO (padrão que veremos com mais detalhe no próximo capítulo, quando ele se junta a reflexão para eliminar boilerplate repetitivo).
+
+Por padrão, as células de um `AbstractTableModel` **não são editáveis**. Para permitir a edição, sobrescreva `isCellEditable`, devolvendo `true`, e `setValueAt`, que guarda o novo valor e chama `fireTableCellUpdated` para avisar a `JTable`.
 
 ## 🧪 Laboratório
 

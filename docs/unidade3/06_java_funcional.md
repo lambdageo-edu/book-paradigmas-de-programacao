@@ -2,7 +2,7 @@
 
 ## 🌉 Trazendo ideias funcionais para uma linguagem imperativa
 
-Retomando o Capítulo 1: Java não foi projetada para ser uma linguagem híbrida, e seu núcleo continua sendo orientado a objetos baseado em classes. Mas, principalmente a partir do **Java 8** (2014), a linguagem incorporou de forma consistente conceitos centrais do paradigma funcional:
+Retomando o Capítulo 2: Java não foi projetada para ser uma linguagem híbrida, e seu núcleo continua sendo orientado a objetos baseado em classes. Mas, principalmente a partir do **Java 8** (2014), a linguagem incorporou de forma consistente conceitos centrais do paradigma funcional:
 
 * **Dados imutáveis** e isolamento de efeitos colaterais — não no sentido estrito de proibi-los (Java continua permitindo mutação livremente), mas de oferecer ferramentas para **isolar** onde eles acontecem.
 * **Funções como valores de primeira classe** — o que possibilita funções de alta ordem como `map`, `filter` e `reduce`, no mesmo sentido amplo discutido no Capítulo 1.
@@ -52,6 +52,26 @@ list.forEach(x -> System.out.println(x)); // lambda
 list.forEach(System.out::println);        // method reference — mesmo efeito, mais direto
 ```
 
+### Strategy com lambdas
+
+O padrão **Strategy** (Capítulo 9) encapsula algoritmos intercambiáveis atrás de uma interface comum. Quando a estratégia é um único método, uma interface funcional e uma lambda bastam, sem criar uma classe para cada variação:
+
+```java
+static double precoFinal(double valor, DoubleUnaryOperator desconto) {
+    return desconto.applyAsDouble(valor);
+}
+```
+
+```java
+DoubleUnaryOperator semDesconto = v -> v;
+DoubleUnaryOperator estudante = v -> v * 0.5;
+
+System.out.println(precoFinal(40.0, semDesconto)); // 40.0
+System.out.println(precoFinal(40.0, estudante));   // 20.0
+```
+
+O próprio `sort` faz isso: o `Comparator` recebido é a estratégia de ordenação.
+
 ## 🌊 Java Stream API
 
 A Stream API, também introduzida no Java 8, aplica esse repertório funcional ao processamento de **coleções** — reencontrando, de forma mais explícita, a comparação entre estilo imperativo e declarativo do Capítulo 1:
@@ -91,26 +111,6 @@ Map<Boolean, List<String>> aprovados = List.of("Ana:8", "Bruno:5", "Carla:9").st
 
 !!! tip "Stream não é sempre a melhor escolha"
     Streams brilham em pipelines de transformação — filtrar, mapear, agregar. Para um laço simples com efeitos colaterais óbvios (por exemplo, atualizar um contador externo a cada iteração), um `for` tradicional continua sendo mais claro e, geralmente, tão eficiente quanto. Prefira Streams quando elas deixam a **intenção** mais legível — não como substituição automática de todo `for`.
-
-### Strategy com lambdas
-
-O padrão **Strategy** (Capítulo 9) encapsula algoritmos intercambiáveis atrás de uma interface comum. Quando a estratégia é um único método, uma interface funcional e uma lambda bastam, sem criar uma classe para cada variação:
-
-```java
-static double precoFinal(double valor, DoubleUnaryOperator desconto) {
-    return desconto.applyAsDouble(valor);
-}
-```
-
-```java
-DoubleUnaryOperator semDesconto = v -> v;
-DoubleUnaryOperator estudante = v -> v * 0.5;
-
-System.out.println(precoFinal(40.0, semDesconto)); // 40.0
-System.out.println(precoFinal(40.0, estudante));   // 20.0
-```
-
-O próprio `sort` faz isso: o `Comparator` recebido é a estratégia de ordenação.
 
 ## ❓ Optional: modelando "pode não haver valor"
 
@@ -171,7 +171,7 @@ String mensagem = switch (r) {
 };
 ```
 
-Isso não substitui exceções — continua sendo a ferramenta certa para condições verdadeiramente excepcionais e não-locais — mas ilustra bem como os recursos vistos ao longo deste livro (interfaces `sealed`, *pattern matching*, generics) se combinam para trazer, de forma idiomática, uma técnica típica de linguagens funcionais para dentro de Java moderno.
+Isso não substitui as exceções, que continuam sendo a ferramenta certa para condições verdadeiramente excepcionais e não locais. O exemplo, porém, ilustra bem como os recursos vistos ao longo deste livro (interfaces `sealed`, *pattern matching*, generics) se combinam para trazer, de forma idiomática, uma técnica típica de linguagens funcionais para dentro de Java moderno.
 
 ## 📝 Atividades
 

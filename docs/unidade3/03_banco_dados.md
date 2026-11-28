@@ -4,7 +4,7 @@
 
 Armazenar e recuperar dados de forma eficiente é, por si só, um desafio de engenharia considerável — e a maioria das aplicações não deveria reinventá-lo. **Persistência** é um serviço oferecido por diversos sistemas de banco de dados (Oracle, PostgreSQL, MySQL, SQLite...), e o Java provê uma API padronizada de acesso a esses sistemas: o **JDBC (Java Database Connectivity)**.
 
-O JDBC é definido inteiramente como um conjunto de **interfaces** (`Connection`, `Statement`, `PreparedStatement`, `ResultSet`) — cada fabricante de banco de dados fornece um **driver** que implementa essas interfaces para o seu produto específico. É um exemplo direto e concreto de por que interfaces importam tanto (Capítulo 8): o mesmo código Java, escrito contra as interfaces do JDBC, funciona com PostgreSQL, MySQL ou SQLite — bastando trocar o driver e a *connection string*.
+O JDBC é organizado em torno de **interfaces** (`Connection`, `Statement`, `PreparedStatement`, `ResultSet`), com poucas classes de apoio, como `DriverManager` e `SQLException` — cada fabricante de banco de dados fornece um **driver** que implementa essas interfaces para o seu produto específico. É um exemplo direto e concreto de por que interfaces importam tanto (Capítulo 8): o mesmo código Java, escrito contra as interfaces do JDBC, funciona com PostgreSQL, MySQL ou SQLite — bastando trocar o driver e a *connection string*.
 
 ## 🚀 Passo a passo
 

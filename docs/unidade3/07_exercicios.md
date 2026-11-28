@@ -67,7 +67,7 @@ As provas completas de anos anteriores estão disponíveis no [site oficial da S
     E) Descreve uma sequência de passos que mudam o estado de um programa.
 
     ??? success "Resposta"
-        **E**. O paradigma imperativo é definido justamente pela mudança de estado através de comandos sequenciais (Capítulo 4) — e está historicamente ligado à arquitetura de Von Neumann (memória e programa compartilhando o mesmo espaço de endereçamento), não à de Harvard.
+        **E**. O paradigma imperativo é definido justamente pela mudança de estado através de comandos sequenciais (Capítulo 4) — e está historicamente ligado à arquitetura de Von Neumann (dados e instruções compartilhando a mesma memória), não à de Harvard.
 
 !!! question "POSCOMP 2018 — Questão 38"
     Sobre tipos de dados, é correto afirmar que:
@@ -117,11 +117,8 @@ As provas completas de anos anteriores estão disponíveis no [site oficial da S
     ??? success "Resposta"
         **C**. Java, C, Pascal e C# são todas estaticamente tipadas (Capítulo 3); Python é a única dinamicamente tipada da lista.
 
-!!! question "POSCOMP 2018 — Questão 28"
-    (Questão original envolve um diagrama de classes UML com as classes `Artefato`, `Veículo`, `Roda`, `Pneu` e `Aerofólio`, relacionadas por generalização e composição/agregação.) Assinale a alternativa correta sobre qual relacionamento do diagrama se conecta diretamente a polimorfismo.
-
-    ??? tip "Como abordar"
-        Esse tipo de questão exige olhar qual relação do diagrama é uma **generalização** ("é um") — só generalização (herança) habilita polimorfismo de inclusão (Capítulo 7); associações e composições ("tem um") não. Ao revisar provas completas do POSCOMP com diagramas, aplique esse filtro primeiro: identifique a seta de generalização antes de avaliar as alternativas.
+!!! tip "Como abordar questões com diagramas UML"
+    Algumas questões pedem para relacionar um diagrama de classes com polimorfismo. Procure primeiro a **generalização** ("é um"): é ela que habilita o polimorfismo de inclusão por herança (Capítulo 7). Associações e composições ("tem um") não criam relação de subtipo.
 
 ## 📝 Exercício de síntese
 

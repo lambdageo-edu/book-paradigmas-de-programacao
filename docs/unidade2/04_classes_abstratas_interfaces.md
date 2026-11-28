@@ -85,7 +85,10 @@ Nenhum *cast* é necessário para tratar `Circle` e `Rectangle` como `Shape` —
 Vale conectar isso com o que vimos no Capítulo 3. Se as formas geométricas forem, por natureza, **imutáveis** (o caso comum), uma alternativa mais moderna a esse desenho com classe abstrata é modelar `Shape` como uma **interface `sealed`**, com cada forma concreta como um `record`:
 
 ```java
-public sealed interface Shape permits Circle, Rectangle {}
+public sealed interface Shape permits Circle, Rectangle {
+    double area();
+    double circumference();
+}
 
 public record Circle(double r) implements Shape {
     public double area() { return Math.PI * r * r; }
