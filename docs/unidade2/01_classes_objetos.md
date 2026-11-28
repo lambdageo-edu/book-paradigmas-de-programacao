@@ -125,6 +125,42 @@ public class ContaBancaria {
 
 Sem o `private`, qualquer código externo poderia fazer `conta.saldo = -1000`, contornando toda validação — é exatamente esse tipo de "estupidez acidental ou proposital" (para usar a expressão de *Java in a Nutshell*) que o encapsulamento existe para prevenir.
 
+Java tem quatro níveis de acesso, do mais restrito ao mais aberto:
+
+| Modificador | Quem acessa |
+|---|---|
+| `private` | apenas a própria classe |
+| nenhum (*package-private*) | classes do mesmo pacote |
+| `protected` | classes do mesmo pacote e subclasses, mesmo em outros pacotes |
+| `public` | qualquer classe |
+
+### Membros de instância × membros estáticos
+
+Um **atributo de instância** tem uma cópia em cada objeto. Um atributo **estático** (`static`) pertence à classe: há uma única cópia, compartilhada por todas as instâncias. Do mesmo modo, um **método de instância** é chamado sobre um objeto e enxerga o estado dele (`this`), enquanto um **método estático** é chamado pela classe e não tem `this`. Já uma **variável local** é declarada dentro de um método e só existe durante a execução daquele bloco.
+
+```java
+public class Matricula {
+    private static int total = 0;   // um só, para a classe toda
+    private final int numero;       // um por objeto
+
+    public Matricula() {
+        total++;
+        int proximo = total;        // variável local do construtor
+        this.numero = proximo;
+    }
+
+    public int getNumero() { return numero; }      // método de instância
+    public static int getTotal() { return total; } // método estático
+}
+```
+
+```java
+var m1 = new Matricula();
+var m2 = new Matricula();
+System.out.println(m1.getNumero() + " " + m2.getNumero()); // 1 2
+System.out.println(Matricula.getTotal());                  // 2
+```
+
 ### Records como objetos de estado imutável
 
 Vale revisitar aqui o *record*, introduzido no Capítulo 3: para objetos cujo papel é apenas **carregar um estado imutável** (sem comportamento complexo nem necessidade de encapsulamento mutável), *record* é hoje a forma idiomática em Java — evita boilerplate sem abrir mão de encapsulamento (os campos de um *record* são sempre `private final`, com *getters* gerados automaticamente):

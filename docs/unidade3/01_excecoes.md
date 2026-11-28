@@ -33,8 +33,8 @@ public void meuMetodo() throws Excecao1, Excecao2 { /* ... */ }
 Exemplos do próprio JDK:
 
 ```java
-public static int parseInt(String s) throws NumberFormatException
-public final String readLine() throws IOException
+public static int parseInt(String s) throws NumberFormatException // em Integer
+public String readLine() throws IOException                       // em BufferedReader
 ```
 
 ## 🚀 Lançando uma exceção (`throw`)
@@ -148,7 +148,7 @@ class Conta {
 }
 
 class Banco {
-    private List<Conta> contas;
+    private final List<Conta> contas = new ArrayList<>();
 
     private Conta procurar(String numero) throws ContaNaoEncontradaException {
         return contas.stream()

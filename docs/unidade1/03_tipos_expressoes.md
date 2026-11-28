@@ -17,7 +17,7 @@ A checagem de tipos garante que uma operação só é aplicada a operandos compa
 
 * **Em tempo de compilação (estática)**: toda variável e parâmetro tem um tipo conhecido antes da execução — Pascal, C, C++, Java, Kotlin, Swift, Haskell.
 * **Em tempo de execução (dinâmica)**: apenas os *valores* carregam um tipo; variáveis podem assumir valores de tipos diferentes ao longo da execução — Python, Ruby, Lua, JavaScript.
-* **Em ambos**: linguagens estaticamente tipadas quase sempre também fazem alguma checagem em tempo de execução (por exemplo, um `ClassCastException` em Java, ou divisão por zero).
+* **Em ambos**: linguagens estaticamente tipadas quase sempre também fazem alguma checagem em tempo de execução (em Java, um *cast* de referência é verificado durante a execução e pode lançar `ClassCastException`).
 
 Java é estaticamente tipada. O código abaixo nem compila, porque `max` espera dois `int` e recebemos `double`:
 
@@ -49,6 +49,26 @@ double correta = 10.0 / 3; // 3.333... — agora a divisão já é em ponto flut
 ```
 
 Kotlin, por comparação, é mais estritamente tipada nesse ponto: `val x: Double = 10 / 5` é erro de compilação, porque `10 / 5` já é um `Int` e Kotlin não converte implicitamente `Int` para `Double` na atribuição.
+
+### Coerção e *cast*
+
+As duas operações convertem um valor de um tipo para outro. A diferença está em quem pede: a **coerção** é implícita, feita pelo compilador (como o `int` que vira `double` acima), enquanto o ***cast*** é explícito, escrito pelo programador com o tipo entre parênteses.
+
+```java
+double nota = 7.9;
+int truncada = (int) nota;      // 7 — descarta a parte fracionária, não arredonda
+
+int a = 7, b = 2;
+double razao = (double) a / b;  // 3.5 — a é convertido antes da divisão
+```
+
+O *cast* é obrigatório quando a conversão pode perder informação (de `double` para `int`, por exemplo). Entre referências, ele afirma que o objeto é de um tipo mais específico, e essa afirmação é conferida na execução:
+
+```java
+Object o = "texto";
+String s = (String) o;    // ok: o objeto é de fato uma String
+Integer n = (Integer) o;  // compila, mas lança ClassCastException
+```
 
 ### Vantagens e limites da tipagem estática
 

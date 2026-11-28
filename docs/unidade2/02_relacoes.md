@@ -123,6 +123,8 @@ public class PlaneCircle extends Circle {
 
 Modele um sistema com quatro classes principais — `SocialNetwork`, `User`, `Post` e `Comment` — usando as relações vistas neste capítulo: `SocialNetwork` é composta por uma coleção de `User`; cada `User` tem uma coleção de `Post`; cada `Post` tem uma coleção de `Comment`.
 
+Há ainda duas relações entre usuários e conteúdo: a **amizade**, uma associação de `User` com outros `User` (`addFriendly`), e a **curtida**, em que um usuário curte o post de outro (`liked(quemCurtiu, donoDoPost, post)`). Em `addComment`, os argumentos são o autor do comentário, o dono do post, o post e o comentário.
+
 O sistema deve suportar o seguinte uso:
 
 ```java
